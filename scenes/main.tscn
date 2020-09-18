@@ -10,7 +10,7 @@
 [ext_resource path="res://sprites/main_idle_3.png" type="Texture" id=8]
 [ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -23,21 +23,19 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.15993, 26.0387 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.95303, 4.90018 )
 
 [node name="World" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
+position = Vector2( 0.0297928, 21.321 )
+shape = SubResource( 2 )
