@@ -30,9 +30,9 @@ animations = [ {
 extents = Vector2( 7.15993, 26.0387 )
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( 61.562, 158.466, 0.536946, 158.445, 1.08777, 1.11211, 480.576, -0.775627, 480.739, 268.552, 407.124, 268.379, 406.341, 164.222, 364.717, 164.432, 61.8486, 209.253, 364.744, 268.327, 0.682205, 268.232, 0.547855, 209.557 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 0, 3, 6, 7 ), PoolIntArray( 8, 0, 7, 9 ), PoolIntArray( 8, 9, 10, 11 ) ]
-outlines = [ PoolVector2Array( 0.682205, 268.232, 0.547855, 209.557, 61.8486, 209.253, 61.562, 158.466, 0.536946, 158.445, 1.08777, 1.11211, 480.576, -0.775627, 480.739, 268.552, 407.124, 268.379, 406.341, 164.222, 364.717, 164.432, 364.744, 268.327 ) ]
+vertices = PoolVector2Array( 480.576, -0.775627, 480.561, 318.316, 415.561, 317.316, 415.561, 214.316, 1.08777, 1.11211, 356.561, 214.316, 71.5613, 148.316, 0.561279, 148.316, 71.5613, 209.316, 355.561, 318.316, 0.561279, 318.316, 0.547855, 209.557 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5, 6 ), PoolIntArray( 6, 7, 4 ), PoolIntArray( 8, 6, 5, 9 ), PoolIntArray( 9, 10, 11, 8 ) ]
+outlines = [ PoolVector2Array( 0.561279, 318.316, 0.547855, 209.557, 71.5613, 209.316, 71.5613, 148.316, 0.561279, 148.316, 1.08777, 1.11211, 480.576, -0.775627, 480.561, 318.316, 415.561, 317.316, 415.561, 214.316, 356.561, 214.316, 355.561, 318.316 ) ]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
@@ -130,11 +130,10 @@ __meta__ = {
 }
 
 [node name="TileMap" type="TileMap" parent="."]
-z_index = -1
 tile_set = ExtResource( 12 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 327681, 0, 0, 327691, 2, 0, 327692, 3, 0, 393217, 1, 0, 393227, 4, 0, 393228, 5, 0 )
+tile_data = PoolIntArray( 327681, 0, 0, 393217, 1, 0, 458763, 2, 0, 458764, 3, 0, 524299, 4, 0, 524300, 5, 0 )
 [connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]

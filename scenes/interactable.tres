@@ -17,7 +17,7 @@
 0/shape_one_way = false
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
-0/z_index = 0
+0/z_index = 1
 1/name = "Cooking_64x.png 1"
 1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
@@ -31,7 +31,7 @@
 1/shape_one_way = false
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
-1/z_index = 0
+1/z_index = -1
 2/name = "Bed_64x.png 2"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
