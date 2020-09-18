@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Main.gd" type="Script" id=10]
 [ext_resource path="res://scenes/ElementBar.gd" type="Script" id=11]
+[ext_resource path="res://scenes/interactable.tres" type="TileSet" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,9 +30,9 @@ animations = [ {
 extents = Vector2( 7.15993, 26.0387 )
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( -0.799988, 269.172, 1.08777, 1.11211, 480.576, -0.775627, 478.688, 270.116 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-outlines = [ PoolVector2Array( -0.799988, 269.172, 1.08777, 1.11211, 480.576, -0.775627, 478.688, 270.116 ) ]
+vertices = PoolVector2Array( 61.562, 158.466, 0.536946, 158.445, 1.08777, 1.11211, 480.576, -0.775627, 480.739, 268.552, 407.124, 268.379, 406.341, 164.222, 364.717, 164.432, 61.8486, 209.253, 364.744, 268.327, 0.682205, 268.232, 0.547855, 209.557 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 0, 3, 6, 7 ), PoolIntArray( 8, 0, 7, 9 ), PoolIntArray( 8, 9, 10, 11 ) ]
+outlines = [ PoolVector2Array( 0.682205, 268.232, 0.547855, 209.557, 61.8486, 209.253, 61.562, 158.466, 0.536946, 158.445, 1.08777, 1.11211, 480.576, -0.775627, 480.739, 268.552, 407.124, 268.379, 406.341, 164.222, 364.717, 164.432, 364.744, 268.327 ) ]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
@@ -127,6 +128,13 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327681, 0, 0, 327691, 2, 0, 327692, 3, 0, 393217, 1, 0, 393227, 4, 0, 393228, 5, 0 )
 [connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
