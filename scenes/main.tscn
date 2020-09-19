@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://sprites/Floor_Wall_64x.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Bed_64x.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Cooking_64x.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Console_64x.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Kitchen Sink_64x.png" type="Texture" id=16]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,9 +34,9 @@ animations = [ {
 extents = Vector2( 7.15993, 26.0387 )
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( 324.561, 278.316, 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.316, 324.561, 218.316, 64.5613, 182.316, 40.5613, 182.316, 40.5613, 94.3163, 440.561, 94.3163, 382.561, 218.316, 440.561, 278.316, 382.561, 278.316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 4, 5, 8, 9 ), PoolIntArray( 9, 8, 10, 11 ) ]
-outlines = [ PoolVector2Array( 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.316, 64.5613, 182.316, 40.5613, 182.316, 40.5613, 94.3163, 440.561, 94.3163, 440.561, 278.316, 382.561, 278.316, 382.561, 218.316, 324.561, 218.316, 324.561, 278.316 ) ]
+vertices = PoolVector2Array( 324.561, 278.316, 72.5613, 278.316, 72.5613, 182.316, 324.561, 218.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 94.3163, 440.561, 94.3163, 64.5613, 182.316, 382.561, 218.316, 440.561, 278.316, 382.561, 278.316 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 2, 8, 4, 7 ), PoolIntArray( 3, 2, 7, 9 ), PoolIntArray( 9, 7, 10, 11 ) ]
+outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 94.3163, 440.561, 94.3163, 440.561, 278.316, 382.561, 278.316, 382.561, 218.316, 324.561, 218.316, 324.561, 278.316 ) ]
 
 [sub_resource type="TileSet" id=4]
 0/name = "Floor_Wall_64x.png 0"
@@ -658,8 +660,11 @@ outlines = [ PoolVector2Array( 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.
 script = ExtResource( 10 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 203.727, 84.1845 )
+position = Vector2( 312, 256 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -766,6 +771,15 @@ texture = ExtResource( 13 )
 [node name="Stove" type="Sprite" parent="TileMap-Floor-Wall"]
 position = Vector2( 64, 224 )
 texture = ExtResource( 14 )
+
+[node name="Console" type="Sprite" parent="TileMap-Floor-Wall"]
+position = Vector2( 128, 80 )
+z_index = -1
+texture = ExtResource( 15 )
+
+[node name="Sink" type="Sprite" parent="TileMap-Floor-Wall"]
+position = Vector2( 64, 160 )
+texture = ExtResource( 16 )
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
