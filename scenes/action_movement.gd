@@ -3,7 +3,6 @@ extends KinematicBody2D
 export (int) var speed = 50
 
 var idle = true
-signal path_done
 
 # Untuk menyimpan runtutan perjalanan
 var path : = PoolVector2Array()
@@ -24,7 +23,6 @@ func _process(delta):
 			path.remove(0)
 			if path.size() == 0:
 				$AnimatedSprite.play("idle")
-				emit_signal("path_done")
 			flip_char()
 		# Update the distance to walk
 		distance_to_walk -= distance_to_next_point
