@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -11,9 +11,18 @@
 [ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Main.gd" type="Script" id=10]
 [ext_resource path="res://scenes/ElementBar.gd" type="Script" id=11]
+<<<<<<< Updated upstream
 [ext_resource path="res://sprites/Floor_Wall_64x.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Bed_64x.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Cooking_64x.png" type="Texture" id=14]
+=======
+[ext_resource path="res://scenes/interactable.tres" type="TileSet" id=12]
+[ext_resource path="res://scenes/Activity.gd" type="Script" id=13]
+[ext_resource path="res://sprites/Cooking_64x.png" type="Texture" id=14]
+[ext_resource path="res://sprites/Bed_64x.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Kitchen Sink_64x.png" type="Texture" id=16]
+[ext_resource path="res://sprites/Console_64x.png" type="Texture" id=17]
+>>>>>>> Stashed changes
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,9 +41,15 @@ animations = [ {
 extents = Vector2( 7.15993, 26.0387 )
 
 [sub_resource type="NavigationPolygon" id=3]
+<<<<<<< Updated upstream
 vertices = PoolVector2Array( 324.561, 278.316, 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.316, 324.561, 218.316, 64.5613, 182.316, 40.5613, 182.316, 40.5613, 94.3163, 440.561, 94.3163, 382.561, 218.316, 440.561, 278.316, 382.561, 278.316 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 4, 5, 8, 9 ), PoolIntArray( 9, 8, 10, 11 ) ]
 outlines = [ PoolVector2Array( 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.316, 64.5613, 182.316, 40.5613, 182.316, 40.5613, 94.3163, 440.561, 94.3163, 440.561, 278.316, 382.561, 278.316, 382.561, 218.316, 324.561, 218.316, 324.561, 278.316 ) ]
+=======
+vertices = PoolVector2Array( 40.5613, 150.316, 40.5613, 102.316, 96.6663, 102.316, 64.5613, 150.316, 160.292, 102.316, 357.561, 214.316, 357.561, 278.316, 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 440.561, 102.316, 440.561, 278.316, 418.561, 278.316, 418.561, 214.316 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8, 2 ), PoolIntArray( 8, 9, 3, 2 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 4, 10, 13, 5 ) ]
+outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 102.316, 96.6663, 102.316, 160.292, 102.316, 440.561, 102.316, 440.561, 278.316, 418.561, 278.316, 418.561, 214.316, 357.561, 214.316, 357.561, 278.316 ) ]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSet" id=4]
 0/name = "Floor_Wall_64x.png 0"
@@ -658,8 +673,14 @@ outlines = [ PoolVector2Array( 40.5613, 278.316, 40.5613, 254.316, 64.5613, 254.
 script = ExtResource( 10 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 203.727, 84.1845 )
+position = Vector2( 352, 256 )
 script = ExtResource( 2 )
+<<<<<<< Updated upstream
+=======
+__meta__ = {
+"_edit_group_": true
+}
+>>>>>>> Stashed changes
 speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -678,6 +699,7 @@ position = Vector2( -0.561279, 1.68368 )
 navpoly = SubResource( 3 )
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 width = 1.0
 default_color = Color( 1, 0, 0, 1 )
 
@@ -753,6 +775,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+<<<<<<< Updated upstream
 [node name="TileMap-Floor-Wall" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 32, 32 )
@@ -769,3 +792,64 @@ texture = ExtResource( 14 )
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
+=======
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 35, 0, 1, 18, 0, 2, 26, 0, 3, 18, 0, 4, 19, 0, 5, 19, 0, 6, 18, 0, 7, 18, 0, 8, 19, 0, 9, 18, 0, 10, 26, 0, 11, 18, 0, 12, 18, 0, 13, 26, 0, 14, 34, 0, 65536, 25, 0, 65537, 8, 0, 65538, 4, 0, 65539, 5, 0, 65540, 8, 0, 65541, 4, 0, 65542, 8, 0, 65543, 5, 0, 65544, 5, 0, 65545, 4, 0, 65546, 8, 0, 65547, 9, 0, 65548, 8, 0, 65549, 5, 0, 65550, 22, 0, 131072, 24, 0, 131073, 6, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 31, 0, 196608, 24, 0, 196609, 2, 0, 196610, 3, 0, 196611, 2, 0, 196612, 3, 0, 196613, 1, 0, 196614, 0, 0, 196615, 1, 0, 196616, 0, 0, 196617, 2, 0, 196618, 0, 0, 196619, 1, 0, 196620, 3, 0, 196621, 2, 0, 196622, 30, 0, 262144, 25, 0, 262145, 0, 0, 262146, 1, 0, 262147, 0, 0, 262148, 2, 0, 262149, 3, 0, 262150, 2, 0, 262151, 3, 0, 262152, 1, 0, 262153, 0, 0, 262154, 2, 0, 262155, 3, 0, 262156, 1, 0, 262157, 3, 0, 262158, 31, 0, 327680, 24, 0, 327681, 2, 0, 327682, 0, 0, 327683, 2, 0, 327684, 0, 0, 327685, 2, 0, 327686, 3, 0, 327687, 2, 0, 327688, 0, 0, 327689, 2, 0, 327690, 0, 0, 327691, 2, 0, 327692, 3, 0, 327693, 1, 0, 327694, 30, 0, 393216, 25, 0, 393217, 3, 0, 393218, 1, 0, 393219, 0, 0, 393220, 2, 0, 393221, 3, 0, 393222, 2, 0, 393223, 3, 0, 393224, 1, 0, 393225, 0, 0, 393226, 1, 0, 393227, 0, 0, 393228, 2, 0, 393229, 3, 0, 393230, 30, 0, 458752, 24, 0, 458753, 2, 0, 458754, 3, 0, 458755, 2, 0, 458756, 3, 0, 458757, 2, 0, 458758, 3, 0, 458759, 1, 0, 458760, 0, 0, 458761, 1, 0, 458762, 0, 0, 458763, 1, 0, 458764, 3, 0, 458765, 1, 0, 458766, 22, 0, 524288, 25, 0, 524289, 0, 0, 524290, 1, 0, 524291, 3, 0, 524292, 2, 0, 524293, 3, 0, 524294, 2, 0, 524295, 3, 0, 524296, 1, 0, 524297, 3, 0, 524298, 1, 0, 524299, 0, 0, 524300, 1, 0, 524301, 3, 0, 524302, 30, 0, 589824, 36, 0, 589825, 20, 0, 589826, 21, 0, 589827, 20, 0, 589828, 20, 0, 589829, 28, 0, 589830, 20, 0, 589831, 20, 0, 589832, 28, 0, 589833, 20, 0, 589834, 28, 0, 589835, 20, 0, 589836, 20, 0, 589837, 21, 0, 589838, 37, 0 )
+
+[node name="Stove" type="Sprite" parent="TileMap"]
+position = Vector2( 64, 224 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="Bed" type="Sprite" parent="TileMap"]
+position = Vector2( 386, 259 )
+z_index = -1
+texture = ExtResource( 15 )
+
+[node name="Sink" type="Sprite" parent="TileMap"]
+position = Vector2( 64, 161 )
+texture = ExtResource( 16 )
+
+[node name="Console" type="Sprite" parent="TileMap"]
+position = Vector2( 128, 84 )
+z_index = -2
+texture = ExtResource( 17 )
+
+[node name="Activity" type="Node" parent="."]
+script = ExtResource( 13 )
+activity_name = "Happiness"
+activity_gain = 4
+
+[node name="Area2D" type="Area2D" parent="Activity"]
+visible = false
+position = Vector2( 45.1076, 187.448 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Activity/Area2D"]
+position = Vector2( -0.107601, 36.552 )
+shape = SubResource( 4 )
+
+[node name="Activity2" type="Node" parent="."]
+script = ExtResource( 13 )
+activity_name = "Health"
+activity_gain = 4
+
+[node name="Area2D" type="Area2D" parent="Activity2"]
+visible = false
+position = Vector2( 385.846, 259.182 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Activity2/Area2D"]
+shape = SubResource( 5 )
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
+[connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
+[connection signal="mouse_entered" from="Activity/Area2D" to="Activity" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Activity/Area2D" to="Activity" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Activity2/Area2D" to="Activity2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Activity2/Area2D" to="Activity2" method="_on_Area2D_mouse_exited"]
+>>>>>>> Stashed changes
