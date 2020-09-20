@@ -671,7 +671,7 @@ extents = Vector2( 31.4745, 26.2661 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
-seconds_per_hour = 3.0
+seconds_per_hour = 10.0
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 312, 256 )
@@ -827,14 +827,6 @@ texture = ExtResource( 16 )
 
 [node name="EventSystem" type="Node2D" parent="."]
 script = ExtResource( 18 )
-event_name = PoolStringArray( "yes", "duo", "full", "win duo", "loss duo" )
-event_from = PoolStringArray( "Console", "yes", "yes", "duo", "duo" )
-event_chance = PoolIntArray( 100, 50, 50, 60, 40 )
-event_output = PoolStringArray( "decision", "chance", "gain", "gain", "gain" )
-health_output = PoolIntArray( 0, 0, 0, 0, 0 )
-happiness_output = PoolIntArray( 0, 0, 3, 10, -5 )
-work_output = PoolIntArray( 0, 0, 0, 0, 0 )
-event_desc = PoolStringArray( "which games\?", "", "win full", "win duo", "loss duo" )
 
 [node name="DecisionPanel" type="Panel" parent="."]
 pause_mode = 2
