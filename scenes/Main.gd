@@ -38,7 +38,10 @@ func _input(event):
 
 func _ready():
 	time_coroutine = time_moving()
-	
+
+func _process(delta):
+	$Tooltip.rect_position = get_viewport().get_mouse_position()
+
 func pause_game():
 	is_pause = true
 
@@ -53,10 +56,15 @@ func time_moving():
 		yield(get_tree().create_timer(seconds_per_hour), "timeout")
 		emit_signal("hour_pass")
 
-func get_activity_hover(activity_type, activity_name, gain):
+func get_activity_hover(activity_type, activity_name, gain, activity_desc, enter):
 	activity_hover = activity_type
 	activity_name_hover = activity_name
 	activity_gain_hover = gain
+	if enter:
+		$Tooltip/Label.text = activity_desc
+		$Tooltip.visible = true
+	else:
+		$Tooltip.visible = false
 
 
 func _on_Player_path_done():
