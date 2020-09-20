@@ -671,7 +671,6 @@ extents = Vector2( 31.4745, 26.2661 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
-seconds_per_hour = 10.0
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 312, 256 )
@@ -785,6 +784,7 @@ script = ExtResource( 17 )
 activity_type = "Health"
 activity_name = "Bed"
 activity_gain = 4
+activity_desc = "Sleep"
 
 [node name="Area2D" type="Area2D" parent="Bed"]
 
@@ -799,6 +799,7 @@ script = ExtResource( 17 )
 activity_type = "Health"
 activity_name = "Stove"
 activity_gain = 4
+activity_desc = "Make a meal"
 
 [node name="Area2D" type="Area2D" parent="Stove"]
 
@@ -814,6 +815,7 @@ script = ExtResource( 17 )
 activity_type = "Happiness"
 activity_name = "Console"
 activity_gain = 4
+activity_desc = "Play a game"
 
 [node name="Area2D" type="Area2D" parent="Console"]
 
@@ -908,10 +910,29 @@ margin_right = 95.7248
 margin_bottom = 25.1659
 rect_scale = Vector2( 0.216527, 0.928298 )
 text = "Event Occured"
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+
+[node name="Tooltip" type="Panel" parent="."]
+visible = false
+margin_left = 36.187
+margin_top = 239.408
+margin_right = 76.187
+margin_bottom = 279.408
+rect_scale = Vector2( 1.8, 0.519998 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tooltip"]
+margin_left = 2.28908
+margin_top = 10.8051
+margin_right = 51.2891
+margin_bottom = 24.8051
+rect_scale = Vector2( 0.333333, 0.846158 )
+text = "tooltips"
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_exited"]
