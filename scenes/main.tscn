@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://sprites/Console_64x.png" type="Texture" id=15]
 [ext_resource path="res://sprites/Kitchen Sink_64x.png" type="Texture" id=16]
 [ext_resource path="res://scenes/Activity.gd" type="Script" id=17]
+[ext_resource path="res://scenes/EventSytem.gd" type="Script" id=18]
+[ext_resource path="res://scenes/EventPanel.gd" type="Script" id=19]
+[ext_resource path="res://scenes/Decision.gd" type="Script" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -821,10 +824,102 @@ shape = SubResource( 7 )
 [node name="Sink" type="Sprite" parent="."]
 position = Vector2( 64, 160 )
 texture = ExtResource( 16 )
+
+[node name="EventSystem" type="Node2D" parent="."]
+script = ExtResource( 18 )
+event_name = PoolStringArray( "yes", "duo", "full", "win duo", "loss duo" )
+event_from = PoolStringArray( "Console", "yes", "yes", "duo", "duo" )
+event_chance = PoolIntArray( 100, 50, 50, 60, 40 )
+event_output = PoolStringArray( "decision", "chance", "gain", "gain", "gain" )
+health_output = PoolIntArray( 0, 0, 0, 0, 0 )
+happiness_output = PoolIntArray( 0, 0, 3, 10, -5 )
+work_output = PoolIntArray( 0, 0, 0, 0, 0 )
+event_desc = PoolStringArray( "which games\?", "", "win full", "win duo", "loss duo" )
+
+[node name="DecisionPanel" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 144.587
+margin_top = 117.38
+margin_right = 184.587
+margin_bottom = 157.38
+rect_scale = Vector2( 5.15723, 2.46872 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="DecisionPanel"]
+margin_left = 3.82956
+margin_top = 5.67094
+margin_right = 313.83
+margin_bottom = 135.671
+rect_scale = Vector2( 0.103871, 0.181936 )
+tab_size = 7
+text = "Text for question"
+
+[node name="Option1" type="Button" parent="DecisionPanel"]
+margin_left = 3.15092
+margin_top = 30.9877
+margin_right = 15.1509
+margin_bottom = 50.9877
+rect_scale = Vector2( 1.08151, 0.216734 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DecisionPanel/Option1"]
+margin_left = 0.507721
+margin_top = 3.5282
+margin_right = 56.5077
+margin_bottom = 17.5282
+rect_scale = Vector2( 0.0929867, 0.96253 )
+text = "Option 1"
+valign = 1
+
+[node name="Option2" type="Button" parent="DecisionPanel"]
+margin_left = 23.5119
+margin_top = 30.8921
+margin_right = 35.5119
+margin_bottom = 50.8921
+rect_scale = Vector2( 1.08151, 0.216734 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DecisionPanel/Option2"]
+margin_left = 0.846161
+margin_top = 3.5282
+margin_right = 56.8462
+margin_bottom = 17.5282
+rect_scale = Vector2( 0.0929867, 0.96253 )
+text = "Option 2"
+valign = 1
+
+[node name="EventPanel" type="Panel" parent="."]
+visible = false
+margin_left = 49.5669
+margin_top = 249.312
+margin_right = 89.5669
+margin_bottom = 289.312
+rect_scale = Vector2( 2.65544, 0.783956 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+time_awake = 2.0
+
+[node name="Label" type="Label" parent="EventPanel"]
+margin_left = 2.72478
+margin_top = 11.1659
+margin_right = 95.7248
+margin_bottom = 25.1659
+rect_scale = Vector2( 0.216527, 0.928298 )
+text = "Event Occured"
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_exited"]
@@ -832,3 +927,6 @@ texture = ExtResource( 16 )
 [connection signal="mouse_exited" from="Stove/Area2D" to="Stove" method="_on_Area2D_mouse_exited"]
 [connection signal="mouse_entered" from="Console/Area2D" to="Console" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Console/Area2D" to="Console" method="_on_Area2D_mouse_exited"]
+[connection signal="pressed" from="DecisionPanel/Option1" to="DecisionPanel" method="_on_Option1_pressed"]
+[connection signal="pressed" from="DecisionPanel/Option2" to="DecisionPanel" method="_on_Option2_pressed"]
+[connection signal="visibility_changed" from="EventPanel" to="EventPanel" method="_on_EventPanel_visibility_changed"]
