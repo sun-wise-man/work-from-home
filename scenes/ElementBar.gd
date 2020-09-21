@@ -1,17 +1,9 @@
 extends ProgressBar
 
 var is_decreasing : = true
+export (int) var decreased_rate = -4
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _on_World_hour_pass():
+func _on_World_hour_pass(time):
 	if is_decreasing:
-		value -= 4
+		value += decreased_rate

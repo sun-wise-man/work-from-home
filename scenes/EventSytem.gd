@@ -14,7 +14,8 @@ func get_chance(from):
 	for i in range(event_name.size()):
 		if from == event_from[i]:
 			if event_chance[i] == 102:
-				chance_pool[0] = -2
+				chance_pool.append(-2)
+				chance_pool.append(i)
 				return chance_pool
 			for n in range(event_chance[i]):
 				chance_pool.append(i)
