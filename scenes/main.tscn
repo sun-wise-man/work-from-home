@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -24,27 +24,14 @@
 [ext_resource path="res://sprites/PC_64x.png" type="Texture" id=22]
 [ext_resource path="res://sprites/Door_64x.png" type="Texture" id=23]
 [ext_resource path="res://sprites/Furniture_64x.png" type="Texture" id=24]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "idle",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.15993, 26.0387 )
+[ext_resource path="res://fonts/slkscr.ttf" type="DynamicFontData" id=25]
+[ext_resource path="res://scenes/TimePanel.gd" type="Script" id=26]
+[ext_resource path="res://scenes/Windows.gd" type="Script" id=27]
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( 340.561, 278.316, 302.561, 279.316, 302.561, 208.316, 340.561, 222.316, 210.561, 277.316, 72.5613, 278.316, 72.5613, 182.316, 210.561, 208.316, 440.561, 278.316, 400.561, 278.316, 400.561, 222.316, 440.561, 209.646, 288.561, 158.316, 440.561, 158.316, 248.561, 142.316, 64.5613, 150.316, 64.5613, 182.316, 40.5613, 150.316, 40.5613, 94.3163, 248.505, 94.3163, 288.561, 142.316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 11, 10, 3, 2 ), PoolIntArray( 14, 12, 2, 7, 6, 15 ), PoolIntArray( 6, 16, 15 ), PoolIntArray( 15, 17, 18, 19, 14 ), PoolIntArray( 12, 14, 20 ) ]
-outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 94.3163, 248.505, 94.3163, 248.561, 142.316, 288.561, 142.316, 288.561, 158.316, 440.561, 158.316, 440.561, 209.646, 440.561, 278.316, 400.561, 278.316, 400.561, 222.316, 340.561, 222.316, 340.561, 278.316, 302.561, 279.316, 302.561, 208.316, 210.561, 208.316, 210.561, 277.316 ) ]
+vertices = PoolVector2Array( 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 416.936, 182.982, 317.338, 222.935, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 340.561, 222.316, 302.329, 223.25, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 248.926, 142.315, 210.561, 277.316, 72.5613, 278.316, 72.5613, 182.316, 210.559, 196.792, 417.311, 278.316, 400.561, 278.316, 400.561, 222.316, 64.5613, 182.316, 340.561, 278.316, 317.652, 278.372, 64.5887, 93.9015, 248.505, 94.3163, 256.069, 157.99, 256.069, 142.513 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 3, 8 ), PoolIntArray( 4, 9, 5 ), PoolIntArray( 10, 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 2, 19, 20, 21, 3 ), PoolIntArray( 17, 22, 10, 14 ), PoolIntArray( 8, 23, 24, 4 ), PoolIntArray( 25, 26, 14, 13 ), PoolIntArray( 27, 18, 17, 14, 28 ), PoolIntArray( 5, 18, 27, 6 ), PoolIntArray( 21, 8, 3 ) ]
+outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 222.316, 340.561, 222.316, 340.561, 278.316, 317.652, 278.372, 317.338, 222.935, 302.329, 223.25, 302.218, 196.477, 210.559, 196.792, 210.561, 277.316 ) ]
 
 [sub_resource type="TileSet" id=4]
 0/name = "Floor_Wall_64x.png 0"
@@ -468,7 +455,7 @@ outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.
 48/shapes = [  ]
 48/z_index = 0
 
-[sub_resource type="TileSet" id=21]
+[sub_resource type="TileSet" id=5]
 0/name = "Furniture_64x.png 0"
 0/texture = ExtResource( 24 )
 0/tex_offset = Vector2( 0, 0 )
@@ -638,76 +625,160 @@ outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.
 11/shapes = [  ]
 11/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 22.5005, 29.868 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.15993, 26.0387 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 15.1971, 25.9756 )
+extents = Vector2( 22.5005, 29.868 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 31.4745, 27.3712 )
+extents = Vector2( 15.1971, 25.9756 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 16, 28 )
+extents = Vector2( 17.7689, 11.3794 )
 
 [sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16, 13.0445 )
+
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 17, 28 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 64, 32 )
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 23.8611, 10.7365 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 14.6054, 10.7365 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 21 )
-region = Rect2( 64, 0, 64, 32 )
+region = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 21 )
-region = Rect2( 128, 0, 64, 32 )
+region = Rect2( 64, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 21 )
-region = Rect2( 192, 0, 64, 32 )
+region = Rect2( 128, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 21 )
-region = Rect2( 256, 0, 64, 32 )
+region = Rect2( 192, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 21 )
-region = Rect2( 0, 64, 64, 32 )
+region = Rect2( 256, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 21 )
-region = Rect2( 64, 64, 64, 32 )
+region = Rect2( 0, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 21 )
-region = Rect2( 128, 64, 64, 32 )
+region = Rect2( 64, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 21 )
-region = Rect2( 192, 64, 64, 32 )
+region = Rect2( 128, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 21 )
+region = Rect2( 192, 64, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 21 )
 region = Rect2( 256, 64, 64, 32 )
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "window",
 "speed": 5.02
 } ]
 
+[sub_resource type="DynamicFont" id=22]
+size = 13
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 13
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 13
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 13
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 10
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 10
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=31]
+size = 11
+font_data = ExtResource( 25 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
+starting_hour = 12
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( -0.561279, 1.68368 )
+navpoly = SubResource( 3 )
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+default_color = Color( 1, 0, 0, 1 )
+
+[node name="TileMap" type="Node2D" parent="."]
+
+[node name="TileMap-Floor-Wall" type="TileMap" parent="TileMap"]
+z_index = -1
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 35, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 34, 0, 10, 48, 0, 11, 48, 0, 12, 48, 0, 13, 48, 0, 14, 48, 0, 65536, 33, 0, 65537, 4, 0, 65538, 4, 0, 65539, 7, 0, 65540, 5, 0, 65541, 6, 0, 65542, 4, 0, 65543, 4, 0, 65544, 7, 0, 65545, 32, 0, 65546, 48, 0, 65547, 48, 0, 65548, 48, 0, 65549, 48, 0, 65550, 48, 0, 131072, 33, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0, 131076, 10, 0, 131077, 10, 0, 131078, 10, 0, 131079, 10, 0, 131080, 10, 0, 131081, 44, 0, 131082, 30, 0, 131083, 30, 0, 131084, 30, 0, 131085, 30, 0, 131086, 34, 0, 196608, 33, 0, 196609, 0, 0, 196610, 3, 0, 196611, 2, 0, 196612, 3, 0, 196613, 0, 0, 196614, 3, 0, 196615, 0, 0, 196616, 3, 0, 196617, 4, 0, 196618, 5, 0, 196619, 7, 0, 196620, 6, 0, 196621, 4, 0, 196622, 32, 0, 262144, 33, 0, 262145, 3, 0, 262146, 2, 0, 262147, 3, 0, 262148, 0, 0, 262149, 3, 0, 262150, 2, 0, 262151, 3, 0, 262152, 2, 0, 262153, 10, 0, 262154, 10, 0, 262155, 10, 0, 262156, 10, 0, 262157, 10, 0, 262158, 32, 0, 327680, 33, 0, 327681, 2, 0, 327682, 3, 0, 327683, 2, 0, 327684, 3, 0, 327685, 0, 0, 327686, 3, 0, 327687, 0, 0, 327688, 3, 0, 327689, 0, 0, 327690, 3, 0, 327691, 2, 0, 327692, 3, 0, 327693, 2, 0, 327694, 32, 0, 393216, 33, 0, 393217, 3, 0, 393218, 2, 0, 393219, 3, 0, 393220, 2, 0, 393221, 3, 0, 393222, 0, 0, 393223, 3, 0, 393224, 0, 0, 393225, 3, 0, 393226, 0, 0, 393227, 3, 0, 393228, 0, 0, 393229, 3, 0, 393230, 32, 0, 458752, 33, 0, 458753, 2, 0, 458754, 3, 0, 458755, 0, 0, 458756, 3, 0, 458757, 2, 0, 458758, 3, 0, 458759, 42, 0, 458760, 41, 0, 458761, 2, 0, 458762, 3, 0, 458763, 0, 0, 458764, 3, 0, 458765, 2, 0, 458766, 32, 0, 524288, 33, 0, 524289, 3, 0, 524290, 0, 0, 524291, 3, 0, 524292, 2, 0, 524293, 3, 0, 524294, 0, 0, 524295, 32, 0, 524296, 33, 0, 524297, 3, 0, 524298, 2, 0, 524299, 3, 0, 524300, 0, 0, 524301, 3, 0, 524302, 32, 0, 589824, 36, 0, 589825, 26, 0, 589826, 26, 0, 589827, 26, 0, 589828, 26, 0, 589829, 8, 0, 589830, 8, 0, 589831, 37, 0, 589832, 36, 0, 589833, 26, 0, 589834, 26, 0, 589835, 26, 0, 589836, 26, 0, 589837, 26, 0, 589838, 37, 0 )
+
+[node name="TileMap-Furniture" type="TileMap" parent="TileMap"]
+tile_set = SubResource( 5 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262147, 7, 0, 262157, 3, 0, 458753, 3, 0, 458761, 1, 0, 458765, 11, 0, 524291, 9, 0, 524293, 10, 0, 524297, 5, 0 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 320, 251 )
@@ -725,103 +796,9 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 2 )
 
-[node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
+[node name="Objects" type="Node2D" parent="."]
 
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-position = Vector2( -0.561279, 1.68368 )
-navpoly = SubResource( 3 )
-
-[node name="Line2D" type="Line2D" parent="."]
-width = 1.0
-default_color = Color( 1, 0, 0, 1 )
-
-[node name="HealthBar" type="ProgressBar" parent="."]
-margin_left = 294.531
-margin_top = 40.7893
-margin_right = 444.531
-margin_bottom = 54.7893
-step = 1.0
-value = 100.0
-percent_visible = false
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HealthBar"]
-margin_left = 60.0549
-margin_top = 2.08111
-margin_right = 102.055
-margin_bottom = 16.0811
-rect_scale = Vector2( 0.7, 0.7 )
-text = "Health"
-align = 1
-
-[node name="HappinessBar" type="ProgressBar" parent="."]
-margin_left = 294.531
-margin_top = 60.7893
-margin_right = 444.531
-margin_bottom = 74.7893
-step = 1.0
-value = 100.0
-percent_visible = false
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HappinessBar"]
-margin_left = 51.4332
-margin_top = 2.00033
-margin_right = 118.433
-margin_bottom = 16.0003
-rect_scale = Vector2( 0.7, 0.7 )
-text = "Happiness"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WorkBar" type="ProgressBar" parent="."]
-margin_left = 295.373
-margin_top = 81.4785
-margin_right = 445.373
-margin_bottom = 95.4785
-step = 1.0
-value = 100.0
-percent_visible = false
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="WorkBar"]
-margin_left = 49.6994
-margin_top = 2.12221
-margin_right = 116.699
-margin_bottom = 16.1222
-rect_scale = Vector2( 0.7, 0.7 )
-text = "Work"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TileMap-Floor-Wall" type="TileMap" parent="."]
-z_index = 1
-tile_set = SubResource( 4 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 0, 35, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 34, 0, 10, 48, 0, 11, 48, 0, 12, 48, 0, 13, 48, 0, 14, 48, 0, 65536, 33, 0, 65537, 4, 0, 65538, 4, 0, 65539, 7, 0, 65540, 5, 0, 65541, 6, 0, 65542, 4, 0, 65543, 4, 0, 65544, 7, 0, 65545, 32, 0, 65546, 48, 0, 65547, 48, 0, 65548, 48, 0, 65549, 48, 0, 65550, 48, 0, 131072, 33, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0, 131076, 10, 0, 131077, 10, 0, 131078, 10, 0, 131079, 10, 0, 131080, 10, 0, 131081, 44, 0, 131082, 30, 0, 131083, 30, 0, 131084, 30, 0, 131085, 30, 0, 131086, 34, 0, 196608, 33, 0, 196609, 0, 0, 196610, 3, 0, 196611, 2, 0, 196612, 3, 0, 196613, 0, 0, 196614, 3, 0, 196615, 0, 0, 196616, 3, 0, 196617, 4, 0, 196618, 5, 0, 196619, 7, 0, 196620, 6, 0, 196621, 4, 0, 196622, 32, 0, 262144, 33, 0, 262145, 3, 0, 262146, 2, 0, 262147, 3, 0, 262148, 0, 0, 262149, 3, 0, 262150, 2, 0, 262151, 3, 0, 262152, 2, 0, 262153, 10, 0, 262154, 10, 0, 262155, 10, 0, 262156, 10, 0, 262157, 10, 0, 262158, 32, 0, 327680, 33, 0, 327681, 2, 0, 327682, 3, 0, 327683, 2, 0, 327684, 3, 0, 327685, 0, 0, 327686, 3, 0, 327687, 0, 0, 327688, 3, 0, 327689, 0, 0, 327690, 3, 0, 327691, 2, 0, 327692, 3, 0, 327693, 2, 0, 327694, 32, 0, 393216, 33, 0, 393217, 3, 0, 393218, 2, 0, 393219, 3, 0, 393220, 2, 0, 393221, 3, 0, 393222, 0, 0, 393223, 3, 0, 393224, 0, 0, 393225, 3, 0, 393226, 0, 0, 393227, 3, 0, 393228, 0, 0, 393229, 3, 0, 393230, 32, 0, 458752, 33, 0, 458753, 2, 0, 458754, 3, 0, 458755, 0, 0, 458756, 3, 0, 458757, 2, 0, 458758, 3, 0, 458759, 42, 0, 458760, 41, 0, 458761, 2, 0, 458762, 3, 0, 458763, 0, 0, 458764, 3, 0, 458765, 2, 0, 458766, 32, 0, 524288, 33, 0, 524289, 3, 0, 524290, 0, 0, 524291, 3, 0, 524292, 2, 0, 524293, 3, 0, 524294, 0, 0, 524295, 32, 0, 524296, 33, 0, 524297, 3, 0, 524298, 2, 0, 524299, 3, 0, 524300, 0, 0, 524301, 3, 0, 524302, 32, 0, 589824, 36, 0, 589825, 26, 0, 589826, 26, 0, 589827, 26, 0, 589828, 26, 0, 589829, 8, 0, 589830, 8, 0, 589831, 37, 0, 589832, 36, 0, 589833, 26, 0, 589834, 26, 0, 589835, 26, 0, 589836, 26, 0, 589837, 26, 0, 589838, 37, 0 )
-
-[node name="TileMap-Furniture" type="TileMap" parent="."]
-tile_set = SubResource( 21 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262147, 7, 0, 262157, 3, 0, 458753, 3, 0, 458761, 1, 0, 458765, 11, 0, 524291, 9, 0, 524293, 10, 0, 524297, 5, 0 )
-
-[node name="Bed" type="Sprite" parent="."]
+[node name="Bed" type="Sprite" parent="Objects"]
 position = Vector2( 369, 256 )
 texture = ExtResource( 13 )
 script = ExtResource( 17 )
@@ -833,14 +810,15 @@ activity_name = "Bed"
 activity_gain = 4
 activity_desc = "Sleep"
 
-[node name="Area2D" type="Area2D" parent="Bed"]
+[node name="Area2D" type="Area2D" parent="Objects/Bed"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
 position = Vector2( 0.668182, 2.89545 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
-[node name="Stove" type="Sprite" parent="."]
+[node name="Stove" type="Sprite" parent="Objects"]
 position = Vector2( 64, 224 )
+z_index = -1
 texture = ExtResource( 14 )
 script = ExtResource( 17 )
 __meta__ = {
@@ -851,13 +829,13 @@ activity_name = "Stove"
 activity_gain = 4
 activity_desc = "Make a meal"
 
-[node name="Area2D" type="Area2D" parent="Stove"]
+[node name="Area2D" type="Area2D" parent="Objects/Stove"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stove/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
 position = Vector2( -17.1474, -6.7175 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
-[node name="Console" type="Sprite" parent="."]
+[node name="Console" type="Sprite" parent="Objects"]
 position = Vector2( 128, 80 )
 z_index = -1
 texture = ExtResource( 15 )
@@ -870,13 +848,13 @@ activity_name = "Console"
 activity_gain = 4
 activity_desc = "Play a game"
 
-[node name="Area2D" type="Area2D" parent="Console"]
+[node name="Area2D" type="Area2D" parent="Objects/Console"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Console/Area2D"]
-position = Vector2( 0.235977, 6.37115 )
-shape = SubResource( 7 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
+position = Vector2( 0.235962, 20.1442 )
+shape = SubResource( 8 )
 
-[node name="PC" type="Sprite" parent="."]
+[node name="PC" type="Sprite" parent="Objects"]
 position = Vector2( 256, 112 )
 z_index = -1
 texture = ExtResource( 22 )
@@ -884,17 +862,18 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Happiness"
+activity_type = "Work"
 activity_name = "PC"
 activity_gain = 4
+activity_desc = "Work"
 
-[node name="Area2D" type="Area2D" parent="PC"]
+[node name="Area2D" type="Area2D" parent="Objects/PC"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PC/Area2D"]
-position = Vector2( 16, -7 )
-shape = SubResource( 8 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
+position = Vector2( 16.25, 4.25 )
+shape = SubResource( 9 )
 
-[node name="Bathroom" type="Sprite" parent="."]
+[node name="Bathroom" type="Sprite" parent="Objects"]
 position = Vector2( 401, 125 )
 z_index = -1
 texture = ExtResource( 23 )
@@ -905,49 +884,180 @@ __meta__ = {
 activity_type = "Health"
 activity_name = "Bathroom"
 activity_gain = 4
+activity_desc = "Use Bathroom"
 
-[node name="Area2D" type="Area2D" parent="Bathroom"]
+[node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bathroom/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
-[node name="Sink" type="Sprite" parent="."]
+[node name="Sink" type="Sprite" parent="Objects"]
 position = Vector2( 64, 160 )
 texture = ExtResource( 16 )
 
+[node name="TV" type="Node2D" parent="Objects"]
+position = Vector2( 128.145, 71.0802 )
+script = ExtResource( 17 )
+activity_type = "Happiness"
+activity_name = "TV"
+activity_gain = 4
+activity_desc = "Watch TV"
+
+[node name="Area2D" type="Area2D" parent="Objects/TV"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/TV/Area2D"]
+shape = SubResource( 30 )
+
+[node name="Web" type="Node2D" parent="Objects"]
+position = Vector2( 275.395, 91.0802 )
+script = ExtResource( 17 )
+activity_type = "Happiness"
+activity_name = "Web"
+activity_gain = 4
+activity_desc = "Surf the web"
+
+[node name="Area2D" type="Area2D" parent="Objects/Web"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Web/Area2D"]
+position = Vector2( -1.5, 0.25 )
+shape = SubResource( 32 )
+
+[node name="Windows" type="Node2D" parent="Objects"]
+script = ExtResource( 27 )
+
+[node name="WindowAnim" type="AnimatedSprite" parent="Objects/Windows"]
+position = Vector2( 193, 48 )
+frames = SubResource( 21 )
+animation = "window"
+frame = 5
+
+[node name="WindowAnim2" type="AnimatedSprite" parent="Objects/Windows"]
+position = Vector2( 64, 48 )
+frames = SubResource( 21 )
+animation = "window"
+frame = 5
+
 [node name="EventSystem" type="Node2D" parent="."]
 script = ExtResource( 18 )
-event_name = PoolStringArray( "Great Food" )
-event_from = PoolStringArray( "Stove" )
-event_chance = PoolIntArray( 40 )
-event_output = PoolStringArray( "Gain" )
-health_output = PoolIntArray( 15 )
-happiness_output = PoolIntArray( 5 )
+event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overtime", "missing file", "missed deadline", "finish game", "play online", "duo", "win duo", "lose duo", "full party", "win full", "lose full", "movie", "known movie", "known movie gain", "recommended", "fun movie", "sad movie", "news", "good news", "bad news", "video call", "jumpscare", "great food", "bad food", "refreshed bath", "diarrhea", "refreshed sleep", "confused" )
+event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
+event_chance = PoolIntArray( 70, 102, 0, 18, 6, 6, 20, 10, 50, 70, 30, 50, 50, 50, 25, 50, 100, 50, 50, 50, 25, 50, 50, 30, 5, 40, 20, 40, 5, 40, 5 )
+event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
+health_output = PoolIntArray( 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -5, 15, -5, 10, -10, 15, 5 )
+happiness_output = PoolIntArray( 0, 10, 0, 0, 0, 0, 10, 0, 0, 10, -5, 0, 20, -5, 0, 0, 10, 0, 15, -10, 0, 15, -5, 10, 5, 5, -5, 5, -5, 10, -5 )
+work_output = PoolIntArray( 0, 15, 5, 10, -15, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
 
-[node name="DecisionPanel" type="Panel" parent="."]
+[node name="GUI" type="Control" parent="."]
+margin_right = 15.0
+margin_bottom = 12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="ProgressBar" parent="GUI"]
+margin_left = 301.0
+margin_top = 25.0
+margin_right = 451.0
+margin_bottom = 41.0
+step = 1.0
+value = 100.0
+percent_visible = false
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/HealthBar"]
+margin_left = 56.8765
+margin_top = 3.27166
+margin_right = 107.877
+margin_bottom = 17.2717
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 22 )
+text = "Health"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HappinessBar" type="ProgressBar" parent="GUI"]
+margin_left = 301.0
+margin_top = 45.0
+margin_right = 451.0
+margin_bottom = 61.0
+step = 1.0
+value = 100.0
+percent_visible = false
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/HappinessBar"]
+margin_left = 47.7251
+margin_top = 3.19088
+margin_right = 125.725
+margin_bottom = 17.1909
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 23 )
+text = "Happiness"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorkBar" type="ProgressBar" parent="GUI"]
+margin_left = 302.0
+margin_top = 66.0
+margin_right = 452.0
+margin_bottom = 82.0
+step = 1.0
+value = 100.0
+percent_visible = false
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/WorkBar"]
+margin_left = 49.1697
+margin_top = 3.18167
+margin_right = 116.169
+margin_bottom = 17.1817
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 24 )
+text = "Work"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecisionPanel" type="Panel" parent="GUI"]
 pause_mode = 2
 visible = false
 margin_left = 144.587
 margin_top = 117.38
 margin_right = 184.587
 margin_bottom = 157.38
-rect_scale = Vector2( 5.15723, 2.46872 )
+rect_scale = Vector2( 4.81913, 2.4048 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="DecisionPanel"]
+[node name="Text" type="RichTextLabel" parent="GUI/DecisionPanel"]
 margin_left = 3.82956
 margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
+custom_fonts/normal_font = SubResource( 25 )
 tab_size = 7
 text = "Text for question"
 
-[node name="Option1" type="Button" parent="DecisionPanel"]
+[node name="Option1" type="Button" parent="GUI/DecisionPanel"]
 margin_left = 3.15092
 margin_top = 30.9877
 margin_right = 15.1509
@@ -957,16 +1067,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="DecisionPanel/Option1"]
+[node name="Label" type="Label" parent="GUI/DecisionPanel/Option1"]
 margin_left = 0.507721
-margin_top = 3.5282
+margin_top = 2.84982
 margin_right = 56.5077
-margin_bottom = 17.5282
+margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
+custom_fonts/font = SubResource( 26 )
 text = "Option 1"
 valign = 1
 
-[node name="Option2" type="Button" parent="DecisionPanel"]
+[node name="Option2" type="Button" parent="GUI/DecisionPanel"]
 margin_left = 23.5119
 margin_top = 30.8921
 margin_right = 35.5119
@@ -976,81 +1087,99 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="DecisionPanel/Option2"]
+[node name="Label" type="Label" parent="GUI/DecisionPanel/Option2"]
 margin_left = 0.846161
-margin_top = 3.5282
+margin_top = 2.51065
 margin_right = 56.8462
-margin_bottom = 17.5282
+margin_bottom = 16.5107
 rect_scale = Vector2( 0.0929867, 0.96253 )
+custom_fonts/font = SubResource( 27 )
 text = "Option 2"
 valign = 1
 
-[node name="EventPanel" type="Panel" parent="."]
+[node name="Tooltip" type="Panel" parent="GUI"]
+visible = false
+margin_left = 36.187
+margin_top = 239.408
+margin_right = 76.187
+margin_bottom = 279.408
+rect_scale = Vector2( 1.46214, 0.578175 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/Tooltip"]
+margin_left = 2.28908
+margin_top = 10.8051
+margin_right = 51.2891
+margin_bottom = 24.8051
+rect_scale = Vector2( 0.333333, 0.846158 )
+custom_fonts/font = SubResource( 28 )
+text = "tooltips"
+
+[node name="EventPanel" type="Panel" parent="GUI"]
 visible = false
 margin_left = 49.5669
 margin_top = 249.312
 margin_right = 89.5669
 margin_bottom = 289.312
-rect_scale = Vector2( 2.65544, 0.783956 )
+rect_scale = Vector2( 2.9478, 0.801499 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 time_awake = 2.0
 
-[node name="Label" type="Label" parent="EventPanel"]
+[node name="Label" type="Label" parent="GUI/EventPanel"]
 margin_left = 2.72478
 margin_top = 11.1659
 margin_right = 95.7248
 margin_bottom = 25.1659
 rect_scale = Vector2( 0.216527, 0.928298 )
+custom_fonts/font = SubResource( 29 )
 text = "Event Occured"
-
-[node name="WindowAnim" type="AnimatedSprite" parent="."]
-position = Vector2( 193, 48 )
-frames = SubResource( 20 )
-animation = "window"
-frame = 5
-
-[node name="WindowAnim2" type="AnimatedSprite" parent="."]
-position = Vector2( 64, 48 )
-frames = SubResource( 20 )
-animation = "window"
-frame = 5
-
-[node name="Tooltip" type="Panel" parent="."]
-visible = false
-margin_left = 36.187
-margin_top = 239.408
-margin_right = 76.187
-margin_bottom = 279.408
-rect_scale = Vector2( 1.8, 0.519998 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Tooltip"]
-margin_left = 2.28908
-margin_top = 10.8051
-margin_right = 51.2891
-margin_bottom = 24.8051
-rect_scale = Vector2( 0.333333, 0.846158 )
-text = "tooltips"
+[node name="Time" type="Panel" parent="GUI"]
+margin_left = 245.258
+margin_top = 39.8474
+margin_right = 285.258
+margin_bottom = 54.8474
+script = ExtResource( 26 )
+
+[node name="Label" type="Label" parent="GUI/Time"]
+margin_right = 41.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 31 )
+text = "12:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="HappinessBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="WorkBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/WorkBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
-[connection signal="mouse_entered" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Bed/Area2D" to="Bed" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Stove/Area2D" to="Stove" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Stove/Area2D" to="Stove" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Console/Area2D" to="Console" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Console/Area2D" to="Console" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="PC/Area2D" to="PC" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="PC/Area2D" to="PC" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Bathroom/Area2D" to="Bathroom" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Bathroom/Area2D" to="Bathroom" method="_on_Area2D_mouse_exited"]
-[connection signal="pressed" from="DecisionPanel/Option1" to="DecisionPanel" method="_on_Option1_pressed"]
-[connection signal="pressed" from="DecisionPanel/Option2" to="DecisionPanel" method="_on_Option2_pressed"]
-[connection signal="visibility_changed" from="EventPanel" to="EventPanel" method="_on_EventPanel_visibility_changed"]
+[connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/Stove/Area2D" to="Objects/Stove" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/Stove/Area2D" to="Objects/Stove" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/Console/Area2D" to="Objects/Console" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/Console/Area2D" to="Objects/Console" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/PC/Area2D" to="Objects/PC" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/PC/Area2D" to="Objects/PC" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/TV/Area2D" to="Objects/TV" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/TV/Area2D" to="Objects/TV" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Objects/Web/Area2D" to="Objects/Web" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Objects/Web/Area2D" to="Objects/Web" method="_on_Area2D_mouse_exited"]
+[connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
+[connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
+[connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
