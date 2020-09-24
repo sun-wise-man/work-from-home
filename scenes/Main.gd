@@ -136,28 +136,10 @@ func _on_World_hour_pass(time):
 		$GUI/HealthBar.value += health_gain_total
 		$GUI/HappinessBar.value += happiness_gain_total
 		money += work_gain_total
-		show_element_change()
 		reset_money()
-
-func show_element_change():
-	if health_gain_total > 0:
-		$GUI/HealthBar/Status.text = "+" + str(health_gain_total)
-		$GUI/HealthBar/Status.visible = true
-	elif health_gain_total < 0:
-		$GUI/HealthBar/Status.text = str(health_gain_total)
-		$GUI/HealthBar/Status.visible = true
-	if happiness_gain_total > 0:
-		$GUI/HappinessBar/Status.text = "+" + str(happiness_gain_total)
-		$GUI/HappinessBar/Status.visible = true
-	elif happiness_gain_total < 0:
-		$GUI/HappinessBar/Status.text = str(happiness_gain_total)
-		$GUI/HappinessBar/Status.visible = true
-	if work_gain_total > 0:
-		$GUI/MoneyText/Status.text = "+" + str(work_gain_total)
-		$GUI/MoneyText/Status.visible = true
-	elif work_gain_total < 0:
-		$GUI/MoneyText/Status.text = str(work_gain_total)
-		$GUI/MoneyText/Status.visible = true
+		$Player/Status.visible = true
+		$Player/Status.text = (str(health_gain_total) + " " + str(happiness_gain_total)
+			+ " " + str(work_gain_total))
 
 func reset_money():
 	$GUI/MoneyText.text = str(money) + " $"
