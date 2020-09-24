@@ -1242,7 +1242,12 @@ align = 1
 valign = 1
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/WorkBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="visibility_changed" from="Player/Status" to="Player/Status" method="_on_Status_visibility_changed"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
