@@ -646,79 +646,79 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7.15993, 26.0387 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 22.5005, 29.868 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16, 25.9756 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 30.9083, 25.8009 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 16, 24.8267 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 17, 28 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 21 )
 region = Rect2( 0, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 21 )
 region = Rect2( 64, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 21 )
 region = Rect2( 128, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 21 )
 region = Rect2( 192, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 21 )
 region = Rect2( 256, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 21 )
 region = Rect2( 0, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 21 )
 region = Rect2( 64, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 21 )
 region = Rect2( 128, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 21 )
 region = Rect2( 192, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 21 )
 region = Rect2( 256, 64, 64, 32 )
 
-[sub_resource type="SpriteFrames" id=22]
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "window",
 "speed": 5.02
 } ]
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=22]
 size = 13
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=36]
+[sub_resource type="DynamicFont" id=23]
 size = 10
 font_data = ExtResource( 25 )
 
@@ -831,7 +831,7 @@ object_cost_increase = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
 position = Vector2( 0.668182, 2.89545 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Stove" type="Sprite" parent="Objects"]
 position = Vector2( 64, 224 )
@@ -849,7 +849,7 @@ object_cost_increase = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
 position = Vector2( -16, -7 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Console" type="Sprite" parent="Objects"]
 position = Vector2( 128, 80 )
@@ -867,7 +867,7 @@ object_cost_increase = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
 position = Vector2( -0.117584, 6.17884 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="PC" type="Sprite" parent="Objects"]
 position = Vector2( 256, 112 )
@@ -885,7 +885,7 @@ object_cost_increase = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
 position = Vector2( 16.0831, -7.09615 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="Bathroom" type="Sprite" parent="Objects"]
 position = Vector2( 401, 125 )
@@ -903,7 +903,7 @@ object_cost_increase = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="Sink" type="Sprite" parent="Objects"]
 position = Vector2( 64, 160 )
@@ -914,13 +914,13 @@ script = ExtResource( 27 )
 
 [node name="WindowAnim" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 193, 48 )
-frames = SubResource( 22 )
+frames = SubResource( 21 )
 animation = "window"
 frame = 5
 
 [node name="WindowAnim2" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 64, 48 )
-frames = SubResource( 22 )
+frames = SubResource( 21 )
 animation = "window"
 frame = 5
 
@@ -960,7 +960,7 @@ margin_top = 28.0
 margin_right = 64.0004
 margin_bottom = 42.0001
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 22 )
 text = "Health"
 align = 1
 __meta__ = {
@@ -973,7 +973,7 @@ margin_left = 67.5287
 margin_top = 26.6933
 margin_right = 107.529
 margin_bottom = 40.6933
-custom_fonts/font = SubResource( 36 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1010,7 +1010,7 @@ margin_left = 67.7055
 margin_top = 26.8406
 margin_right = 107.705
 margin_bottom = 40.8406
-custom_fonts/font = SubResource( 36 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 0.807843, 0.776471, 0.137255, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1040,7 +1040,7 @@ margin_top = 0.133812
 margin_right = 176.177
 margin_bottom = 14.1338
 rect_scale = Vector2( 1.30344, 1.38164 )
-custom_fonts/font = SubResource( 36 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1278,11 +1278,11 @@ custom_fonts/font = SubResource( 35 )
 text = "Play a game"
 align = 1
 valign = 1
-[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1300,11 +1300,11 @@ valign = 1
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]
