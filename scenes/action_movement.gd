@@ -8,6 +8,9 @@ signal path_done
 # Untuk menyimpan runtutan perjalanan
 var path : = PoolVector2Array()
 
+func _ready():
+	$AnimatedSprite.play("idle")
+
 func _process(delta):
 	# Calculate the movement distance for this frame
 	var distance_to_walk = speed * delta

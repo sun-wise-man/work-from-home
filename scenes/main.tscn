@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://fonts/slkscr.ttf" type="DynamicFontData" id=25]
 [ext_resource path="res://scenes/TimePanel.gd" type="Script" id=26]
 [ext_resource path="res://scenes/Windows.gd" type="Script" id=27]
+[ext_resource path="res://scenes/ActivitySystem.gd" type="Script" id=28]
+[ext_resource path="res://scenes/Status.gd" type="Script" id=29]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 416.936, 182.982, 340.561, 222.316, 317.561, 212.316, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 400.561, 222.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 248.926, 142.315, 210.561, 277.316, 72.5613, 278.316, 72.5613, 182.316, 210.559, 196.792, 417.311, 278.316, 400.561, 278.316, 340.561, 278.316, 317.652, 278.372, 64.5613, 182.316, 64.5887, 93.9015, 248.505, 94.3163, 256.069, 157.99, 256.069, 142.513, 302.561, 212.316 )
@@ -641,6 +643,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7.15993, 26.0387 )
 
+[sub_resource type="DynamicFont" id=37]
+size = 9
+font_data = ExtResource( 25 )
+
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 22.5005, 29.868 )
 
@@ -655,12 +661,6 @@ extents = Vector2( 16, 13.0445 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 17, 28 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 23.8611, 10.7365 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 14.6054, 10.7365 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 21 )
@@ -751,6 +751,22 @@ font_data = ExtResource( 25 )
 size = 11
 font_data = ExtResource( 25 )
 
+[sub_resource type="DynamicFont" id=33]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 14
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 14
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=36]
+size = 12
+font_data = ExtResource( 25 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
 seconds_per_hour = 5.0
@@ -784,9 +800,6 @@ tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262147, 7, 0
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 320, 251 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -797,6 +810,19 @@ frame = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 5 )
 
+[node name="Status" type="Label" parent="Player"]
+visible = false
+margin_left = -25.0
+margin_top = -32.0
+margin_right = 25.0
+margin_bottom = -15.0
+custom_fonts/font = SubResource( 37 )
+text = "+0 +0 +0"
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Bed" type="Sprite" parent="Objects"]
@@ -806,10 +832,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Health"
-activity_name = "Bed"
-activity_gain = 4
-activity_desc = "Sleep"
+object_names = "Bed"
+object_start_cost = 10
+object_cost_increase = 5
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
 
@@ -825,10 +850,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Health"
-activity_name = "Stove"
-activity_gain = 4
-activity_desc = "Make a meal"
+object_names = "Stove"
+object_start_cost = 10
+object_cost_increase = 5
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
 
@@ -844,10 +868,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Happiness"
-activity_name = "Console"
-activity_gain = 4
-activity_desc = "Play a game"
+object_names = "TV"
+object_start_cost = 10
+object_cost_increase = 5
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
 
@@ -863,10 +886,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Work"
-activity_name = "PC"
-activity_gain = 4
-activity_desc = "Work"
+object_names = "PC"
+object_start_cost = 10
+object_cost_increase = 5
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
 
@@ -882,10 +904,9 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-activity_type = "Health"
-activity_name = "Bathroom"
-activity_gain = 4
-activity_desc = "Use Bathroom"
+object_names = "Bathroom"
+object_start_cost = 10
+object_cost_increase = 5
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
 
@@ -896,33 +917,6 @@ shape = SubResource( 10 )
 [node name="Sink" type="Sprite" parent="Objects"]
 position = Vector2( 64, 160 )
 texture = ExtResource( 16 )
-
-[node name="TV" type="Node2D" parent="Objects"]
-position = Vector2( 128.145, 71.0802 )
-script = ExtResource( 17 )
-activity_type = "Happiness"
-activity_name = "TV"
-activity_gain = 4
-activity_desc = "Watch TV"
-
-[node name="Area2D" type="Area2D" parent="Objects/TV"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/TV/Area2D"]
-shape = SubResource( 11 )
-
-[node name="Web" type="Node2D" parent="Objects"]
-position = Vector2( 275.395, 91.0802 )
-script = ExtResource( 17 )
-activity_type = "Happiness"
-activity_name = "Web"
-activity_gain = 4
-activity_desc = "Surf the web"
-
-[node name="Area2D" type="Area2D" parent="Objects/Web"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Web/Area2D"]
-position = Vector2( -1.5, 0.25 )
-shape = SubResource( 12 )
 
 [node name="Windows" type="Node2D" parent="Objects"]
 script = ExtResource( 27 )
@@ -957,24 +951,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealthBar" type="ProgressBar" parent="GUI"]
+[node name="HealthBar" type="TextureProgress" parent="GUI"]
 margin_left = 301.0
-margin_top = 25.0
+margin_top = 24.0
 margin_right = 451.0
-margin_bottom = 41.0
-step = 1.0
+margin_bottom = 40.0
 value = 100.0
-percent_visible = false
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="GUI/HealthBar"]
-margin_left = 56.8765
-margin_top = 3.27166
-margin_right = 107.877
-margin_bottom = 17.2717
+margin_left = 54.0846
+margin_top = 4.27154
+margin_right = 105.085
+margin_bottom = 18.2716
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/font = SubResource( 24 )
 text = "Health"
@@ -983,14 +975,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HappinessBar" type="ProgressBar" parent="GUI"]
+[node name="HappinessBar" type="TextureProgress" parent="GUI"]
 margin_left = 301.0
 margin_top = 45.0
 margin_right = 451.0
 margin_bottom = 61.0
-step = 1.0
 value = 100.0
-percent_visible = false
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1009,28 +999,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorkBar" type="ProgressBar" parent="GUI"]
-margin_left = 302.0
-margin_top = 66.0
-margin_right = 452.0
-margin_bottom = 82.0
-step = 1.0
-value = 100.0
-percent_visible = false
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/WorkBar"]
-margin_left = 49.1697
-margin_top = 3.18167
-margin_right = 116.169
-margin_bottom = 17.1817
+[node name="MoneyText" type="Label" parent="GUI"]
+margin_left = 301.0
+margin_top = 69.182
+margin_right = 511.0
+margin_bottom = 85.182
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/font = SubResource( 26 )
-text = "Work"
+text = "0 $"
 align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1144,14 +1122,14 @@ __meta__ = {
 }
 
 [node name="Time" type="Panel" parent="GUI"]
-margin_left = 245.258
-margin_top = 39.8474
-margin_right = 285.258
-margin_bottom = 54.8474
+margin_left = 238.0
+margin_top = 35.0
+margin_right = 288.0
+margin_bottom = 65.0
 script = ExtResource( 26 )
 
-[node name="Label" type="Label" parent="GUI/Time"]
-margin_right = 41.0
+[node name="hour" type="Label" parent="GUI/Time"]
+margin_right = 50.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 32 )
 text = "12:00"
@@ -1160,13 +1138,118 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="day" type="Label" parent="GUI/Time"]
+margin_top = 15.0
+margin_right = 50.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 33 )
+text = "Day 1"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ActivitySystem" type="Control" parent="GUI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.408221, 0.419289 )
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+activity_name = PoolStringArray( "Bed", "Stove", "Console", "TV", "PC", "Web", "Bathroom" )
+activity_from = PoolStringArray( "Bed", "Stove", "TV", "TV", "PC", "PC", "Bathroom" )
+activity_type = PoolStringArray( "Health", "Health", "Happiness", "Happiness", "Work", "Happiness", "Health" )
+activity_gain = PoolIntArray( 10, 10, 10, 5, 10, 5, 5 )
+activity_scale = PoolIntArray( 1, 1, 1, 1, 1, 1, 1 )
+activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "Watch TV", "Do a work", "Surf the web", "Use bathroom" )
+
+[node name="Panel" type="Panel" parent="GUI/ActivitySystem"]
+margin_right = 200.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Object" type="Label" parent="GUI/ActivitySystem/Panel"]
+margin_left = 5.0
+margin_top = 20.0
+margin_right = 110.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 34 )
+text = "Object name"
+
+[node name="Level" type="Label" parent="GUI/ActivitySystem/Panel"]
+margin_left = 150.0
+margin_top = 20.0
+margin_right = 190.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 35 )
+text = "lv 1"
+
+[node name="Button" type="Button" parent="GUI/ActivitySystem/Panel"]
+margin_left = 10.0
+margin_top = 55.0
+margin_right = 190.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
+margin_right = 180.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 36 )
+text = "Play a game"
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="GUI/ActivitySystem/Panel"]
+margin_left = 10.0
+margin_top = 90.0
+margin_right = 190.0
+margin_bottom = 115.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
+margin_right = 180.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 36 )
+text = "Play a game"
+align = 1
+valign = 1
+
+[node name="Button3" type="Button" parent="GUI/ActivitySystem/Panel"]
+margin_left = 10.0
+margin_top = 125.0
+margin_right = 190.0
+margin_bottom = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
+margin_right = 180.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 36 )
+text = "Play a game"
+align = 1
+valign = 1
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/WorkBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
+
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
+[connection signal="visibility_changed" from="Player/Status" to="Player/Status" method="_on_Status_visibility_changed"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
 [connection signal="mouse_entered" from="Objects/Stove/Area2D" to="Objects/Stove" method="_on_Area2D_mouse_entered"]
@@ -1177,10 +1260,19 @@ __meta__ = {
 [connection signal="mouse_exited" from="Objects/PC/Area2D" to="Objects/PC" method="_on_Area2D_mouse_exited"]
 [connection signal="mouse_entered" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/TV/Area2D" to="Objects/TV" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/TV/Area2D" to="Objects/TV" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/Web/Area2D" to="Objects/Web" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/Web/Area2D" to="Objects/Web" method="_on_Area2D_mouse_exited"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button" to="GUI/ActivitySystem" method="_on_Button_pressed"]
+[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button2" to="." method="_on_Button2_mouse_entered"]
+[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button2" to="GUI/ActivitySystem" method="_on_Button2_pressed"]
+[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
+[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
