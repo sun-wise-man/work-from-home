@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -30,13 +30,14 @@
 [ext_resource path="res://scenes/ActivitySystem.gd" type="Script" id=28]
 [ext_resource path="res://scenes/Status.gd" type="Script" id=29]
 [ext_resource path="res://sprites/Element_Bar/Health_GUI_64x.png" type="Texture" id=30]
-[ext_resource path="res://sprites/Element_Bar/Frame_GUI_64x.png" type="Texture" id=31]
+[ext_resource path="res://sprites/Element_Bar/Big_Frame_64x.png" type="Texture" id=31]
 [ext_resource path="res://sprites/Element_Bar/Happiness_GUI_64x.png" type="Texture" id=32]
+[ext_resource path="res://sprites/Element_Bar/Frame_64x.png" type="Texture" id=33]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5613, 150.316, 210.559, 196.792, 210.561, 277.316, 72.5613, 278.316, 72.5613, 182.316, 97.0876, 157.617, 160.241, 157.302, 256.069, 142.513, 256.069, 157.99, 248.926, 142.315, 160.241, 118.559, 248.505, 94.3163, 64.5887, 93.9015, 96.1426, 118.559, 64.5613, 182.316, 302.561, 212.316, 317.561, 212.316, 417.311, 278.316, 400.561, 278.316, 400.561, 222.316, 340.561, 222.316, 317.652, 278.372, 340.561, 278.316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 0, 4 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 14, 15, 16 ), PoolIntArray( 17, 18, 11, 16, 19 ), PoolIntArray( 19, 16, 20, 21 ), PoolIntArray( 22, 21, 20, 23 ), PoolIntArray( 9, 22, 23, 15, 10 ), PoolIntArray( 24, 10, 15, 14 ), PoolIntArray( 4, 11, 18, 5 ), PoolIntArray( 25, 4, 3, 26 ), PoolIntArray( 3, 27, 28, 29 ), PoolIntArray( 26, 3, 29, 30 ), PoolIntArray( 31, 26, 30, 32 ) ]
-outlines = [ PoolVector2Array( 72.5613, 278.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 222.316, 340.561, 222.316, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 302.561, 212.316, 302.218, 196.477, 210.559, 196.792, 210.561, 277.316 ), PoolVector2Array( 97.0876, 157.617, 160.241, 157.302, 160.241, 118.559, 96.1426, 118.559 ) ]
+vertices = PoolVector2Array( 64.5887, 93.9015, 248.505, 94.3163, 160.561, 103.316, 95.5613, 103.316, 63.9934, 122.475, 97.0876, 157.617, 64.5613, 150.316, 160.241, 157.302, 248.926, 142.315, 209.561, 196.316, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 416.936, 182.982, 340.561, 214.316, 317.561, 212.316, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 400.561, 214.316, 40.5613, 150.316, 40.5613, 122.276, 64.5613, 182.316, 72.5613, 182.316, 417.311, 278.316, 400.561, 278.316, 340.561, 278.316, 317.652, 278.372, 144.561, 254.316, 144.561, 270.316, 72.5613, 270.316, 209.561, 254.316, 302.561, 212.316, 256.069, 142.513, 256.069, 157.99 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5, 6 ), PoolIntArray( 7, 2, 1, 8, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17, 18, 13, 19 ), PoolIntArray( 20, 21, 4, 6 ), PoolIntArray( 22, 6, 5, 23 ), PoolIntArray( 12, 24, 25, 19, 13 ), PoolIntArray( 26, 27, 15, 14 ), PoolIntArray( 28, 29, 30, 23, 5 ), PoolIntArray( 7, 9, 31, 28, 5 ), PoolIntArray( 15, 32, 16 ), PoolIntArray( 8, 33, 34, 9 ), PoolIntArray( 16, 9, 34, 17 ) ]
+outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 340.561, 214.316, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 302.561, 212.316, 302.218, 196.477, 209.561, 196.316, 209.561, 254.316, 144.561, 254.316, 144.561, 270.316 ), PoolVector2Array( 97.0876, 157.617, 160.241, 157.302, 160.561, 103.316, 95.5613, 103.316 ) ]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Floor_Wall_64x.png 0"
@@ -772,7 +773,7 @@ font_data = ExtResource( 25 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
-seconds_per_hour = 5.0
+seconds_per_hour = 3.0
 starting_hour = 12
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -824,8 +825,8 @@ __meta__ = {
 "_edit_group_": true
 }
 object_names = "Bed"
-object_start_cost = 10
-object_cost_increase = 5
+object_start_cost = 50
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
 
@@ -842,8 +843,8 @@ __meta__ = {
 "_edit_group_": true
 }
 object_names = "Stove"
-object_start_cost = 10
-object_cost_increase = 5
+object_start_cost = 50
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
 
@@ -860,8 +861,8 @@ __meta__ = {
 "_edit_group_": true
 }
 object_names = "TV"
-object_start_cost = 10
-object_cost_increase = 5
+object_start_cost = 50
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
 
@@ -878,8 +879,8 @@ __meta__ = {
 "_edit_group_": true
 }
 object_names = "PC"
-object_start_cost = 10
-object_cost_increase = 5
+object_start_cost = 50
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
 
@@ -896,8 +897,8 @@ __meta__ = {
 "_edit_group_": true
 }
 object_names = "Bathroom"
-object_start_cost = 10
-object_cost_increase = 5
+object_start_cost = 50
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
 
@@ -928,11 +929,11 @@ frame = 5
 script = ExtResource( 18 )
 event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overtime", "missing file", "missed deadline", "finish game", "play online", "duo", "win duo", "lose duo", "full party", "win full", "lose full", "movie", "known movie", "known movie gain", "recommended", "fun movie", "sad movie", "news", "good news", "bad news", "video call", "jumpscare", "great food", "bad food", "refreshed bath", "diarrhea", "refreshed sleep", "confused" )
 event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
-event_chance = PoolIntArray( 70, 102, 0, 18, 6, 6, 20, 10, 50, 70, 30, 50, 50, 50, 25, 50, 100, 50, 50, 50, 25, 50, 50, 30, 5, 40, 20, 40, 5, 40, 5 )
+event_chance = PoolIntArray( 50, 102, 0, 12, 12, 12, 20, 10, 50, 55, 45, 50, 40, 60, 25, 50, 100, 50, 50, 50, 25, 50, 50, 30, 5, 20, 20, 20, 5, 15, 5 )
 event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
-health_output = PoolIntArray( 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -5, 15, -5, 10, -10, 15, 5 )
-happiness_output = PoolIntArray( 0, 10, 0, 0, 0, 0, 10, 0, 0, 10, -5, 0, 20, -5, 0, 0, 10, 0, 15, -10, 0, 15, -5, 10, 5, 5, -5, 5, -5, 10, -5 )
-work_output = PoolIntArray( 0, 15, 5, 10, -15, -15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+health_output = PoolIntArray( 0, -3, -3, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -15, 0, -10, 5, -10, 5, 1 )
+happiness_output = PoolIntArray( 0, 3, -7, -7, -7, -7, 5, 0, 0, 2, -10, 0, 8, -15, 0, 0, 4, 0, 6, -6, 0, 4, -20, 4, -10, 5, -15, 4, -30, 4, -5 )
+work_output = PoolIntArray( 0, 5, 5, 10, -10, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
 
 [node name="GUI" type="Control" parent="."]
@@ -948,6 +949,7 @@ margin_top = 12.0
 margin_right = 443.0
 margin_bottom = 76.0
 value = 100.0
+texture_over = ExtResource( 33 )
 texture_progress = ExtResource( 30 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -984,7 +986,7 @@ margin_top = 29.0
 margin_right = 447.0
 margin_bottom = 93.0
 value = 100.0
-texture_over = ExtResource( 31 )
+texture_over = ExtResource( 33 )
 texture_progress = ExtResource( 32 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -1019,10 +1021,10 @@ __meta__ = {
 }
 
 [node name="MoneyText" type="Label" parent="GUI"]
-margin_left = 301.0
-margin_top = 69.182
-margin_right = 511.0
-margin_bottom = 85.182
+margin_left = 300.0
+margin_top = 75.0
+margin_right = 510.0
+margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
@@ -1156,20 +1158,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Time" type="Panel" parent="GUI"]
-margin_left = 308.0
-margin_top = 38.0
-margin_right = 358.0
-margin_bottom = 68.0
+[node name="Time" type="TextureRect" parent="GUI"]
+margin_left = 303.0
+margin_top = 20.0
+margin_right = 367.0
+margin_bottom = 84.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 31 )
 script = ExtResource( 26 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="hour" type="Label" parent="GUI/Time"]
-margin_right = 50.0
-margin_bottom = 15.0
+margin_left = 6.00677
+margin_top = 18.0203
+margin_right = 56.0068
+margin_bottom = 33.0203
 custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12:00"
 align = 1
 valign = 1
@@ -1178,10 +1187,12 @@ __meta__ = {
 }
 
 [node name="day" type="Label" parent="GUI/Time"]
-margin_top = 15.0
-margin_right = 50.0
-margin_bottom = 28.0
+margin_left = 6.00677
+margin_top = 33.0203
+margin_right = 56.0068
+margin_bottom = 46.0203
 custom_fonts/font = SubResource( 32 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 align = 1
 valign = 1
@@ -1278,11 +1289,11 @@ custom_fonts/font = SubResource( 35 )
 text = "Play a game"
 align = 1
 valign = 1
-[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1300,11 +1311,11 @@ valign = 1
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]

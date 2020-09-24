@@ -1,4 +1,4 @@
-extends Panel
+extends TextureRect
 var day_count : = 1
 
 
