@@ -677,15 +677,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -730,152 +730,132 @@ extents = Vector2( 22.5005, 29.868 )
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 16, 25.9756 )
 
-[sub_resource type="AtlasTexture" id=55]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=56]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 15 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 15 )
 region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=58]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 15 )
 region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=59]
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 55 ) ],
+"frames": [ SubResource( 21 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
 "name": "activities",
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 30.9083, 25.8009 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 22 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 22 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 22 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 22 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 22 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=32]
 animations = [ {
-"frames": [ SubResource( 22 ) ],
+"frames": [ SubResource( 27 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
 "name": "working",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 16, 24.8267 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 17, 28 )
-
-[sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 21 )
-region = Rect2( 0, 0, 64, 32 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 21 )
-region = Rect2( 64, 0, 64, 32 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 21 )
-region = Rect2( 128, 0, 64, 32 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 21 )
-region = Rect2( 192, 0, 64, 32 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 21 )
-region = Rect2( 256, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 21 )
-region = Rect2( 0, 64, 64, 32 )
+region = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 21 )
-region = Rect2( 64, 64, 64, 32 )
+region = Rect2( 64, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 21 )
-region = Rect2( 128, 64, 64, 32 )
+region = Rect2( 128, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 21 )
-region = Rect2( 192, 64, 64, 32 )
+region = Rect2( 192, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 21 )
+region = Rect2( 256, 0, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 64, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 21 )
+region = Rect2( 64, 64, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 21 )
+region = Rect2( 128, 64, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 21 )
+region = Rect2( 192, 64, 64, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 21 )
 region = Rect2( 256, 64, 64, 32 )
 
-[sub_resource type="SpriteFrames" id=40]
+[sub_resource type="SpriteFrames" id=45]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "window",
 "speed": 5.02
 } ]
 
-[sub_resource type="DynamicFont" id=41]
-size = 13
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=42]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=43]
-size = 13
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=44]
-size = 13
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=45]
-size = 13
-font_data = ExtResource( 25 )
-
 [sub_resource type="DynamicFont" id=46]
-size = 10
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=47]
@@ -883,30 +863,50 @@ size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=48]
-size = 12
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=49]
-size = 11
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=50]
-size = 11
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=51]
-size = 11
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=52]
-size = 14
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=53]
-size = 14
+size = 12
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=54]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=55]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=56]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=57]
+size = 14
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=58]
+size = 14
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=59]
 size = 12
 font_data = ExtResource( 25 )
 
@@ -996,7 +996,7 @@ shape = SubResource( 20 )
 [node name="Console" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 128, 80 )
 z_index = -1
-frames = SubResource( 59 )
+frames = SubResource( 25 )
 script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
@@ -1009,12 +1009,12 @@ object_cost_increase = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
 position = Vector2( -0.117584, 6.17884 )
-shape = SubResource( 21 )
+shape = SubResource( 26 )
 
 [node name="PC" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 258, 107 )
 z_index = -1
-frames = SubResource( 27 )
+frames = SubResource( 32 )
 script = ExtResource( 17 )
 object_names = "PC"
 object_start_cost = 50
@@ -1024,7 +1024,7 @@ object_cost_increase = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
 position = Vector2( 16.0831, -7.09615 )
-shape = SubResource( 28 )
+shape = SubResource( 33 )
 
 [node name="Bathroom" type="Sprite" parent="Objects"]
 position = Vector2( 401, 125 )
@@ -1042,7 +1042,7 @@ object_cost_increase = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
-shape = SubResource( 29 )
+shape = SubResource( 34 )
 
 [node name="Sink" type="Sprite" parent="Objects"]
 position = Vector2( 64, 160 )
@@ -1053,13 +1053,13 @@ script = ExtResource( 27 )
 
 [node name="WindowAnim" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 193, 48 )
-frames = SubResource( 40 )
+frames = SubResource( 45 )
 animation = "window"
 frame = 5
 
 [node name="WindowAnim2" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 64, 48 )
-frames = SubResource( 40 )
+frames = SubResource( 45 )
 animation = "window"
 frame = 5
 
@@ -1100,7 +1100,7 @@ margin_top = 28.0
 margin_right = 64.0004
 margin_bottom = 42.0001
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 41 )
+custom_fonts/font = SubResource( 46 )
 text = "Health"
 align = 1
 __meta__ = {
@@ -1113,7 +1113,7 @@ margin_left = 67.5287
 margin_top = 26.6933
 margin_right = 107.529
 margin_bottom = 40.6933
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1137,7 +1137,7 @@ margin_top = 28.0
 margin_right = 82.0
 margin_bottom = 42.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 48 )
 text = "Happiness"
 align = 1
 __meta__ = {
@@ -1150,7 +1150,7 @@ margin_left = 67.7055
 margin_top = 26.8406
 margin_right = 107.705
 margin_bottom = 40.8406
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0.807843, 0.776471, 0.137255, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1164,7 +1164,7 @@ margin_top = 75.0
 margin_right = 510.0
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 44 )
+custom_fonts/font = SubResource( 49 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "0 $"
 align = 1
@@ -1180,7 +1180,7 @@ margin_top = 0.133812
 margin_right = 176.177
 margin_bottom = 14.1338
 rect_scale = Vector2( 1.30344, 1.38164 )
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1207,7 +1207,7 @@ margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 45 )
+custom_fonts/normal_font = SubResource( 50 )
 tab_size = 7
 text = "Text for question"
 
@@ -1227,7 +1227,7 @@ margin_top = 2.84982
 margin_right = 56.5077
 margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 51 )
 text = "Option 1"
 valign = 1
 
@@ -1247,7 +1247,7 @@ margin_top = 2.51065
 margin_right = 56.8462
 margin_bottom = 16.5107
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 52 )
 text = "Option 2"
 valign = 1
 
@@ -1268,7 +1268,7 @@ margin_top = 10.8051
 margin_right = 51.2891
 margin_bottom = 24.8051
 rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 48 )
+custom_fonts/font = SubResource( 53 )
 text = "tooltips"
 
 [node name="EventPanel" type="Panel" parent="GUI"]
@@ -1290,7 +1290,7 @@ margin_top = 11.1659
 margin_right = 95.7248
 margin_bottom = 25.1659
 rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 54 )
 text = "Event Occured"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1315,7 +1315,7 @@ margin_left = 6.00677
 margin_top = 18.0203
 margin_right = 56.0068
 margin_bottom = 33.0203
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 55 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "12:00"
 align = 1
@@ -1329,7 +1329,7 @@ margin_left = 6.00677
 margin_top = 33.0203
 margin_right = 56.0068
 margin_bottom = 46.0203
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 56 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 align = 1
@@ -1366,7 +1366,7 @@ margin_left = 5.0
 margin_top = 20.0
 margin_right = 110.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 52 )
+custom_fonts/font = SubResource( 57 )
 text = "Object name"
 
 [node name="Level" type="Label" parent="GUI/ActivitySystem/Panel"]
@@ -1374,7 +1374,7 @@ margin_left = 150.0
 margin_top = 20.0
 margin_right = 190.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 53 )
+custom_fonts/font = SubResource( 58 )
 text = "lv 1"
 
 [node name="Button" type="Button" parent="GUI/ActivitySystem/Panel"]
@@ -1389,7 +1389,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 59 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1406,7 +1406,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 59 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1423,15 +1423,15 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 59 )
 text = "Play a game"
 align = 1
 valign = 1
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1450,10 +1450,10 @@ valign = 1
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]

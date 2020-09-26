@@ -20,6 +20,7 @@ var activity_name : String
 var activity_type : String
 var activity_gain : int
 var activity_scale : int
+var activity_from : String
 var is_working : bool = false 
 var event_chance_pool : PoolIntArray
 var decision_index : PoolIntArray
@@ -77,6 +78,7 @@ func _process(delta):
 	$GUI/Tooltip.rect_position = get_viewport().get_mouse_position()
 
 func move_player(target_position):
+	stop_working_anim()
 	var path = $Navigation2D.get_simple_path($Player.position, target_position)
 	$Player.take_path(path)
 	$Line2D.points = path
@@ -104,19 +106,41 @@ func get_object_hover(object_name, object_level, object_cost):
 	object_level_hover = object_level
 	object_cost_hover = object_cost
 
-func get_activity(p_activity_name, p_activity_type, p_activity_gain, p_activity_scale):
+func get_activity(p_activity_name, p_activity_type, p_activity_gain, 
+	p_activity_scale, p_activity_from):
 	activity_name = p_activity_name
 	activity_type = p_activity_type
 	activity_gain = p_activity_gain
 	activity_scale = p_activity_scale
+	activity_from = p_activity_from
 	object_level_active = object_level_fix
 	move_player(object_position)
 
 func _on_Player_path_done():
 	if activity_name != "null":
 		is_working = true
+		play_working_anim()
 		event_chance_pool = $EventSystem.get_chance(activity_name)
 
+func play_working_anim():
+	if activity_from == "Stove":
+		$Player/AnimatedSprite.play("eating")
+	else:
+		$Player.visible = false
+		if activity_from == "Bed":
+			$Objects/Bed.play("sleeping")
+		elif activity_from == "PC":
+			$Objects/PC.play("working")
+		elif activity_from == "TV":
+			$TileMap/Sofa.play("activity")
+			$Objects/Console.play("activities")
+
+func stop_working_anim():
+	$Player.visible = true
+	$Objects/Bed.play("default")
+	$Objects/PC.play("default")
+	$TileMap/Sofa.play("default")
+	$Objects/Console.play("default")
 
 func _on_World_hour_pass(time):
 	if is_working:
@@ -151,7 +175,6 @@ func reset_element_decrease():
 func grab_event(pool : PoolIntArray):
 	randomize()
 	var number = randi() % 100
-	print(number)
 	var output : String
 	if pool[number] != -1:
 		output = $EventSystem.get_event_output(pool[number])

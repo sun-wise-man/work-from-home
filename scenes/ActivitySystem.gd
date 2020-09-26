@@ -58,8 +58,9 @@ func close_popup():
 func _on_Button_pressed():
 	visible = false
 	showing = false
-	world.get_activity(activity_name[activity_pool[0]], activity_type[activity_pool[0]], 
-		activity_gain[activity_pool[0]], activity_scale[activity_pool[0]])
+	var index : int = activity_pool[0]
+	world.get_activity(activity_name[index], activity_type[index], 
+		activity_gain[index], activity_scale[index], activity_from[index])
 	world.inside_popup = false
 	world.showing_popup = false
 
@@ -67,8 +68,9 @@ func _on_Button_pressed():
 func _on_Button2_pressed():
 	visible = false
 	showing = false
-	world.get_activity(activity_name[activity_pool[1]], activity_type[activity_pool[1]], 
-		activity_gain[activity_pool[1]], activity_scale[activity_pool[1]])
+	var index : int = activity_pool[1]
+	world.get_activity(activity_name[index], activity_type[index], 
+		activity_gain[index], activity_scale[index], activity_from[index])
 	world.inside_popup = false
 	world.showing_popup = false
 
