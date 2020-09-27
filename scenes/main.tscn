@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -35,6 +35,16 @@
 [ext_resource path="res://sprites/Element_Bar/Frame_64x.png" type="Texture" id=33]
 [ext_resource path="res://sprites/Eating_64x.png" type="Texture" id=34]
 [ext_resource path="res://sprites/Sofa_64x.png" type="Texture" id=35]
+[ext_resource path="res://scenes/GameOver.gd" type="Script" id=36]
+[ext_resource path="res://sprites/UI/GameOver_2.png" type="Texture" id=37]
+[ext_resource path="res://sprites/UI/GameOver.png" type="Texture" id=38]
+[ext_resource path="res://scenes/Audio.gd" type="Script" id=39]
+[ext_resource path="res://audio/Eating/411595__omgbong__eating-an-apple-03.wav" type="AudioStream" id=40]
+[ext_resource path="res://audio/Shower/353195__inspectorj__shower-a.wav" type="AudioStream" id=41]
+[ext_resource path="res://audio/TV/468539__ddmyzik__tv-news-loop.wav" type="AudioStream" id=42]
+[ext_resource path="res://audio/Typing/447909__breviceps__keyboard-typing.wav" type="AudioStream" id=43]
+[ext_resource path="res://audio/Game Over/159408__noirenex__life-lost-game-over.wav" type="AudioStream" id=44]
+[ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 64.5887, 93.9015, 248.505, 94.3163, 160.561, 103.316, 95.5613, 103.316, 63.9934, 122.475, 97.0876, 157.617, 64.5613, 150.316, 160.241, 157.302, 248.926, 142.315, 209.561, 196.316, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 416.936, 182.982, 340.561, 214.316, 317.561, 212.316, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 400.561, 214.316, 40.5613, 150.316, 40.5613, 122.276, 64.5613, 182.316, 72.5613, 182.316, 417.311, 278.316, 400.561, 278.316, 340.561, 278.316, 317.652, 278.372, 144.561, 254.316, 144.561, 270.316, 72.5613, 270.316, 209.561, 254.316, 302.561, 212.316, 256.069, 142.513, 256.069, 157.99 )
@@ -910,6 +920,27 @@ font_data = ExtResource( 25 )
 size = 12
 font_data = ExtResource( 25 )
 
+[sub_resource type="StyleBoxFlat" id=60]
+bg_color = Color( 0, 0, 0, 0.705882 )
+
+[sub_resource type="StyleBoxFlat" id=61]
+
+[sub_resource type="DynamicFont" id=62]
+size = 24
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=63]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=64]
+size = 13
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=65]
+size = 10
+font_data = ExtResource( 25 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
 seconds_per_hour = 3.0
@@ -938,7 +969,7 @@ tile_data = PoolIntArray( 0, 35, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 1
 tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262157, 3, 0, 458753, 3, 0, 458761, 1, 0, 458765, 11, 0, 524291, 9, 0, 524293, 10, 0, 524297, 5, 0 )
+tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262157, 3, 0, 458753, 3, 0, 458761, 2, 0, 458765, 11, 0, 524291, 9, 0, 524293, 10, 0, 524297, 5, 0 )
 
 [node name="Sofa" type="AnimatedSprite" parent="TileMap"]
 position = Vector2( 129, 126 )
@@ -1427,8 +1458,115 @@ custom_fonts/font = SubResource( 59 )
 text = "Play a game"
 align = 1
 valign = 1
-[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+
+[node name="GameOverPanel" type="Panel" parent="GUI"]
+visible = false
+margin_right = 480.0
+margin_bottom = 320.0
+custom_styles/panel = SubResource( 60 )
+script = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="GUI/GameOverPanel"]
+margin_left = 116.571
+margin_top = 74.1938
+margin_right = 376.571
+margin_bottom = 224.194
+custom_styles/panel = SubResource( 61 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/GameOverPanel/Panel"]
+margin_left = 62.7023
+margin_top = 3.1748
+margin_right = 209.702
+margin_bottom = 28.1748
+custom_fonts/font = SubResource( 62 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game Over"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLose" type="TextureRect" parent="GUI/GameOverPanel/Panel"]
+visible = false
+margin_left = 20.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 163.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 38 )
+
+[node name="HappinessLose" type="TextureRect" parent="GUI/GameOverPanel/Panel"]
+visible = false
+margin_left = 20.0
+margin_top = 35.0
+margin_right = 148.0
+margin_bottom = 163.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 37 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/GameOverPanel/Panel"]
+margin_left = 93.0
+margin_top = 35.0
+margin_right = 243.0
+margin_bottom = 95.0
+custom_fonts/normal_font = SubResource( 63 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You don't have will to live again!"
+
+[node name="Survive" type="Label" parent="GUI/GameOverPanel/Panel"]
+margin_left = 6.54063
+margin_top = 104.056
+margin_right = 194.541
+margin_bottom = 119.056
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Survive for : 20 days"
+
+[node name="Earning" type="Label" parent="GUI/GameOverPanel/Panel"]
+margin_left = 7.72987
+margin_top = 119.515
+margin_right = 195.73
+margin_bottom = 134.515
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Total earning : 500 $"
+
+[node name="Button" type="Button" parent="GUI/GameOverPanel/Panel"]
+margin_left = 194.138
+margin_top = 107.921
+margin_right = 252.138
+margin_bottom = 127.921
+custom_fonts/font = SubResource( 65 )
+text = "Restart"
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 39 )
+
+[node name="Sleep" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 45 )
+
+[node name="Pc" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 43 )
+
+[node name="Shower" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 41 )
+
+[node name="Eat" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 40 )
+
+[node name="GameOver" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 44 )
+
+[node name="Tv" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 42 )
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
@@ -1449,8 +1587,8 @@ valign = 1
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
@@ -1462,3 +1600,4 @@ valign = 1
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button2" to="GUI/ActivitySystem" method="_on_Button2_pressed"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
+[connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/159408__noirenex__life-lost-game-over.wav-26e2d0619d0af1ca3a78585bca6c4a49.sample"
+
+[deps]
+
+source_file="res://audio/Game Over/159408__noirenex__life-lost-game-over.wav"
+dest_files=[ "res://.import/159408__noirenex__life-lost-game-over.wav-26e2d0619d0af1ca3a78585bca6c4a49.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
