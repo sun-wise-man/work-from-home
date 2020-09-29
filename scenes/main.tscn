@@ -47,9 +47,9 @@
 [ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 64.5887, 93.9015, 248.505, 94.3163, 160.561, 103.316, 95.5613, 103.316, 63.9934, 122.475, 97.0876, 157.617, 64.5613, 150.316, 160.241, 157.302, 248.926, 142.315, 209.561, 196.316, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 416.936, 182.982, 340.561, 214.316, 317.561, 212.316, 302.218, 196.477, 288.561, 158.316, 418.078, 158.506, 400.561, 214.316, 40.5613, 150.316, 40.5613, 122.276, 64.5613, 182.316, 72.5613, 182.316, 417.311, 278.316, 400.561, 278.316, 340.561, 278.316, 317.652, 278.372, 144.561, 254.316, 144.561, 270.316, 72.5613, 270.316, 209.561, 254.316, 302.561, 212.316, 256.069, 142.513, 256.069, 157.99 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5, 6 ), PoolIntArray( 7, 2, 1, 8, 9 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17, 18, 13, 19 ), PoolIntArray( 20, 21, 4, 6 ), PoolIntArray( 22, 6, 5, 23 ), PoolIntArray( 12, 24, 25, 19, 13 ), PoolIntArray( 26, 27, 15, 14 ), PoolIntArray( 28, 29, 30, 23, 5 ), PoolIntArray( 7, 9, 31, 28, 5 ), PoolIntArray( 15, 32, 16 ), PoolIntArray( 8, 33, 34, 9 ), PoolIntArray( 16, 9, 34, 17 ) ]
-outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 340.561, 214.316, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 302.561, 212.316, 302.218, 196.477, 209.561, 196.316, 209.561, 254.316, 144.561, 254.316, 144.561, 270.316 ), PoolVector2Array( 97.0876, 157.617, 160.241, 157.302, 160.561, 103.316, 95.5613, 103.316 ) ]
+vertices = PoolVector2Array( 302.218, 196.477, 209.561, 196.316, 168.561, 158.316, 256.069, 157.99, 288.561, 158.316, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 418.078, 158.506, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5613, 150.316, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 168.561, 102.316, 248.926, 142.315, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 340.561, 214.316, 144.561, 270.316, 72.5613, 270.316, 72.5613, 182.316, 144.561, 254.316, 64.5613, 182.316, 88.5613, 158.316, 209.561, 254.316, 302.561, 212.316, 256.069, 142.513, 248.505, 94.3163, 64.5887, 93.9015, 88.5613, 102.316 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 5 ), PoolIntArray( 4, 9, 5 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 8, 14, 15, 16, 5 ), PoolIntArray( 3, 2, 17, 18 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 23, 24, 25, 26 ), PoolIntArray( 25, 27, 13, 28 ), PoolIntArray( 1, 29, 26, 25, 28, 2 ), PoolIntArray( 21, 30, 0, 5 ), PoolIntArray( 18, 31, 3 ), PoolIntArray( 32, 18, 17 ), PoolIntArray( 33, 32, 17, 34 ), PoolIntArray( 12, 33, 34, 28, 13 ), PoolIntArray( 22, 21, 5, 16 ) ]
+outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 340.561, 214.316, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 302.561, 212.316, 302.218, 196.477, 209.561, 196.316, 209.561, 254.316, 144.561, 254.316, 144.561, 270.316 ), PoolVector2Array( 88.5613, 158.316, 168.561, 158.316, 168.561, 102.316, 88.5613, 102.316 ) ]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Floor_Wall_64x.png 0"
@@ -687,15 +687,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "eating",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -1550,21 +1550,27 @@ script = ExtResource( 39 )
 
 [node name="Sleep" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 45 )
+volume_db = -10.0
 
 [node name="Pc" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 43 )
+volume_db = -15.0
 
 [node name="Shower" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 41 )
+volume_db = -10.0
 
 [node name="Eat" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 40 )
+volume_db = -20.0
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 44 )
+volume_db = -10.0
 
 [node name="Tv" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 42 )
+volume_db = -35.0
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
@@ -1587,11 +1593,11 @@ stream = ExtResource( 42 )
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]
