@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/353195__inspectorj__shower-a.wav-fa4e26b41b7699ecc23a679cfd1f324c.sample"
+
+[deps]
+
+source_file="res://audio/Shower/353195__inspectorj__shower-a.wav"
+dest_files=[ "res://.import/353195__inspectorj__shower-a.wav-fa4e26b41b7699ecc23a679cfd1f324c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

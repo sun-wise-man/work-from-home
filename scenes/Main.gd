@@ -74,11 +74,10 @@ func _ready():
 	time_hour = starting_hour
 	time_coroutine = time_moving()
 
-func _process(delta):
-	$GUI/Tooltip.rect_position = get_viewport().get_mouse_position()
 
 func move_player(target_position):
 	stop_working_anim()
+	$Audio.stop_all_activity_sound()
 	var path = $Navigation2D.get_simple_path($Player.position, target_position)
 	$Player.take_path(path)
 	$Line2D.points = path
@@ -120,6 +119,7 @@ func _on_Player_path_done():
 	if activity_name != "null":
 		is_working = true
 		play_working_anim()
+		$Audio.play_activity_sound(activity_from)
 		event_chance_pool = $EventSystem.get_chance(activity_name)
 
 func play_working_anim():
@@ -157,13 +157,27 @@ func _on_World_hour_pass(time):
 			work_gain_total += activity_gain + activity_scale * object_level_active
 		if event_chance_pool != null:
 			grab_event(event_chance_pool)
+		if is_pause:
+			yield(self, "unpause")
 		$GUI/HealthBar.value += health_gain_total
 		$GUI/HappinessBar.value += happiness_gain_total
 		money += work_gain_total
-		$GUI/HealthBar/Status.get_gain_number(health_gain_total)
-		$GUI/HappinessBar/Status.get_gain_number(happiness_gain_total)
-		$GUI/MoneyText/Status.get_gain_number(work_gain_total)
-		reset_money()
+	health_gain_total += $GUI/HealthBar.decrease_rate
+	happiness_gain_total += $GUI/HappinessBar.decrease_rate
+	$GUI/HealthBar/Status.get_gain_number(health_gain_total)
+	$GUI/HappinessBar/Status.get_gain_number(happiness_gain_total)
+	$GUI/MoneyText/Status.get_gain_number(work_gain_total)
+	reset_money()
+	if $GUI/HealthBar.value <= 0:
+		pause_game()
+		$GUI/GameOverPanel.game_over(1, day_count, money)
+		$Audio.play_game_over_sound()
+		pass
+	if $GUI/HappinessBar.value <= 0:
+		pause_game()
+		$GUI/GameOverPanel.game_over(2, day_count, money)
+		$Audio.play_game_over_sound()
+		pass
 
 func reset_money():
 	$GUI/MoneyText.text = str(money) + " $"
