@@ -143,10 +143,10 @@ func stop_working_anim():
 	$Objects/Console.play("default")
 
 func _on_World_hour_pass(time):
+	health_gain_total = 0
+	happiness_gain_total = 0
+	work_gain_total = 0
 	if is_working:
-		health_gain_total = 0
-		happiness_gain_total = 0
-		work_gain_total = 0
 		if activity_type == "Health":
 			health_gain_total += activity_gain + activity_scale * object_level_active
 			$GUI/HealthBar.is_decreasing = false
