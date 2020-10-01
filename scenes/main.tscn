@@ -687,15 +687,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -1099,7 +1099,7 @@ frame = 5
 script = ExtResource( 18 )
 event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overtime", "missing file", "missed deadline", "finish game", "play online", "duo", "win duo", "lose duo", "full party", "win full", "lose full", "movie", "known movie", "known movie gain", "recommended", "fun movie", "sad movie", "news", "good news", "bad news", "video call", "jumpscare", "great food", "bad food", "refreshed bath", "diarrhea", "refreshed sleep", "confused" )
 event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
-event_chance = PoolIntArray( 50, 102, 0, 12, 12, 12, 20, 10, 50, 55, 45, 50, 40, 60, 25, 50, 100, 50, 50, 50, 25, 50, 50, 30, 5, 20, 20, 20, 5, 15, 5 )
+event_chance = PoolIntArray( 30, 102, 0, 7, 7, 6, 20, 10, 50, 55, 45, 50, 40, 60, 25, 50, 100, 50, 50, 50, 25, 50, 50, 30, 5, 20, 20, 20, 5, 15, 5 )
 event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
 health_output = PoolIntArray( 0, -3, -3, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, -15, 0, -10, 5, -10, 5, 1 )
 happiness_output = PoolIntArray( 0, 3, -7, -7, -7, -7, 5, 0, 0, 2, -10, 0, 8, -15, 0, 0, 4, 0, 6, -6, 0, 4, -20, 4, -10, 5, -15, 4, -30, 4, -5 )
@@ -1574,8 +1574,9 @@ stream = ExtResource( 42 )
 volume_db = -35.0
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
@@ -1594,10 +1595,11 @@ volume_db = -35.0
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
