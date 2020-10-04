@@ -47,9 +47,9 @@
 [ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 302.218, 196.477, 209.561, 196.316, 168.561, 158.316, 256.069, 157.99, 288.561, 158.316, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 418.078, 158.506, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5613, 150.316, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 168.561, 102.316, 248.926, 142.315, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 340.561, 214.316, 144.561, 270.316, 72.5613, 270.316, 72.5613, 182.316, 144.561, 254.316, 64.5613, 182.316, 88.5613, 158.316, 209.561, 254.316, 302.561, 212.316, 256.069, 142.513, 248.505, 94.3163, 64.5887, 93.9015, 88.5613, 102.316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 6, 7, 8, 5 ), PoolIntArray( 4, 9, 5 ), PoolIntArray( 10, 11, 12, 13 ), PoolIntArray( 8, 14, 15, 16, 5 ), PoolIntArray( 3, 2, 17, 18 ), PoolIntArray( 19, 20, 21, 22 ), PoolIntArray( 23, 24, 25, 26 ), PoolIntArray( 25, 27, 13, 28 ), PoolIntArray( 1, 29, 26, 25, 28, 2 ), PoolIntArray( 21, 30, 0, 5 ), PoolIntArray( 18, 31, 3 ), PoolIntArray( 32, 18, 17 ), PoolIntArray( 33, 32, 17, 34 ), PoolIntArray( 12, 33, 34, 28, 13 ), PoolIntArray( 22, 21, 5, 16 ) ]
-outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.316, 64.5613, 150.316, 40.5613, 150.316, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 416.936, 182.982, 439.385, 184.104, 440.561, 212.316, 417.061, 212.066, 417.311, 278.316, 400.561, 278.316, 400.561, 214.316, 340.561, 214.316, 340.561, 278.316, 317.652, 278.372, 317.561, 212.316, 302.561, 212.316, 302.218, 196.477, 209.561, 196.316, 209.561, 254.316, 144.561, 254.316, 144.561, 270.316 ), PoolVector2Array( 88.5613, 158.316, 168.561, 158.316, 168.561, 102.316, 88.5613, 102.316 ) ]
+vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11, 12 ), PoolIntArray( 2, 1, 13, 14 ), PoolIntArray( 15, 16, 17, 7 ), PoolIntArray( 18, 19, 20 ), PoolIntArray( 21, 17, 22, 8, 12 ), PoolIntArray( 20, 23, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 30, 31, 32, 33 ), PoolIntArray( 6, 34, 7 ), PoolIntArray( 18, 20, 25, 26, 29, 33, 32 ), PoolIntArray( 18, 32, 5, 4 ), PoolIntArray( 0, 7, 17, 21 ), PoolIntArray( 35, 12, 11, 36 ), PoolIntArray( 37, 35, 36 ), PoolIntArray( 37, 36, 14, 38 ), PoolIntArray( 38, 14, 13 ) ]
+outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 418, 187, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340.561, 214.316, 340, 280, 318, 280, 318, 209, 221, 209, 209, 222.075, 209, 247, 145, 247, 145, 255 ), PoolVector2Array( 88, 147, 98, 158, 155.501, 158.258, 168.561, 144.25, 168.561, 118, 157.75, 102.316, 98.5, 102.316, 88.3327, 120.51 ) ]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Floor_Wall_64x.png 0"
@@ -177,7 +177,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 8/shape_one_way = false
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
-8/z_index = 0
+8/z_index = 2
 10/name = "Floor_Wall_64x.png 10"
 10/texture = ExtResource( 12 )
 10/tex_offset = Vector2( 0, 0 )
@@ -219,7 +219,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 17/shape_one_way = false
 17/shape_one_way_margin = 0.0
 17/shapes = [  ]
-17/z_index = 0
+17/z_index = 2
 18/name = "Floor_Wall_64x.png 18"
 18/texture = ExtResource( 12 )
 18/tex_offset = Vector2( 0, 0 )
@@ -303,7 +303,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 26/shape_one_way = false
 26/shape_one_way_margin = 0.0
 26/shapes = [  ]
-26/z_index = 0
+26/z_index = 2
 30/name = "Floor_Wall_64x.png 30"
 30/texture = ExtResource( 12 )
 30/tex_offset = Vector2( 0, 0 )
@@ -387,7 +387,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 36/shape_one_way = false
 36/shape_one_way_margin = 0.0
 36/shapes = [  ]
-36/z_index = 0
+36/z_index = 2
 37/name = "Floor_Wall_64x.png 37"
 37/texture = ExtResource( 12 )
 37/tex_offset = Vector2( 0, 0 )
@@ -401,7 +401,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 37/shape_one_way = false
 37/shape_one_way_margin = 0.0
 37/shapes = [  ]
-37/z_index = 0
+37/z_index = 2
 41/name = "Floor_Wall_64x.png 41"
 41/texture = ExtResource( 12 )
 41/tex_offset = Vector2( 0, 0 )
@@ -415,7 +415,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 41/shape_one_way = false
 41/shape_one_way_margin = 0.0
 41/shapes = [  ]
-41/z_index = 0
+41/z_index = 2
 42/name = "Floor_Wall_64x.png 42"
 42/texture = ExtResource( 12 )
 42/tex_offset = Vector2( 0, 0 )
@@ -429,7 +429,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 42/shape_one_way = false
 42/shape_one_way_margin = 0.0
 42/shapes = [  ]
-42/z_index = 0
+42/z_index = 2
 44/name = "Floor_Wall_64x.png 44"
 44/texture = ExtResource( 12 )
 44/tex_offset = Vector2( 0, 0 )
@@ -515,7 +515,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 2/shape_one_way = false
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
-2/z_index = 0
+2/z_index = 2
 3/name = "Furniture_64x.png 3"
 3/texture = ExtResource( 24 )
 3/tex_offset = Vector2( 0, 0 )
@@ -627,7 +627,7 @@ outlines = [ PoolVector2Array( 72.5613, 270.316, 72.5613, 182.316, 64.5613, 182.
 10/shape_one_way = false
 10/shape_one_way_margin = 0.0
 10/shapes = [  ]
-10/z_index = 0
+10/z_index = 1
 11/name = "Furniture_64x.png 11"
 11/texture = ExtResource( 24 )
 11/tex_offset = Vector2( 0, 0 )
@@ -687,15 +687,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -950,7 +950,6 @@ starting_hour = 7
 visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -987,6 +986,7 @@ frames = SubResource( 11 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
 shape = SubResource( 12 )
 
 [node name="Objects" type="Node2D" parent="."]
@@ -1003,6 +1003,7 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
 position = Vector2( 0.668182, 2.89545 )
@@ -1021,6 +1022,7 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
 position = Vector2( -16, -7 )
@@ -1039,21 +1041,26 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
 position = Vector2( -0.117584, 6.17884 )
 shape = SubResource( 26 )
 
 [node name="PC" type="AnimatedSprite" parent="Objects"]
-position = Vector2( 258, 107 )
+position = Vector2( 256, 107 )
 z_index = -1
 frames = SubResource( 32 )
 script = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
 object_names = "PC"
 object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
 position = Vector2( 16.0831, -7.09615 )
@@ -1072,6 +1079,7 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
@@ -1372,6 +1380,7 @@ __meta__ = {
 }
 
 [node name="ActivitySystem" type="Control" parent="GUI"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.408221, 0.419289 )
@@ -1561,7 +1570,7 @@ volume_db = -15.0
 
 [node name="Shower" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 41 )
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Eat" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 40 )
@@ -1576,9 +1585,9 @@ stream = ExtResource( 42 )
 volume_db = -35.0
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1596,8 +1605,8 @@ volume_db = -35.0
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
