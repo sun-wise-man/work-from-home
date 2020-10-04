@@ -1003,7 +1003,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
 position = Vector2( 0.668182, 2.89545 )
@@ -1022,7 +1021,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
 position = Vector2( -16, -7 )
@@ -1041,7 +1039,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
 position = Vector2( -0.117584, 6.17884 )
@@ -1060,7 +1057,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
 position = Vector2( 16.0831, -7.09615 )
@@ -1079,7 +1075,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
@@ -1115,12 +1110,35 @@ happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6,
 work_output = PoolIntArray( 0, 5, 5, 10, -10, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
 
-[node name="GUI" type="Control" parent="."]
-margin_right = 15.0
-margin_bottom = 12.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 39 )
+
+[node name="Sleep" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 45 )
+volume_db = -10.0
+
+[node name="Pc" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 43 )
+volume_db = -15.0
+
+[node name="Shower" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 41 )
+volume_db = -15.0
+
+[node name="Eat" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 40 )
+volume_db = -20.0
+
+[node name="GameOver" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 44 )
+volume_db = -10.0
+
+[node name="Tv" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 42 )
+volume_db = -35.0
+
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="HealthBar" type="TextureProgress" parent="GUI"]
 margin_left = 379.0
@@ -1383,7 +1401,6 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.408221, 0.419289 )
 script = ExtResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1398,6 +1415,7 @@ activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "W
 [node name="Panel" type="Panel" parent="GUI/ActivitySystem"]
 margin_right = 200.0
 margin_bottom = 160.0
+rect_scale = Vector2( 0.382225, 0.470944 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1556,37 +1574,10 @@ margin_right = 252.138
 margin_bottom = 127.921
 custom_fonts/font = SubResource( 65 )
 text = "Restart"
-
-[node name="Audio" type="Node2D" parent="."]
-script = ExtResource( 39 )
-
-[node name="Sleep" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 45 )
-volume_db = -10.0
-
-[node name="Pc" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 43 )
-volume_db = -15.0
-
-[node name="Shower" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 41 )
-volume_db = -15.0
-
-[node name="Eat" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 40 )
-volume_db = -20.0
-
-[node name="GameOver" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 44 )
-volume_db = -10.0
-
-[node name="Tv" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 42 )
-volume_db = -35.0
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
@@ -1605,10 +1596,10 @@ volume_db = -35.0
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
