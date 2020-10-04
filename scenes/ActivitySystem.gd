@@ -34,7 +34,14 @@ func get_activity_pool(from):
 
 func showing_popup(object_level, cost, position):
 	showing = true
-	rect_position = position
+	var new_position = position
+	var panel_x = $Panel.rect_size.x * $Panel.rect_scale.x
+	var panel_y = $Panel.rect_size.y * $Panel.rect_scale.y
+	if new_position.x > (480 - panel_x):
+		new_position.x = (480 - panel_x)
+	if new_position.y > (320 - panel_y):
+		new_position.y = (320 - panel_y)
+	rect_position = new_position
 	visible = true
 	$Panel/Object.text = object_choice
 	$Panel/Level.text = "Lv " + str(object_level)
