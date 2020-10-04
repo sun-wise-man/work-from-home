@@ -36,8 +36,6 @@ var inside_popup : bool = false
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed and not is_pause:
-			is_working = false
-			reset_element_decrease()
 			if object_hover != "null" and not showing_popup:
 				object_fix = object_hover
 				object_level_fix = object_level_hover
@@ -48,7 +46,7 @@ func _input(event):
 					object_cost_fix, object_position)
 			elif not showing_popup:
 				object_fix = "null"
-				object_level_fix = 0
+				object_level_hover = 0
 				object_cost_fix = 0
 				activity_name = "null"
 				activity_type = "null"
@@ -59,14 +57,8 @@ func _input(event):
 				move_player(event.position)
 			elif not inside_popup:
 				object_fix = "null"
-				object_level_fix = 0
+				object_level_hover = 0
 				object_cost_fix = 0
-				activity_name = "null"
-				activity_type = "null"
-				activity_gain = 0
-				activity_scale = 0
-				event_chance_pool = []
-				decision_index = []
 				$GUI/ActivitySystem.close_popup()
 				showing_popup = false
 
@@ -76,6 +68,8 @@ func _ready():
 
 
 func move_player(target_position):
+	is_working = false
+	reset_element_decrease()
 	stop_working_anim()
 	$Audio.stop_all_activity_sound()
 	var path = $Navigation2D.get_simple_path($Player.position, target_position)
@@ -106,13 +100,13 @@ func get_object_hover(object_name, object_level, object_cost):
 	object_cost_hover = object_cost
 
 func get_activity(p_activity_name, p_activity_type, p_activity_gain, 
-	p_activity_scale, p_activity_from):
+	p_activity_scale, p_activity_from, p_object_level):
 	activity_name = p_activity_name
 	activity_type = p_activity_type
 	activity_gain = p_activity_gain
 	activity_scale = p_activity_scale
 	activity_from = p_activity_from
-	object_level_active = object_level_fix
+	object_level_active = p_object_level
 	move_player(object_position)
 
 func _on_Player_path_done():

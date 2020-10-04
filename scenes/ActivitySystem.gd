@@ -8,6 +8,7 @@ export (PoolIntArray) var activity_scale
 export (PoolStringArray) var activity_desc
 var activity_pool : PoolIntArray
 var object_choice : String
+var object_lv : int
 var money : int
 var object_cost : int
 var world
@@ -20,7 +21,7 @@ func _ready():
 func _process(delta):
 	money = world.money
 	if showing:
-		if money > object_cost:
+		if money >= object_cost:
 			$Panel/Button3.disabled = false
 		else:
 			$Panel/Button3.disabled = true
@@ -57,6 +58,7 @@ func show_popup(object_name, object_level, cost, position):
 	activity_pool = get_activity_pool(object_name)
 	object_choice = object_name
 	object_cost = cost
+	object_lv = object_level
 	showing_popup(object_level, cost, position)
 
 func close_popup():
@@ -67,7 +69,7 @@ func _on_Button_pressed():
 	showing = false
 	var index : int = activity_pool[0]
 	world.get_activity(activity_name[index], activity_type[index], 
-		activity_gain[index], activity_scale[index], activity_from[index])
+		activity_gain[index], activity_scale[index], activity_from[index], object_lv)
 	world.inside_popup = false
 	world.showing_popup = false
 
@@ -77,7 +79,7 @@ func _on_Button2_pressed():
 	showing = false
 	var index : int = activity_pool[1]
 	world.get_activity(activity_name[index], activity_type[index], 
-		activity_gain[index], activity_scale[index], activity_from[index])
+		activity_gain[index], activity_scale[index], activity_from[index], object_lv)
 	world.inside_popup = false
 	world.showing_popup = false
 
