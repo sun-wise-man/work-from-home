@@ -986,7 +986,6 @@ frames = SubResource( 11 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-visible = false
 shape = SubResource( 12 )
 
 [node name="Objects" type="Node2D" parent="."]
@@ -1003,7 +1002,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
 position = Vector2( 0.668182, 2.89545 )
@@ -1022,7 +1020,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
 position = Vector2( -16, -7 )
@@ -1041,7 +1038,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
 position = Vector2( -0.117584, 6.17884 )
@@ -1060,7 +1056,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
 position = Vector2( 16.0831, -7.09615 )
@@ -1079,7 +1074,6 @@ object_start_cost = 50
 object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
 position = Vector2( 0, 4 )
