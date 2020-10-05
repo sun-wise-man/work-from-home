@@ -26,4 +26,6 @@ func _on_ActivitySystem_upgrade_object(object_name, money):
 			world.money -= object_cost
 			object_level += 1
 			object_cost += object_cost_increase
+			if world.activity_from == object_names:
+				world.object_level_active = object_level
 			world.reset_money()
