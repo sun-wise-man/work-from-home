@@ -877,31 +877,31 @@ size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=49]
-size = 13
+size = 11
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=50]
-size = 13
+size = 11
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=51]
-size = 10
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=52]
-size = 10
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=53]
-size = 12
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=54]
-size = 11
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=55]
-size = 11
+size = 12
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=56]
@@ -1217,13 +1217,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Time" type="TextureRect" parent="GUI"]
+margin_left = 303.0
+margin_top = 20.0
+margin_right = 367.0
+margin_bottom = 84.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 31 )
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="hour" type="Label" parent="GUI/Time"]
+margin_left = 6.00677
+margin_top = 18.0203
+margin_right = 56.0068
+margin_bottom = 33.0203
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "7:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="day" type="Label" parent="GUI/Time"]
+margin_left = 6.00677
+margin_top = 33.0203
+margin_right = 56.0068
+margin_bottom = 46.0203
+custom_fonts/font = SubResource( 50 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Day 1"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="MoneyText" type="Label" parent="GUI"]
 margin_left = 300.0
 margin_top = 75.0
 margin_right = 510.0
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 51 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "0 $"
 align = 1
@@ -1266,7 +1308,7 @@ margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 50 )
+custom_fonts/normal_font = SubResource( 52 )
 tab_size = 7
 text = "Text for question"
 
@@ -1286,7 +1328,7 @@ margin_top = 2.84982
 margin_right = 56.5077
 margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 53 )
 text = "Option 1"
 valign = 1
 
@@ -1306,7 +1348,7 @@ margin_top = 2.51065
 margin_right = 56.8462
 margin_bottom = 16.5107
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 52 )
+custom_fonts/font = SubResource( 54 )
 text = "Option 2"
 valign = 1
 
@@ -1327,15 +1369,15 @@ margin_top = 10.8051
 margin_right = 51.2891
 margin_bottom = 24.8051
 rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 53 )
+custom_fonts/font = SubResource( 55 )
 text = "tooltips"
 
 [node name="EventPanel" type="Panel" parent="GUI"]
 visible = false
-margin_left = 49.5669
-margin_top = 249.312
-margin_right = 89.5669
-margin_bottom = 289.312
+margin_left = 50.0
+margin_top = 249.0
+margin_right = 97.0
+margin_bottom = 289.0
 rect_scale = Vector2( 2.9478, 0.801499 )
 script = ExtResource( 19 )
 __meta__ = {
@@ -1344,57 +1386,15 @@ __meta__ = {
 time_awake = 2.0
 
 [node name="Label" type="Label" parent="GUI/EventPanel"]
-margin_left = 2.72478
-margin_top = 11.1659
-margin_right = 95.7248
-margin_bottom = 25.1659
+margin_left = 1.69617
+margin_top = 6.23829
+margin_right = 100.696
+margin_bottom = 20.2383
 rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 56 )
 text = "Event Occured"
 __meta__ = {
 "_edit_use_anchors_": false
-}
-
-[node name="Time" type="TextureRect" parent="GUI"]
-margin_left = 303.0
-margin_top = 20.0
-margin_right = 367.0
-margin_bottom = 84.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture = ExtResource( 31 )
-script = ExtResource( 26 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="hour" type="Label" parent="GUI/Time"]
-margin_left = 6.00677
-margin_top = 18.0203
-margin_right = 56.0068
-margin_bottom = 33.0203
-custom_fonts/font = SubResource( 55 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "7:00"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="day" type="Label" parent="GUI/Time"]
-margin_left = 6.00677
-margin_top = 33.0203
-margin_right = 56.0068
-margin_bottom = 46.0203
-custom_fonts/font = SubResource( 56 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Day 1"
-align = 1
-valign = 1
-__meta__ = {
-"_editor_description_": ""
 }
 
 [node name="ActivitySystem" type="Control" parent="GUI"]
@@ -1580,8 +1580,8 @@ text = "Restart"
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1599,10 +1599,10 @@ text = "Restart"
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
