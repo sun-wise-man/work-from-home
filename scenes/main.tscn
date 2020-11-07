@@ -1577,8 +1577,8 @@ margin_right = 252.138
 margin_bottom = 127.921
 custom_fonts/font = SubResource( 65 )
 text = "Restart"
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
