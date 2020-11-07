@@ -1,8 +1,8 @@
 extends Node2D
 
 
-func _ready():
-	change_window(get_parent().get_parent().starting_hour)
+#func _ready():
+	#change_window(get_parent().get_parent().starting_hour)
 
 func _on_World_hour_pass(time):
 	change_window(time)

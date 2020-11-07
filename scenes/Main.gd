@@ -65,6 +65,7 @@ func _input(event):
 func _ready():
 	time_hour = starting_hour
 	time_coroutine = time_moving()
+	$Objects/Windows.change_window(starting_hour)
 
 
 func move_player(target_position):

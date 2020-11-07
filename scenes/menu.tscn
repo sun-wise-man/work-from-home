@@ -1,63 +1,38 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=81 format=2]
 
-[ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
-[ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
-[ext_resource path="res://sprites/main_walk_4.png" type="Texture" id=3]
-[ext_resource path="res://sprites/main_walk_3.png" type="Texture" id=4]
-[ext_resource path="res://sprites/main_walk_2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/main_idle_1.png" type="Texture" id=6]
-[ext_resource path="res://sprites/main_idle_2.png" type="Texture" id=7]
-[ext_resource path="res://sprites/main_idle_3.png" type="Texture" id=8]
-[ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=9]
-[ext_resource path="res://scenes/Main.gd" type="Script" id=10]
-[ext_resource path="res://scenes/ElementBar.gd" type="Script" id=11]
-[ext_resource path="res://sprites/Floor_Wall_64x.png" type="Texture" id=12]
+[ext_resource path="res://sprites/UI/Start_Button.png" type="Texture" id=1]
+[ext_resource path="res://sprites/UI/Highscore_Button.png" type="Texture" id=2]
+[ext_resource path="res://sprites/UI/Title_512x.png" type="Texture" id=3]
+[ext_resource path="res://scenes/menu.gd" type="Script" id=4]
+[ext_resource path="res://fonts/slkscr.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/Status.gd" type="Script" id=6]
+[ext_resource path="res://sprites/main_walk_3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Element_Bar/Health_GUI_64x.png" type="Texture" id=8]
+[ext_resource path="res://sprites/Element_Bar/Frame_64x.png" type="Texture" id=9]
+[ext_resource path="res://sprites/Kitchen Sink_64x.png" type="Texture" id=10]
+[ext_resource path="res://sprites/Window_64x.png" type="Texture" id=11]
+[ext_resource path="res://sprites/Furniture_64x.png" type="Texture" id=12]
 [ext_resource path="res://sprites/Bed_64x.png" type="Texture" id=13]
 [ext_resource path="res://sprites/Cooking_64x.png" type="Texture" id=14]
-[ext_resource path="res://sprites/Console_64x.png" type="Texture" id=15]
-[ext_resource path="res://sprites/Kitchen Sink_64x.png" type="Texture" id=16]
-[ext_resource path="res://scenes/Activity.gd" type="Script" id=17]
-[ext_resource path="res://scenes/EventSytem.gd" type="Script" id=18]
-[ext_resource path="res://scenes/EventPanel.gd" type="Script" id=19]
-[ext_resource path="res://scenes/Decision.gd" type="Script" id=20]
-[ext_resource path="res://sprites/Window_64x.png" type="Texture" id=21]
-[ext_resource path="res://sprites/Chair_64x.png" type="Texture" id=22]
-[ext_resource path="res://sprites/Door_64x.png" type="Texture" id=23]
-[ext_resource path="res://sprites/Furniture_64x.png" type="Texture" id=24]
-[ext_resource path="res://fonts/slkscr.ttf" type="DynamicFontData" id=25]
-[ext_resource path="res://scenes/TimePanel.gd" type="Script" id=26]
-[ext_resource path="res://scenes/Windows.gd" type="Script" id=27]
-[ext_resource path="res://scenes/ActivitySystem.gd" type="Script" id=28]
-[ext_resource path="res://scenes/Status.gd" type="Script" id=29]
-[ext_resource path="res://sprites/Element_Bar/Health_GUI_64x.png" type="Texture" id=30]
-[ext_resource path="res://sprites/Element_Bar/Big_Frame_64x.png" type="Texture" id=31]
-[ext_resource path="res://sprites/Element_Bar/Happiness_GUI_64x.png" type="Texture" id=32]
-[ext_resource path="res://sprites/Element_Bar/Frame_64x.png" type="Texture" id=33]
-[ext_resource path="res://sprites/Eating_64x.png" type="Texture" id=34]
-[ext_resource path="res://sprites/Sofa_64x.png" type="Texture" id=35]
-[ext_resource path="res://scenes/GameOver.gd" type="Script" id=36]
-[ext_resource path="res://sprites/UI/GameOver_2.png" type="Texture" id=37]
-[ext_resource path="res://sprites/UI/GameOver.png" type="Texture" id=38]
-[ext_resource path="res://scenes/Audio.gd" type="Script" id=39]
-[ext_resource path="res://audio/Eating/411595__omgbong__eating-an-apple-03.wav" type="AudioStream" id=40]
-[ext_resource path="res://audio/Shower/353195__inspectorj__shower-a.wav" type="AudioStream" id=41]
-[ext_resource path="res://audio/TV/468539__ddmyzik__tv-news-loop.wav" type="AudioStream" id=42]
-[ext_resource path="res://audio/Typing/447909__breviceps__keyboard-typing.wav" type="AudioStream" id=43]
-[ext_resource path="res://audio/Game Over/159408__noirenex__life-lost-game-over.wav" type="AudioStream" id=44]
-[ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
-[ext_resource path="res://sprites/UI/Text_Panel_256x.png" type="Texture" id=46]
-[ext_resource path="res://sprites/UI/Text_Button_256x.png" type="Texture" id=47]
-[ext_resource path="res://Resource/Button/Hover.tres" type="StyleBox" id=48]
-[ext_resource path="res://Resource/Button/Pressed.tres" type="StyleBox" id=49]
-
-[sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11, 12 ), PoolIntArray( 2, 1, 13, 14 ), PoolIntArray( 15, 16, 17, 7 ), PoolIntArray( 18, 19, 20 ), PoolIntArray( 21, 17, 22, 8, 12 ), PoolIntArray( 20, 23, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 30, 31, 32, 33 ), PoolIntArray( 6, 34, 7 ), PoolIntArray( 18, 20, 25, 26, 29, 33, 32 ), PoolIntArray( 18, 32, 5, 4 ), PoolIntArray( 0, 7, 17, 21 ), PoolIntArray( 35, 12, 11, 36 ), PoolIntArray( 37, 35, 36 ), PoolIntArray( 37, 36, 14, 38 ), PoolIntArray( 38, 14, 13 ) ]
-outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 64.5887, 93.9015, 248.505, 94.3163, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 288.561, 158.316, 418.078, 158.506, 418, 187, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340.561, 214.316, 340, 280, 318, 280, 318, 209, 221, 209, 209, 222.075, 209, 247, 145, 247, 145, 255 ), PoolVector2Array( 88, 147, 98, 158, 155.501, 158.258, 168.561, 144.25, 168.561, 118, 157.75, 102.316, 98.5, 102.316, 88.3327, 120.51 ) ]
+[ext_resource path="res://sprites/main_idle_1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/Console_64x.png" type="Texture" id=16]
+[ext_resource path="res://sprites/main_idle_2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/main_walk_4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=19]
+[ext_resource path="res://sprites/Door_64x.png" type="Texture" id=20]
+[ext_resource path="res://sprites/Element_Bar/Big_Frame_64x.png" type="Texture" id=21]
+[ext_resource path="res://sprites/Element_Bar/Happiness_GUI_64x.png" type="Texture" id=22]
+[ext_resource path="res://sprites/Floor_Wall_64x.png" type="Texture" id=23]
+[ext_resource path="res://sprites/Eating_64x.png" type="Texture" id=24]
+[ext_resource path="res://sprites/Sofa_64x.png" type="Texture" id=25]
+[ext_resource path="res://sprites/main_walk_2.png" type="Texture" id=26]
+[ext_resource path="res://sprites/main_idle_3.png" type="Texture" id=27]
+[ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=28]
+[ext_resource path="res://sprites/Chair_64x.png" type="Texture" id=29]
 
 [sub_resource type="TileSet" id=2]
 0/name = "Floor_Wall_64x.png 0"
-0/texture = ExtResource( 12 )
+0/texture = ExtResource( 23 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -71,7 +46,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 0/shapes = [  ]
 0/z_index = -2
 1/name = "Floor_Wall_64x.png 1"
-1/texture = ExtResource( 12 )
+1/texture = ExtResource( 23 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 32, 0, 32, 32 )
@@ -85,7 +60,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 1/shapes = [  ]
 1/z_index = -2
 2/name = "Floor_Wall_64x.png 2"
-2/texture = ExtResource( 12 )
+2/texture = ExtResource( 23 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 64, 0, 32, 32 )
@@ -99,7 +74,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 2/shapes = [  ]
 2/z_index = -2
 3/name = "Floor_Wall_64x.png 3"
-3/texture = ExtResource( 12 )
+3/texture = ExtResource( 23 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 96, 0, 32, 32 )
@@ -113,7 +88,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 3/shapes = [  ]
 3/z_index = -2
 4/name = "Floor_Wall_64x.png 4"
-4/texture = ExtResource( 12 )
+4/texture = ExtResource( 23 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 128, 0, 32, 32 )
@@ -127,7 +102,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 4/shapes = [  ]
 4/z_index = -2
 5/name = "Floor_Wall_64x.png 5"
-5/texture = ExtResource( 12 )
+5/texture = ExtResource( 23 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 160, 0, 32, 32 )
@@ -141,7 +116,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 5/shapes = [  ]
 5/z_index = -2
 6/name = "Floor_Wall_64x.png 6"
-6/texture = ExtResource( 12 )
+6/texture = ExtResource( 23 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 192, 0, 32, 32 )
@@ -155,7 +130,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 6/shapes = [  ]
 6/z_index = -2
 7/name = "Floor_Wall_64x.png 7"
-7/texture = ExtResource( 12 )
+7/texture = ExtResource( 23 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 224, 0, 32, 32 )
@@ -169,7 +144,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 7/shapes = [  ]
 7/z_index = -2
 8/name = "Floor_Wall_64x.png 8"
-8/texture = ExtResource( 12 )
+8/texture = ExtResource( 23 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 320, 0, 32, 32 )
@@ -183,7 +158,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 8/shapes = [  ]
 8/z_index = 2
 10/name = "Floor_Wall_64x.png 10"
-10/texture = ExtResource( 12 )
+10/texture = ExtResource( 23 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 128, 32, 32, 32 )
@@ -197,7 +172,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 10/shapes = [  ]
 10/z_index = -2
 12/name = "Floor_Wall_64x.png 12"
-12/texture = ExtResource( 12 )
+12/texture = ExtResource( 23 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 256, 32, 32, 32 )
@@ -211,7 +186,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 12/shapes = [  ]
 12/z_index = 0
 17/name = "Floor_Wall_64x.png 17"
-17/texture = ExtResource( 12 )
+17/texture = ExtResource( 23 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 224, 64, 32, 32 )
@@ -225,7 +200,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 17/shapes = [  ]
 17/z_index = 2
 18/name = "Floor_Wall_64x.png 18"
-18/texture = ExtResource( 12 )
+18/texture = ExtResource( 23 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 256, 64, 32, 32 )
@@ -239,7 +214,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 18/shapes = [  ]
 18/z_index = 0
 19/name = "Floor_Wall_64x.png 19"
-19/texture = ExtResource( 12 )
+19/texture = ExtResource( 23 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 352, 64, 32, 32 )
@@ -253,7 +228,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 19/shapes = [  ]
 19/z_index = 0
 20/name = "Floor_Wall_64x.png 20"
-20/texture = ExtResource( 12 )
+20/texture = ExtResource( 23 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 0, 96, 32, 32 )
@@ -267,7 +242,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 20/shapes = [  ]
 20/z_index = 0
 21/name = "Floor_Wall_64x.png 21"
-21/texture = ExtResource( 12 )
+21/texture = ExtResource( 23 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 96, 96, 32, 32 )
@@ -281,7 +256,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 21/shapes = [  ]
 21/z_index = 0
 23/name = "Floor_Wall_64x.png 23"
-23/texture = ExtResource( 12 )
+23/texture = ExtResource( 23 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 160, 96, 32, 32 )
@@ -295,7 +270,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 23/shapes = [  ]
 23/z_index = 0
 26/name = "Floor_Wall_64x.png 26"
-26/texture = ExtResource( 12 )
+26/texture = ExtResource( 23 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 64, 128, 32, 32 )
@@ -309,7 +284,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 26/shapes = [  ]
 26/z_index = 2
 30/name = "Floor_Wall_64x.png 30"
-30/texture = ExtResource( 12 )
+30/texture = ExtResource( 23 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 0, 160, 32, 32 )
@@ -323,7 +298,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 30/shapes = [  ]
 30/z_index = 0
 32/name = "Floor_Wall_64x.png 32"
-32/texture = ExtResource( 12 )
+32/texture = ExtResource( 23 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
 32/region = Rect2( 128, 160, 32, 32 )
@@ -337,7 +312,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 32/shapes = [  ]
 32/z_index = 0
 33/name = "Floor_Wall_64x.png 33"
-33/texture = ExtResource( 12 )
+33/texture = ExtResource( 23 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
 33/region = Rect2( 224, 160, 32, 32 )
@@ -351,7 +326,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 33/shapes = [  ]
 33/z_index = 0
 34/name = "Floor_Wall_64x.png 34"
-34/texture = ExtResource( 12 )
+34/texture = ExtResource( 23 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 256, 160, 32, 32 )
@@ -365,7 +340,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 34/shapes = [  ]
 34/z_index = 0
 35/name = "Floor_Wall_64x.png 35"
-35/texture = ExtResource( 12 )
+35/texture = ExtResource( 23 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
 35/region = Rect2( 352, 160, 32, 32 )
@@ -379,7 +354,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 35/shapes = [  ]
 35/z_index = 0
 36/name = "Floor_Wall_64x.png 36"
-36/texture = ExtResource( 12 )
+36/texture = ExtResource( 23 )
 36/tex_offset = Vector2( 0, 0 )
 36/modulate = Color( 1, 1, 1, 1 )
 36/region = Rect2( 32, 192, 32, 32 )
@@ -393,7 +368,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 36/shapes = [  ]
 36/z_index = 2
 37/name = "Floor_Wall_64x.png 37"
-37/texture = ExtResource( 12 )
+37/texture = ExtResource( 23 )
 37/tex_offset = Vector2( 0, 0 )
 37/modulate = Color( 1, 1, 1, 1 )
 37/region = Rect2( 64, 192, 32, 32 )
@@ -407,7 +382,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 37/shapes = [  ]
 37/z_index = 2
 41/name = "Floor_Wall_64x.png 41"
-41/texture = ExtResource( 12 )
+41/texture = ExtResource( 23 )
 41/tex_offset = Vector2( 0, 0 )
 41/modulate = Color( 1, 1, 1, 1 )
 41/region = Rect2( 288, 192, 32, 32 )
@@ -421,7 +396,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 41/shapes = [  ]
 41/z_index = 2
 42/name = "Floor_Wall_64x.png 42"
-42/texture = ExtResource( 12 )
+42/texture = ExtResource( 23 )
 42/tex_offset = Vector2( 0, 0 )
 42/modulate = Color( 1, 1, 1, 1 )
 42/region = Rect2( 320, 192, 32, 32 )
@@ -435,7 +410,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 42/shapes = [  ]
 42/z_index = 2
 44/name = "Floor_Wall_64x.png 44"
-44/texture = ExtResource( 12 )
+44/texture = ExtResource( 23 )
 44/tex_offset = Vector2( 0, 0 )
 44/modulate = Color( 1, 1, 1, 1 )
 44/region = Rect2( 128, 224, 32, 32 )
@@ -449,7 +424,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 44/shapes = [  ]
 44/z_index = 0
 47/name = "Floor_Wall_64x.png 47"
-47/texture = ExtResource( 12 )
+47/texture = ExtResource( 23 )
 47/tex_offset = Vector2( 0, 0 )
 47/modulate = Color( 1, 1, 1, 1 )
 47/region = Rect2( 224, 224, 32, 32 )
@@ -463,7 +438,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 47/shapes = [  ]
 47/z_index = 0
 48/name = "Floor_Wall_64x.png 48"
-48/texture = ExtResource( 12 )
+48/texture = ExtResource( 23 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
 48/region = Rect2( 352, 224, 32, 32 )
@@ -479,7 +454,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 
 [sub_resource type="TileSet" id=3]
 0/name = "Furniture_64x.png 0"
-0/texture = ExtResource( 24 )
+0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 32, 32 )
@@ -493,7 +468,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 0/shapes = [  ]
 0/z_index = 0
 1/name = "Furniture_64x.png 1"
-1/texture = ExtResource( 24 )
+1/texture = ExtResource( 12 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 32, 0, 32, 32 )
@@ -507,7 +482,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 1/shapes = [  ]
 1/z_index = 1
 2/name = "Furniture_64x.png 2"
-2/texture = ExtResource( 24 )
+2/texture = ExtResource( 12 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 0, 32, 32, 32 )
@@ -521,7 +496,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 2/shapes = [  ]
 2/z_index = 2
 3/name = "Furniture_64x.png 3"
-3/texture = ExtResource( 24 )
+3/texture = ExtResource( 12 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 64, 0, 32, 64 )
@@ -535,7 +510,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 3/shapes = [  ]
 3/z_index = 0
 4/name = "Furniture_64x.png 4"
-4/texture = ExtResource( 24 )
+4/texture = ExtResource( 12 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 96, 0, 32, 64 )
@@ -549,7 +524,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 4/shapes = [  ]
 4/z_index = 0
 5/name = "Furniture_64x.png 5"
-5/texture = ExtResource( 24 )
+5/texture = ExtResource( 12 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 128, 0, 32, 32 )
@@ -563,7 +538,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 5/shapes = [  ]
 5/z_index = 0
 6/name = "Furniture_64x.png 6"
-6/texture = ExtResource( 24 )
+6/texture = ExtResource( 12 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 160, 0, 32, 32 )
@@ -577,7 +552,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 6/shapes = [  ]
 6/z_index = 0
 7/name = "Furniture_64x.png 7"
-7/texture = ExtResource( 24 )
+7/texture = ExtResource( 12 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 128, 32, 64, 32 )
@@ -591,7 +566,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 7/shapes = [  ]
 7/z_index = 0
 8/name = "Furniture_64x.png 8"
-8/texture = ExtResource( 24 )
+8/texture = ExtResource( 12 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 64, 64, 64 )
@@ -605,7 +580,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 8/shapes = [  ]
 8/z_index = 0
 9/name = "Furniture_64x.png 9"
-9/texture = ExtResource( 24 )
+9/texture = ExtResource( 12 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 64, 64, 32, 32 )
@@ -619,7 +594,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 9/shapes = [  ]
 9/z_index = 0
 10/name = "Furniture_64x.png 10"
-10/texture = ExtResource( 24 )
+10/texture = ExtResource( 12 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 64, 96, 32, 32 )
@@ -633,7 +608,7 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 10/shapes = [  ]
 10/z_index = 1
 11/name = "Furniture_64x.png 11"
-11/texture = ExtResource( 24 )
+11/texture = ExtResource( 12 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 96, 64, 32, 64 )
@@ -648,11 +623,11 @@ outlines = [ PoolVector2Array( 73, 256, 73, 173, 65, 173, 65, 150, 41, 150, 40.5
 11/z_index = 0
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 35 )
+atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 35 )
+atlas = ExtResource( 25 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=6]
@@ -669,37 +644,37 @@ animations = [ {
 } ]
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 34 )
+atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 34 )
+atlas = ExtResource( 24 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 34 )
+atlas = ExtResource( 24 )
 region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 34 )
+atlas = ExtResource( 24 )
 region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "idle",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "eating",
 "speed": 3.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -738,26 +713,20 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 22.5005, 29.868 )
-
-[sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 16, 25.9756 )
-
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 16 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 16 )
 region = Rect2( 0, 64, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 15 )
+atlas = ExtResource( 16 )
 region = Rect2( 64, 64, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=25]
@@ -773,27 +742,24 @@ animations = [ {
 "speed": 0.5
 } ]
 
-[sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 30.9083, 25.8009 )
-
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 29 )
 region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 29 )
 region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 29 )
 region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 29 )
 region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 22 )
+atlas = ExtResource( 29 )
 region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=32]
@@ -809,50 +775,44 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=33]
-extents = Vector2( 16, 24.8267 )
-
-[sub_resource type="RectangleShape2D" id=34]
-extents = Vector2( 17, 28 )
-
 [sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 64, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 128, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 192, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 256, 0, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 64, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 128, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=43]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 192, 64, 64, 32 )
 
 [sub_resource type="AtlasTexture" id=44]
-atlas = ExtResource( 21 )
+atlas = ExtResource( 11 )
 region = Rect2( 256, 64, 64, 32 )
 
 [sub_resource type="SpriteFrames" id=45]
@@ -870,121 +830,54 @@ animations = [ {
 
 [sub_resource type="DynamicFont" id=46]
 size = 13
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=47]
 size = 10
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=48]
 size = 13
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=49]
 size = 11
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=50]
 size = 11
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=51]
 size = 13
-font_data = ExtResource( 25 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxTexture" id=52]
-texture = ExtResource( 46 )
-region_rect = Rect2( 15.601, 56.1494, 224.816, 141.108 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 14.5928, 141.562, 226.382, 53.694 )
 
-[sub_resource type="DynamicFont" id=53]
-size = 13
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxTexture" id=53]
+texture = ExtResource( 1 )
+region_rect = Rect2( 269.219, 139.864, 228.88, 58.381 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 14.1117, 141.562, 227.236, 53.2052 )
 
 [sub_resource type="StyleBoxTexture" id=54]
-texture = ExtResource( 47 )
-region_rect = Rect2( -0.407646, 29.9449, 80.4076, 20.2538 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 512, 256 )
 
-[sub_resource type="DynamicFont" id=55]
-size = 10
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxTexture" id=55]
+texture = ExtResource( 2 )
+region_rect = Rect2( 270.489, 141.659, 226.922, 53.3404 )
 
 [sub_resource type="StyleBoxTexture" id=56]
-texture = ExtResource( 47 )
-region_rect = Rect2( -0.217072, 29.6224, 79.72, 20.6293 )
-
-[sub_resource type="DynamicFont" id=57]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=58]
-size = 12
-font_data = ExtResource( 25 )
-
-[sub_resource type="StyleBoxTexture" id=59]
-texture = ExtResource( 46 )
-region_rect = Rect2( 15.6842, 55.3158, 223.158, 145.263 )
-
-[sub_resource type="DynamicFont" id=60]
-size = 11
-font_data = ExtResource( 25 )
-
-[sub_resource type="StyleBoxTexture" id=71]
-texture = ExtResource( 46 )
-region_rect = Rect2( 17, 56, 221, 143 )
-
-[sub_resource type="DynamicFont" id=61]
-extra_spacing_char = 1
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=62]
-size = 12
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=63]
-size = 13
-extra_spacing_char = 1
-font_data = ExtResource( 25 )
-
-[sub_resource type="StyleBoxFlat" id=64]
-bg_color = Color( 0, 0, 0, 0.705882 )
-
-[sub_resource type="StyleBoxFlat" id=65]
-
-[sub_resource type="DynamicFont" id=66]
-size = 24
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=67]
-size = 12
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=68]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="StyleBoxTexture" id=69]
-texture = ExtResource( 47 )
-region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
-
-[sub_resource type="DynamicFont" id=70]
-size = 10
-font_data = ExtResource( 25 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 14.6997, 141.204, 226.727, 53.6955 )
 
 [node name="World" type="Node2D"]
-script = ExtResource( 10 )
-seconds_per_hour = 3.0
-starting_hour = 7
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
-visible = false
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-navpoly = SubResource( 1 )
-
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
-width = 1.0
-default_color = Color( 1, 0, 0, 1 )
+script = ExtResource( 4 )
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -1007,8 +900,6 @@ frames = SubResource( 6 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 320, 251 )
-script = ExtResource( 2 )
-speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 11 )
@@ -1022,98 +913,47 @@ shape = SubResource( 12 )
 [node name="Bed" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 369, 256 )
 frames = SubResource( 18 )
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-object_names = "Bed"
-object_start_cost = 75
-object_cost_increase = 75
-
-[node name="Area2D" type="Area2D" parent="Objects/Bed"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bed/Area2D"]
-position = Vector2( 0.668182, 2.89545 )
-shape = SubResource( 19 )
 
 [node name="Stove" type="Sprite" parent="Objects"]
 position = Vector2( 64, 224 )
 z_index = -1
 texture = ExtResource( 14 )
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-object_names = "Stove"
-object_start_cost = 75
-object_cost_increase = 75
-
-[node name="Area2D" type="Area2D" parent="Objects/Stove"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Stove/Area2D"]
-position = Vector2( -16, -7 )
-shape = SubResource( 20 )
 
 [node name="Console" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 128, 80 )
 z_index = -1
 frames = SubResource( 25 )
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-object_names = "TV"
-object_start_cost = 75
-object_cost_increase = 75
-
-[node name="Area2D" type="Area2D" parent="Objects/Console"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Console/Area2D"]
-position = Vector2( -0.117584, 6.17884 )
-shape = SubResource( 26 )
 
 [node name="PC" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 256, 107 )
 z_index = -1
 frames = SubResource( 32 )
-script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-object_names = "PC"
-object_start_cost = 75
-object_cost_increase = 75
-
-[node name="Area2D" type="Area2D" parent="Objects/PC"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/PC/Area2D"]
-position = Vector2( 16.0831, -7.09615 )
-shape = SubResource( 33 )
 
 [node name="Bathroom" type="Sprite" parent="Objects"]
 position = Vector2( 401, 125 )
 z_index = -1
-texture = ExtResource( 23 )
-script = ExtResource( 17 )
+texture = ExtResource( 20 )
 __meta__ = {
 "_edit_group_": true
 }
-object_names = "Bathroom"
-object_start_cost = 75
-object_cost_increase = 75
-
-[node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Bathroom/Area2D"]
-position = Vector2( 0, 4 )
-shape = SubResource( 34 )
 
 [node name="Sink" type="Sprite" parent="Objects"]
 position = Vector2( 64, 160 )
-texture = ExtResource( 16 )
+texture = ExtResource( 10 )
 
 [node name="Windows" type="Node2D" parent="Objects"]
-script = ExtResource( 27 )
 
 [node name="WindowAnim" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 193, 48 )
@@ -1127,44 +967,6 @@ frames = SubResource( 45 )
 animation = "window"
 frame = 5
 
-[node name="EventSystem" type="Node2D" parent="."]
-script = ExtResource( 18 )
-event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overtime", "missing file", "missed deadline", "finish game", "play online", "duo", "win duo", "lose duo", "full party", "win full", "lose full", "movie", "known movie", "known movie gain", "recommended", "fun movie", "sad movie", "news", "good news", "bad news", "video call", "jumpscare", "great food", "bad food", "refreshed bath", "diarrhea", "refreshed sleep", "confused" )
-event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
-event_chance = PoolIntArray( 11, 102, 0, 3, 3, 3, 20, 10, 50, 55, 45, 50, 40, 60, 15, 50, 100, 50, 50, 50, 15, 50, 50, 12, 3, 12, 13, 19, 5, 19, 5 )
-event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
-health_output = PoolIntArray( 0, 3, -4, -4, -4, -4, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 2, -12, 4, -26, 6, 1 )
-happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6, 0, 0, 4, 0, 8, -8, 0, 4, -15, 9, -11, 16, -12, 4, -21, 4, -5 )
-work_output = PoolIntArray( 0, 5, 5, 10, -10, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
-event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
-
-[node name="Audio" type="Node2D" parent="."]
-script = ExtResource( 39 )
-
-[node name="Sleep" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 45 )
-volume_db = -10.0
-
-[node name="Pc" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 43 )
-volume_db = -15.0
-
-[node name="Shower" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 41 )
-volume_db = -15.0
-
-[node name="Eat" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 40 )
-volume_db = -20.0
-
-[node name="GameOver" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 44 )
-volume_db = -10.0
-
-[node name="Tv" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 42 )
-volume_db = -35.0
-
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -1174,9 +976,8 @@ margin_top = 12.0
 margin_right = 443.0
 margin_bottom = 76.0
 value = 100.0
-texture_over = ExtResource( 33 )
-texture_progress = ExtResource( 30 )
-script = ExtResource( 11 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1203,7 +1004,7 @@ margin_bottom = 40.6933
 custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 text = "+0"
-script = ExtResource( 29 )
+script = ExtResource( 6 )
 
 [node name="HappinessBar" type="TextureProgress" parent="GUI"]
 margin_left = 379.0
@@ -1211,9 +1012,8 @@ margin_top = 29.0
 margin_right = 447.0
 margin_bottom = 93.0
 value = 100.0
-texture_over = ExtResource( 33 )
-texture_progress = ExtResource( 32 )
-script = ExtResource( 11 )
+texture_over = ExtResource( 9 )
+texture_progress = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1240,7 +1040,7 @@ margin_bottom = 40.8406
 custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0.807843, 0.776471, 0.137255, 1 )
 text = "+0"
-script = ExtResource( 29 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1252,8 +1052,7 @@ margin_right = 367.0
 margin_bottom = 84.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource( 31 )
-script = ExtResource( 26 )
+texture = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -1312,366 +1111,50 @@ rect_scale = Vector2( 1.30344, 1.38164 )
 custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
-script = ExtResource( 29 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DecisionPanel" type="Panel" parent="GUI"]
-pause_mode = 2
-visible = false
-margin_left = 144.587
-margin_top = 117.38
-margin_right = 184.587
-margin_bottom = 157.38
-rect_scale = Vector2( 4.81913, 2.4048 )
-custom_styles/panel = SubResource( 52 )
-script = ExtResource( 20 )
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Title" type="TextureRect" parent="Menu"]
+margin_left = 118.366
+margin_top = -30.9966
+margin_right = 630.366
+margin_bottom = 481.003
+rect_scale = Vector2( 0.446389, 0.446389 )
+texture = ExtResource( 3 )
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="GUI/DecisionPanel"]
-margin_left = 3.82956
-margin_top = 5.67094
-margin_right = 313.83
-margin_bottom = 135.671
-rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 53 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-tab_size = 7
-text = "Text for question"
+[node name="Start" type="Button" parent="Menu"]
+margin_left = 194.759
+margin_top = 183.413
+margin_right = 274.759
+margin_bottom = 203.413
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/normal = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option1" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 3.0
-margin_top = 31.0
-margin_right = 17.0
-margin_bottom = 52.0
-rect_scale = Vector2( 1.08151, 0.216734 )
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 54 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/DecisionPanel/Option1"]
-margin_left = 0.507721
-margin_top = 2.84982
-margin_right = 56.5077
-margin_bottom = 16.8498
-rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 55 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Option 1"
-valign = 1
-
-[node name="Option2" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 21.0
-margin_top = 30.5842
-margin_right = 37.0
-margin_bottom = 52.5842
-rect_scale = Vector2( 1.08151, 0.216734 )
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
+[node name="Highscore" type="Button" parent="Menu"]
+margin_left = 193.777
+margin_top = 217.36
+margin_right = 273.777
+margin_bottom = 237.36
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
 custom_styles/normal = SubResource( 56 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label" type="Label" parent="GUI/DecisionPanel/Option2"]
-margin_left = 0.846161
-margin_top = 3.82492
-margin_right = 56.8462
-margin_bottom = 17.825
-rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 57 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Option 2"
-valign = 1
-
-[node name="Tooltip" type="Panel" parent="GUI"]
-visible = false
-margin_left = 36.187
-margin_top = 239.408
-margin_right = 76.187
-margin_bottom = 279.408
-rect_scale = Vector2( 1.46214, 0.578175 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/Tooltip"]
-margin_left = 2.28908
-margin_top = 10.8051
-margin_right = 51.2891
-margin_bottom = 24.8051
-rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 58 )
-text = "tooltips"
-
-[node name="EventPanel" type="Panel" parent="GUI"]
-visible = false
-margin_left = 50.0
-margin_top = 249.0
-margin_right = 97.0
-margin_bottom = 289.0
-rect_scale = Vector2( 2.9478, 0.801499 )
-custom_styles/panel = SubResource( 59 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-time_awake = 2.0
-
-[node name="Label" type="Label" parent="GUI/EventPanel"]
-margin_left = 1.69617
-margin_top = 6.23829
-margin_right = 100.696
-margin_bottom = 20.2383
-rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 60 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Event Occured"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ActivitySystem" type="Control" parent="GUI"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-activity_name = PoolStringArray( "Bed", "Stove", "Console", "TV", "PC", "Web", "Bathroom" )
-activity_from = PoolStringArray( "Bed", "Stove", "TV", "TV", "PC", "PC", "Bathroom" )
-activity_type = PoolStringArray( "Health", "Health", "Happiness", "Happiness", "Work", "Happiness", "Health" )
-activity_gain = PoolIntArray( 10, 10, 10, 10, 10, 10, 10 )
-activity_scale = PoolIntArray( 1, 1, 1, 1, 1, 1, 1 )
-activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "Watch TV", "Working", "Surf the web", "Use bathroom" )
-
-[node name="Panel" type="Panel" parent="GUI/ActivitySystem"]
-margin_right = 200.0
-margin_bottom = 160.0
-rect_scale = Vector2( 0.382225, 0.470944 )
-custom_styles/panel = SubResource( 71 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Object" type="Label" parent="GUI/ActivitySystem/Panel"]
-margin_left = 10.465
-margin_top = 16.9872
-margin_right = 139.465
-margin_bottom = 33.9872
-custom_fonts/font = SubResource( 61 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Object name"
-
-[node name="Level" type="Label" parent="GUI/ActivitySystem/Panel"]
-margin_left = 151.743
-margin_top = 21.234
-margin_right = 191.743
-margin_bottom = 36.234
-custom_fonts/font = SubResource( 62 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "lv 1"
-
-[node name="Button" type="Button" parent="GUI/ActivitySystem/Panel"]
-margin_left = 10.0
-margin_top = 55.0
-margin_right = 190.0
-margin_bottom = 80.0
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = ExtResource( 48 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
-margin_right = 180.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 63 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Play a game"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="Button" parent="GUI/ActivitySystem/Panel"]
-margin_left = 10.0
-margin_top = 90.0
-margin_right = 190.0
-margin_bottom = 115.0
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = ExtResource( 48 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
-margin_right = 180.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 63 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Play a game"
-align = 1
-valign = 1
-
-[node name="Button3" type="Button" parent="GUI/ActivitySystem/Panel"]
-margin_left = 10.0
-margin_top = 125.0
-margin_right = 190.0
-margin_bottom = 150.0
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = ExtResource( 48 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
-margin_right = 180.0
-margin_bottom = 25.0
-custom_fonts/font = SubResource( 63 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Play a game"
-align = 1
-valign = 1
-
-[node name="GameOverPanel" type="Panel" parent="GUI"]
-visible = false
-margin_right = 480.0
-margin_bottom = 320.0
-custom_styles/panel = SubResource( 64 )
-script = ExtResource( 36 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-health_lose_text = "You fell ill. Please mind your health while working."
-happiness_lose_text = "You're depressed. Don't forget to leave some time to have fun"
-
-[node name="Panel" type="Panel" parent="GUI/GameOverPanel"]
-margin_left = 116.571
-margin_top = 74.1938
-margin_right = 376.571
-margin_bottom = 224.194
-custom_styles/panel = SubResource( 65 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="GUI/GameOverPanel/Panel"]
-margin_left = 59.429
-margin_top = 5.8062
-margin_right = 206.429
-margin_bottom = 30.8062
-custom_fonts/font = SubResource( 66 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Game Over"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthLose" type="TextureRect" parent="GUI/GameOverPanel/Panel"]
-visible = false
-margin_left = 20.0
-margin_top = 35.0
-margin_right = 148.0
-margin_bottom = 163.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 38 )
-
-[node name="HappinessLose" type="TextureRect" parent="GUI/GameOverPanel/Panel"]
-visible = false
-margin_left = 20.0
-margin_top = 35.0
-margin_right = 148.0
-margin_bottom = 163.0
-rect_scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 37 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="GUI/GameOverPanel/Panel"]
-margin_left = 93.0
-margin_top = 35.0
-margin_right = 243.0
-margin_bottom = 95.0
-custom_fonts/normal_font = SubResource( 67 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Send Help!"
-
-[node name="Survive" type="Label" parent="GUI/GameOverPanel/Panel"]
-margin_left = 7.0
-margin_top = 104.0
-margin_right = 195.0
-margin_bottom = 118.0
-custom_fonts/font = SubResource( 68 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Survive for : 20 days"
-
-[node name="Earning" type="Label" parent="GUI/GameOverPanel/Panel"]
-margin_left = 7.72987
-margin_top = 119.515
-margin_right = 195.73
-margin_bottom = 134.515
-custom_fonts/font = SubResource( 68 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Total earning : 500 $"
-
-[node name="Button" type="Button" parent="GUI/GameOverPanel/Panel"]
-margin_left = 194.138
-margin_top = 107.921
-margin_right = 252.138
-margin_bottom = 127.921
-custom_styles/hover = ExtResource( 48 )
-custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 69 )
-custom_fonts/font = SubResource( 70 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Restart"
-[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
-[connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
-[connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/Stove/Area2D" to="Objects/Stove" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/Stove/Area2D" to="Objects/Stove" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/Console/Area2D" to="Objects/Console" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/Console/Area2D" to="Objects/Console" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/PC/Area2D" to="Objects/PC" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/PC/Area2D" to="Objects/PC" method="_on_Area2D_mouse_exited"]
-[connection signal="mouse_entered" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Objects/Bathroom/Area2D" to="Objects/Bathroom" method="_on_Area2D_mouse_exited"]
 [connection signal="visibility_changed" from="GUI/HealthBar/Status" to="GUI/HealthBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/HappinessBar/Status" to="GUI/HappinessBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/MoneyText/Status" to="GUI/MoneyText/Status" method="_on_Status_visibility_changed"]
-[connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
-[connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
-[connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
-[connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
-[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button" to="GUI/ActivitySystem" method="_on_Button_pressed"]
-[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button2" to="." method="_on_Button2_mouse_entered"]
-[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button2" to="GUI/ActivitySystem" method="_on_Button2_pressed"]
-[connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
-[connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
-[connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
