@@ -896,11 +896,11 @@ region_rect = Rect2( 270.569, 141.023, 227.52, 55.4139 )
 texture = ExtResource( 32 )
 region_rect = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="StyleBoxTexture" id=55]
+[sub_resource type="StyleBoxTexture" id=85]
 texture = ExtResource( 6 )
 region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
 
-[sub_resource type="StyleBoxTexture" id=56]
+[sub_resource type="StyleBoxTexture" id=86]
 texture = ExtResource( 6 )
 region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
 
@@ -1423,9 +1423,9 @@ margin_left = 8.82942
 margin_top = 7.14763
 margin_right = 28.8294
 margin_bottom = 27.1476
-custom_styles/hover = SubResource( 55 )
-custom_styles/pressed = SubResource( 56 )
-custom_styles/normal = SubResource( 55 )
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

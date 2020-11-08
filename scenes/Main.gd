@@ -78,11 +78,7 @@ func _input(event):
 					decision_index = []
 					move_player(event.position)
 				elif not inside_popup and not pause_hover:
-					object_fix = "null"
-					object_level_hover = 0
-					object_cost_fix = 0
-					$GUI/ActivitySystem.close_popup()
-					showing_popup = false
+					close_popup()
 
 func _ready():
 	time_hour = starting_hour
@@ -94,6 +90,12 @@ func _ready():
 	else:
 		time_coroutine = time_moving()
 
+func close_popup():
+	object_fix = "null"
+	object_level_hover = 0
+	object_cost_fix = 0
+	$GUI/ActivitySystem.close_popup()
+	showing_popup = false
 
 func move_player(target_position):
 	is_working = false
@@ -202,15 +204,15 @@ func _on_World_hour_pass(time):
 	reset_money()
 	buff_check()
 	if $GUI/HealthBar.value <= 0:
+		$GUI/Pause.disabled = true
 		pause_game()
 		$GUI/GameOverPanel.game_over(1, day_count, money)
 		$Audio.play_game_over_sound()
-		pass
 	if $GUI/HappinessBar.value <= 0:
+		$GUI/Pause.disabled = true
 		pause_game()
 		$GUI/GameOverPanel.game_over(2, day_count, money)
 		$Audio.play_game_over_sound()
-		pass
 
 func reset_money():
 	$GUI/MoneyText.text = str(money) + " $"
@@ -456,3 +458,7 @@ func _on_Pause_mouse_entered():
 
 func _on_Pause_mouse_exited():
 	pause_hover = false
+
+
+func _on_ExitPopUp_pressed():
+	close_popup()

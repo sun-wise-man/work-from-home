@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://sprites/UI/Debuff_Health_64x.png" type="Texture" id=55]
 [ext_resource path="res://Resource/Cover.tres" type="StyleBox" id=56]
 [ext_resource path="res://Resource/Panel.tres" type="StyleBox" id=57]
+[ext_resource path="res://sprites/UI/Close_Button_50px.png" type="Texture" id=58]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
@@ -988,6 +989,14 @@ size = 13
 extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
+[sub_resource type="StyleBoxTexture" id=85]
+texture = ExtResource( 58 )
+region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
+
+[sub_resource type="StyleBoxTexture" id=86]
+texture = ExtResource( 58 )
+region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
+
 [sub_resource type="StyleBoxFlat" id=74]
 bg_color = Color( 0, 0, 0, 0.705882 )
 
@@ -1848,6 +1857,7 @@ activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "W
 margin_right = 200.0
 margin_bottom = 160.0
 rect_scale = Vector2( 0.382225, 0.470944 )
+mouse_filter = 1
 custom_styles/panel = SubResource( 70 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1936,6 +1946,18 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
+
+[node name="ExitPopUp" type="Button" parent="GUI/ActivitySystem/Panel"]
+margin_left = 3.89053
+margin_top = 2.13708
+margin_right = 21.8905
+margin_bottom = 18.1371
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GameOverPanel" type="Panel" parent="GUI"]
 visible = false
@@ -2107,6 +2129,7 @@ __meta__ = {
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button2" to="GUI/ActivitySystem" method="_on_Button2_pressed"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
+[connection signal="pressed" from="GUI/ActivitySystem/Panel/ExitPopUp" to="." method="_on_ExitPopUp_pressed"]
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Home" to="GUI/GameOverPanel" method="_on_Home_pressed"]
 [connection signal="mouse_entered" from="GUI/Pause" to="." method="_on_Pause_mouse_entered"]
