@@ -2042,6 +2042,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Home"
 
 [node name="PausePanel" type="Panel" parent="GUI"]
+visible = false
 margin_right = 479.0
 margin_bottom = 318.0
 mouse_filter = 2
