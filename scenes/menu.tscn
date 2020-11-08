@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://sprites/UI/Start_Button.png" type="Texture" id=1]
 [ext_resource path="res://sprites/UI/Highscore_Button.png" type="Texture" id=2]
@@ -29,8 +29,13 @@
 [ext_resource path="res://sprites/main_idle_3.png" type="Texture" id=27]
 [ext_resource path="res://sprites/main_idle_4.png" type="Texture" id=28]
 [ext_resource path="res://sprites/Chair_64x.png" type="Texture" id=29]
+[ext_resource path="res://sprites/UI/Tutorial_Button_256x.png" type="Texture" id=30]
+[ext_resource path="res://sprites/UI/Credits_Button_256x.png" type="Texture" id=31]
+[ext_resource path="res://sprites/UI/Highscore_Panel_256x.png" type="Texture" id=32]
+[ext_resource path="res://Resource/Font.tres" type="DynamicFont" id=33]
+[ext_resource path="res://scenes/SaveSystem.gd" type="Script" id=34]
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=1]
 0/name = "Floor_Wall_64x.png 0"
 0/texture = ExtResource( 23 )
 0/tex_offset = Vector2( 0, 0 )
@@ -452,7 +457,7 @@
 48/shapes = [  ]
 48/z_index = 0
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=2]
 0/name = "Furniture_64x.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -622,259 +627,275 @@
 11/shapes = [  ]
 11/z_index = 0
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 25 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 25 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "activity",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 24 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 24 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 24 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "idle",
 "speed": 6.0
 }, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
+}, {
 "frames": [ ExtResource( 19 ), ExtResource( 26 ), ExtResource( 7 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 7.15993, 26.0387 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 13 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 13 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 13 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 13 )
 region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=18]
+[sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "sleeping",
 "speed": 3.0
 } ]
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 16 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 16 )
 region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 16 )
 region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=22]
 animations = [ {
-"frames": [ SubResource( 21 ) ],
+"frames": [ SubResource( 18 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "activities",
 "speed": 0.5
 } ]
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 29 )
 region = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 29 )
 region = Rect2( 64, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 29 )
 region = Rect2( 128, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 29 )
 region = Rect2( 192, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 29 )
 region = Rect2( 256, 0, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=32]
+[sub_resource type="SpriteFrames" id=28]
 animations = [ {
-"frames": [ SubResource( 27 ) ],
+"frames": [ SubResource( 23 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "working",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 11 )
 region = Rect2( 64, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 11 )
 region = Rect2( 128, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 11 )
 region = Rect2( 192, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 11 )
 region = Rect2( 256, 0, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 11 )
 region = Rect2( 64, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 11 )
 region = Rect2( 128, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 11 )
 region = Rect2( 192, 64, 64, 32 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 11 )
 region = Rect2( 256, 64, 64, 32 )
 
-[sub_resource type="SpriteFrames" id=45]
+[sub_resource type="SpriteFrames" id=39]
 animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "window",
 "speed": 5.02
 } ]
 
-[sub_resource type="DynamicFont" id=46]
+[sub_resource type="DynamicFont" id=40]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=47]
+[sub_resource type="DynamicFont" id=41]
 size = 10
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=48]
+[sub_resource type="DynamicFont" id=42]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=49]
+[sub_resource type="DynamicFont" id=43]
 size = 11
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=50]
+[sub_resource type="DynamicFont" id=44]
 size = 11
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=51]
+[sub_resource type="DynamicFont" id=45]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxTexture" id=52]
+[sub_resource type="StyleBoxTexture" id=46]
 texture = ExtResource( 1 )
 region_rect = Rect2( 14.5928, 141.562, 226.382, 53.694 )
 
-[sub_resource type="StyleBoxTexture" id=53]
+[sub_resource type="StyleBoxTexture" id=47]
 texture = ExtResource( 1 )
 region_rect = Rect2( 269.219, 139.864, 228.88, 58.381 )
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=48]
 texture = ExtResource( 1 )
 region_rect = Rect2( 14.1117, 141.562, 227.236, 53.2052 )
 
-[sub_resource type="StyleBoxTexture" id=54]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 512, 256 )
-
-[sub_resource type="StyleBoxTexture" id=55]
-texture = ExtResource( 2 )
-region_rect = Rect2( 270.489, 141.659, 226.922, 53.3404 )
-
-[sub_resource type="StyleBoxTexture" id=56]
+[sub_resource type="StyleBoxTexture" id=51]
 texture = ExtResource( 2 )
 region_rect = Rect2( 14.6997, 141.204, 226.727, 53.6955 )
+
+[sub_resource type="StyleBoxTexture" id=50]
+texture = ExtResource( 2 )
+region_rect = Rect2( 271.169, 141.336, 226.408, 54.4411 )
+
+[sub_resource type="StyleBoxTexture" id=52]
+texture = ExtResource( 30 )
+region_rect = Rect2( 14.0556, 139.319, 228.717, 56.2813 )
+
+[sub_resource type="StyleBoxTexture" id=53]
+texture = ExtResource( 30 )
+region_rect = Rect2( 269.392, 142.834, 228.792, 52.7723 )
+
+[sub_resource type="StyleBoxTexture" id=54]
+texture = ExtResource( 31 )
+region_rect = Rect2( 14.6251, 139.02, 227.143, 56.6021 )
+
+[sub_resource type="StyleBoxTexture" id=55]
+texture = ExtResource( 31 )
+region_rect = Rect2( 270.569, 141.023, 227.52, 55.4139 )
+
+[sub_resource type="StyleBoxTexture" id=56]
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 256, 256 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -883,36 +904,36 @@ script = ExtResource( 4 )
 
 [node name="TileMap-Floor-Wall" type="TileMap" parent="TileMap"]
 z_index = -1
-tile_set = SubResource( 2 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 0, 35, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 34, 0, 10, 48, 0, 11, 48, 0, 12, 48, 0, 13, 48, 0, 14, 48, 0, 65536, 33, 0, 65537, 4, 0, 65538, 4, 0, 65539, 7, 0, 65540, 5, 0, 65541, 6, 0, 65542, 4, 0, 65543, 4, 0, 65544, 7, 0, 65545, 32, 0, 65546, 48, 0, 65547, 48, 0, 65548, 48, 0, 65549, 48, 0, 65550, 48, 0, 131072, 33, 0, 131073, 10, 0, 131074, 10, 0, 131075, 10, 0, 131076, 10, 0, 131077, 10, 0, 131078, 10, 0, 131079, 10, 0, 131080, 10, 0, 131081, 44, 0, 131082, 30, 0, 131083, 30, 0, 131084, 30, 0, 131085, 30, 0, 131086, 34, 0, 196608, 33, 0, 196609, 0, 0, 196610, 3, 0, 196611, 2, 0, 196612, 3, 0, 196613, 0, 0, 196614, 3, 0, 196615, 0, 0, 196616, 3, 0, 196617, 4, 0, 196618, 5, 0, 196619, 7, 0, 196620, 6, 0, 196621, 4, 0, 196622, 32, 0, 262144, 33, 0, 262145, 3, 0, 262146, 2, 0, 262147, 3, 0, 262148, 0, 0, 262149, 3, 0, 262150, 2, 0, 262151, 3, 0, 262152, 2, 0, 262153, 10, 0, 262154, 10, 0, 262155, 10, 0, 262156, 10, 0, 262157, 10, 0, 262158, 32, 0, 327680, 33, 0, 327681, 2, 0, 327682, 3, 0, 327683, 2, 0, 327684, 3, 0, 327685, 0, 0, 327686, 3, 0, 327687, 0, 0, 327688, 3, 0, 327689, 0, 0, 327690, 3, 0, 327691, 2, 0, 327692, 3, 0, 327693, 2, 0, 327694, 32, 0, 393216, 33, 0, 393217, 3, 0, 393218, 2, 0, 393219, 3, 0, 393220, 2, 0, 393221, 3, 0, 393222, 0, 0, 393223, 3, 0, 393224, 0, 0, 393225, 3, 0, 393226, 0, 0, 393227, 3, 0, 393228, 0, 0, 393229, 3, 0, 393230, 32, 0, 458752, 33, 0, 458753, 2, 0, 458754, 3, 0, 458755, 0, 0, 458756, 3, 0, 458757, 2, 0, 458758, 3, 0, 458759, 42, 0, 458760, 41, 0, 458761, 2, 0, 458762, 3, 0, 458763, 0, 0, 458764, 3, 0, 458765, 2, 0, 458766, 32, 0, 524288, 33, 0, 524289, 3, 0, 524290, 0, 0, 524291, 3, 0, 524292, 2, 0, 524293, 3, 0, 524294, 0, 0, 524295, 32, 0, 524296, 33, 0, 524297, 3, 0, 524298, 2, 0, 524299, 3, 0, 524300, 0, 0, 524301, 3, 0, 524302, 32, 0, 589824, 36, 0, 589825, 26, 0, 589826, 26, 0, 589827, 26, 0, 589828, 26, 0, 589829, 8, 0, 589830, 8, 0, 589831, 37, 0, 589832, 36, 0, 589833, 26, 0, 589834, 26, 0, 589835, 26, 0, 589836, 26, 0, 589837, 26, 0, 589838, 37, 0 )
 
 [node name="TileMap-Furniture" type="TileMap" parent="TileMap"]
-tile_set = SubResource( 3 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 196609, 0, 0, 196611, 8, 0, 196616, 4, 0, 262157, 3, 0, 458753, 3, 0, 458761, 2, 0, 458765, 11, 0, 524291, 9, 0, 524293, 10, 0, 524297, 5, 0 )
 
 [node name="Sofa" type="AnimatedSprite" parent="TileMap"]
 position = Vector2( 129, 126 )
-frames = SubResource( 6 )
+frames = SubResource( 5 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 320, 251 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 11 )
+frames = SubResource( 10 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 12 )
+shape = SubResource( 11 )
 
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Bed" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 369, 256 )
-frames = SubResource( 18 )
+frames = SubResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -928,7 +949,7 @@ __meta__ = {
 [node name="Console" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 128, 80 )
 z_index = -1
-frames = SubResource( 25 )
+frames = SubResource( 22 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -936,7 +957,7 @@ __meta__ = {
 [node name="PC" type="AnimatedSprite" parent="Objects"]
 position = Vector2( 256, 107 )
 z_index = -1
-frames = SubResource( 32 )
+frames = SubResource( 28 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -957,13 +978,13 @@ texture = ExtResource( 10 )
 
 [node name="WindowAnim" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 193, 48 )
-frames = SubResource( 45 )
+frames = SubResource( 39 )
 animation = "window"
 frame = 5
 
 [node name="WindowAnim2" type="AnimatedSprite" parent="Objects/Windows"]
 position = Vector2( 64, 48 )
-frames = SubResource( 45 )
+frames = SubResource( 39 )
 animation = "window"
 frame = 5
 
@@ -988,7 +1009,7 @@ margin_top = 28.0
 margin_right = 64.0004
 margin_bottom = 42.0001
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Health"
 align = 1
 __meta__ = {
@@ -1001,7 +1022,7 @@ margin_left = 67.5287
 margin_top = 26.6933
 margin_right = 107.529
 margin_bottom = 40.6933
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 41 )
 custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 text = "+0"
 script = ExtResource( 6 )
@@ -1024,7 +1045,7 @@ margin_top = 28.0
 margin_right = 82.0
 margin_bottom = 42.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 48 )
+custom_fonts/font = SubResource( 42 )
 text = "Happiness"
 align = 1
 __meta__ = {
@@ -1037,7 +1058,7 @@ margin_left = 67.7055
 margin_top = 26.8406
 margin_right = 107.705
 margin_bottom = 40.8406
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 41 )
 custom_colors/font_color = Color( 0.807843, 0.776471, 0.137255, 1 )
 text = "+0"
 script = ExtResource( 6 )
@@ -1063,7 +1084,7 @@ margin_left = 6.00677
 margin_top = 18.0203
 margin_right = 56.0068
 margin_bottom = 33.0203
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 43 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7:00"
 align = 1
@@ -1077,7 +1098,7 @@ margin_left = 6.00677
 margin_top = 33.0203
 margin_right = 56.0068
 margin_bottom = 46.0203
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 44 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 align = 1
@@ -1092,7 +1113,7 @@ margin_top = 75.0
 margin_right = 510.0
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 45 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "0 $"
 align = 1
@@ -1108,7 +1129,7 @@ margin_top = 0.133812
 margin_right = 176.177
 margin_bottom = 14.1338
 rect_scale = Vector2( 1.30344, 1.38164 )
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 41 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
 script = ExtResource( 6 )
@@ -1132,13 +1153,13 @@ __meta__ = {
 }
 
 [node name="Start" type="Button" parent="Menu"]
-margin_left = 194.759
-margin_top = 183.413
-margin_right = 274.759
-margin_bottom = 203.413
-custom_styles/hover = SubResource( 52 )
-custom_styles/pressed = SubResource( 53 )
-custom_styles/normal = SubResource( 1 )
+margin_left = 192.775
+margin_top = 162.38
+margin_right = 272.775
+margin_bottom = 182.38
+custom_styles/hover = SubResource( 46 )
+custom_styles/pressed = SubResource( 47 )
+custom_styles/normal = SubResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1148,13 +1169,281 @@ margin_left = 193.777
 margin_top = 217.36
 margin_right = 273.777
 margin_bottom = 237.36
-custom_styles/hover = SubResource( 54 )
-custom_styles/pressed = SubResource( 55 )
-custom_styles/normal = SubResource( 56 )
+custom_styles/hover = SubResource( 51 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/normal = SubResource( 51 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tutorial" type="Button" parent="Menu"]
+margin_left = 194.06
+margin_top = 190.091
+margin_right = 274.06
+margin_bottom = 210.091
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/normal = SubResource( 52 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credit" type="Button" parent="Menu"]
+margin_left = 192.822
+margin_top = 243.147
+margin_right = 272.822
+margin_bottom = 263.147
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/normal = SubResource( 54 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSPanel" type="Panel" parent="Menu"]
+visible = false
+margin_left = 88.4652
+margin_top = 16.1341
+margin_right = 388.465
+margin_bottom = 296.134
+custom_styles/panel = SubResource( 56 )
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="Menu/HSPanel"]
+margin_left = 75.1313
+margin_top = 80.2345
+margin_right = 117.131
+margin_bottom = 97.2345
+custom_fonts/font = ExtResource( 33 )
+text = "Date"
+
+[node name="Date1" type="Label" parent="Menu/HSPanel"]
+margin_left = 67.1428
+margin_top = 113.87
+margin_right = 122.143
+margin_bottom = 130.87
+custom_fonts/font = ExtResource( 33 )
+text = "20 Dec"
+align = 1
+
+[node name="Date2" type="Label" parent="Menu/HSPanel"]
+margin_left = 66.7223
+margin_top = 136.995
+margin_right = 121.722
+margin_bottom = 153.995
+custom_fonts/font = ExtResource( 33 )
+text = "20 Dec"
+align = 1
+
+[node name="Date3" type="Label" parent="Menu/HSPanel"]
+margin_left = 67.1427
+margin_top = 160.12
+margin_right = 122.143
+margin_bottom = 177.12
+custom_fonts/font = ExtResource( 33 )
+text = "20 Dec"
+align = 1
+
+[node name="Date4" type="Label" parent="Menu/HSPanel"]
+margin_left = 66.3018
+margin_top = 184.506
+margin_right = 121.302
+margin_bottom = 201.506
+custom_fonts/font = ExtResource( 33 )
+text = "20 Dec"
+align = 1
+
+[node name="Date5" type="Label" parent="Menu/HSPanel"]
+margin_left = 66.3018
+margin_top = 209.312
+margin_right = 121.302
+margin_bottom = 226.312
+custom_fonts/font = ExtResource( 33 )
+text = "20 Dec"
+align = 1
+
+[node name="DS1" type="Label" parent="Menu/HSPanel"]
+margin_left = 141.142
+margin_top = 114.291
+margin_right = 196.142
+margin_bottom = 131.291
+custom_fonts/font = ExtResource( 33 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DS2" type="Label" parent="Menu/HSPanel"]
+margin_left = 141.142
+margin_top = 136.995
+margin_right = 196.142
+margin_bottom = 153.995
+custom_fonts/font = ExtResource( 33 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DS3" type="Label" parent="Menu/HSPanel"]
+margin_left = 141.142
+margin_top = 160.54
+margin_right = 196.142
+margin_bottom = 177.54
+custom_fonts/font = ExtResource( 33 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DS4" type="Label" parent="Menu/HSPanel"]
+margin_left = 140.721
+margin_top = 184.085
+margin_right = 195.721
+margin_bottom = 201.085
+custom_fonts/font = ExtResource( 33 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DS5" type="Label" parent="Menu/HSPanel"]
+margin_left = 140.721
+margin_top = 208.892
+margin_right = 195.721
+margin_bottom = 225.892
+custom_fonts/font = ExtResource( 33 )
+text = "20"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money1" type="Label" parent="Menu/HSPanel"]
+margin_left = 216.822
+margin_top = 113.87
+margin_right = 271.822
+margin_bottom = 130.87
+custom_fonts/font = ExtResource( 33 )
+text = "$5000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money2" type="Label" parent="Menu/HSPanel"]
+margin_left = 217.243
+margin_top = 137.416
+margin_right = 272.243
+margin_bottom = 154.416
+custom_fonts/font = ExtResource( 33 )
+text = "$5000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money3" type="Label" parent="Menu/HSPanel"]
+margin_left = 216.822
+margin_top = 161.381
+margin_right = 271.822
+margin_bottom = 178.381
+custom_fonts/font = ExtResource( 33 )
+text = "$5000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money4" type="Label" parent="Menu/HSPanel"]
+margin_left = 217.243
+margin_top = 184.085
+margin_right = 272.243
+margin_bottom = 201.085
+custom_fonts/font = ExtResource( 33 )
+text = "$5000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money5" type="Label" parent="Menu/HSPanel"]
+margin_left = 218.084
+margin_top = 208.892
+margin_right = 273.084
+margin_bottom = 225.892
+custom_fonts/font = ExtResource( 33 )
+text = "$5000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DaySurvive" type="Label" parent="Menu/HSPanel"]
+margin_left = 104.003
+margin_top = 70.6394
+margin_right = 233.003
+margin_bottom = 107.639
+custom_fonts/font = ExtResource( 33 )
+text = "Days 
+Survived"
+align = 1
+
+[node name="Money" type="Label" parent="Menu/HSPanel"]
+margin_left = 218.877
+margin_top = 79.3937
+margin_right = 272.877
+margin_bottom = 94.3937
+custom_fonts/font = ExtResource( 33 )
+text = "Money"
+
+[node name="1st" type="Label" parent="Menu/HSPanel"]
+margin_left = 20.0
+margin_top = 114.362
+margin_right = 60.0
+margin_bottom = 129.362
+custom_fonts/font = ExtResource( 33 )
+text = "1st"
+
+[node name="2nd" type="Label" parent="Menu/HSPanel"]
+margin_left = 20.0
+margin_top = 137.487
+margin_right = 60.0
+margin_bottom = 152.487
+custom_fonts/font = ExtResource( 33 )
+text = "2nd"
+
+[node name="3rd" type="Label" parent="Menu/HSPanel"]
+margin_left = 20.0
+margin_top = 161.032
+margin_right = 60.0
+margin_bottom = 176.032
+custom_fonts/font = ExtResource( 33 )
+text = "3rd"
+
+[node name="4th" type="Label" parent="Menu/HSPanel"]
+margin_left = 20.0
+margin_top = 184.577
+margin_right = 60.0
+margin_bottom = 199.577
+custom_fonts/font = ExtResource( 33 )
+text = "4th"
+
+[node name="5th" type="Label" parent="Menu/HSPanel"]
+margin_left = 20.0
+margin_top = 208.542
+margin_right = 60.0
+margin_bottom = 223.542
+custom_fonts/font = ExtResource( 33 )
+text = "5th"
 [connection signal="visibility_changed" from="GUI/HealthBar/Status" to="GUI/HealthBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/HappinessBar/Status" to="GUI/HappinessBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/MoneyText/Status" to="GUI/MoneyText/Status" method="_on_Status_visibility_changed"]
 [connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/Highscore" to="." method="_on_Highscore_pressed"]
