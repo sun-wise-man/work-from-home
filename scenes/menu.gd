@@ -18,3 +18,8 @@ func _process(delta):
 func _on_Start_pressed():
 	playScene = true
 	path = "res://scenes/main.tscn"
+
+
+func _on_Highscore_pressed():
+	$Menu/HSPanel.visible = true
+	$Menu/HSPanel.show_data()
