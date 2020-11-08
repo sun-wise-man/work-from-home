@@ -700,15 +700,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -989,51 +989,51 @@ size = 13
 extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=85]
+[sub_resource type="StyleBoxTexture" id=74]
 texture = ExtResource( 58 )
 region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
 
-[sub_resource type="StyleBoxTexture" id=86]
+[sub_resource type="StyleBoxTexture" id=75]
 texture = ExtResource( 58 )
 region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
 
-[sub_resource type="StyleBoxFlat" id=74]
+[sub_resource type="StyleBoxFlat" id=76]
 bg_color = Color( 0, 0, 0, 0.705882 )
 
-[sub_resource type="StyleBoxFlat" id=75]
+[sub_resource type="StyleBoxFlat" id=77]
 
-[sub_resource type="DynamicFont" id=76]
+[sub_resource type="DynamicFont" id=78]
 size = 24
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=77]
+[sub_resource type="DynamicFont" id=79]
 size = 12
 font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=78]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="StyleBoxTexture" id=79]
-texture = ExtResource( 47 )
-region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
 
 [sub_resource type="DynamicFont" id=80]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxFlat" id=81]
+[sub_resource type="StyleBoxTexture" id=81]
+texture = ExtResource( 47 )
+region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
+
+[sub_resource type="DynamicFont" id=82]
+size = 10
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=83]
 bg_color = Color( 0, 0, 0, 0.54902 )
 
-[sub_resource type="StyleBoxTexture" id=82]
+[sub_resource type="StyleBoxTexture" id=84]
 texture = ExtResource( 51 )
 region_rect = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="StyleBoxTexture" id=83]
+[sub_resource type="StyleBoxTexture" id=85]
 texture = ExtResource( 50 )
 region_rect = Rect2( 5.14925, 4.51936, 40.1181, 42.8931 )
 
-[sub_resource type="StyleBoxTexture" id=84]
+[sub_resource type="StyleBoxTexture" id=86]
 texture = ExtResource( 50 )
 region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
 
@@ -1948,13 +1948,13 @@ align = 1
 valign = 1
 
 [node name="ExitPopUp" type="Button" parent="GUI/ActivitySystem/Panel"]
-margin_left = 3.89053
-margin_top = 2.13708
-margin_right = 21.8905
-margin_bottom = 18.1371
-custom_styles/hover = SubResource( 85 )
-custom_styles/pressed = SubResource( 86 )
-custom_styles/normal = SubResource( 85 )
+margin_left = 175.289
+margin_top = 4.24679
+margin_right = 193.289
+margin_bottom = 20.2468
+custom_styles/hover = SubResource( 74 )
+custom_styles/pressed = SubResource( 75 )
+custom_styles/normal = SubResource( 74 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1963,7 +1963,7 @@ __meta__ = {
 visible = false
 margin_right = 480.0
 margin_bottom = 320.0
-custom_styles/panel = SubResource( 74 )
+custom_styles/panel = SubResource( 76 )
 script = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1976,7 +1976,7 @@ margin_left = 116.571
 margin_top = 74.1938
 margin_right = 376.571
 margin_bottom = 224.194
-custom_styles/panel = SubResource( 75 )
+custom_styles/panel = SubResource( 77 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1986,7 +1986,7 @@ margin_left = 59.429
 margin_top = 5.8062
 margin_right = 206.429
 margin_bottom = 30.8062
-custom_fonts/font = SubResource( 76 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over"
 align = 1
@@ -2017,7 +2017,7 @@ margin_left = 93.0
 margin_top = 35.0
 margin_right = 243.0
 margin_bottom = 95.0
-custom_fonts/normal_font = SubResource( 77 )
+custom_fonts/normal_font = SubResource( 79 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Send Help!"
 
@@ -2026,7 +2026,7 @@ margin_left = 7.0
 margin_top = 104.0
 margin_right = 195.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 78 )
+custom_fonts/font = SubResource( 80 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Survive for : 20 days"
 
@@ -2035,7 +2035,7 @@ margin_left = 7.72987
 margin_top = 119.515
 margin_right = 195.73
 margin_bottom = 134.515
-custom_fonts/font = SubResource( 78 )
+custom_fonts/font = SubResource( 80 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Total earning : 500 $"
 
@@ -2046,8 +2046,8 @@ margin_right = 252.138
 margin_bottom = 114.467
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 79 )
-custom_fonts/font = SubResource( 80 )
+custom_styles/normal = SubResource( 81 )
+custom_fonts/font = SubResource( 82 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Restart"
 
@@ -2058,8 +2058,8 @@ margin_right = 252.138
 margin_bottom = 139.273
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 79 )
-custom_fonts/font = SubResource( 80 )
+custom_styles/normal = SubResource( 81 )
+custom_fonts/font = SubResource( 82 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Home"
 
@@ -2068,7 +2068,7 @@ visible = false
 margin_right = 479.0
 margin_bottom = 318.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 81 )
+custom_styles/panel = SubResource( 83 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2078,7 +2078,7 @@ margin_left = 179.589
 margin_top = 95.3474
 margin_right = 299.589
 margin_bottom = 215.347
-custom_styles/panel = SubResource( 82 )
+custom_styles/panel = SubResource( 84 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2088,17 +2088,17 @@ margin_left = 6.61459
 margin_top = 6.61458
 margin_right = 21.6146
 margin_bottom = 21.6146
-custom_styles/hover = SubResource( 83 )
-custom_styles/pressed = SubResource( 84 )
-custom_styles/normal = SubResource( 83 )
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -2116,10 +2116,10 @@ __meta__ = {
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
