@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -45,6 +45,12 @@
 [ext_resource path="res://audio/Typing/447909__breviceps__keyboard-typing.wav" type="AudioStream" id=43]
 [ext_resource path="res://audio/Game Over/159408__noirenex__life-lost-game-over.wav" type="AudioStream" id=44]
 [ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
+[ext_resource path="res://sprites/UI/Text_Panel_256x.png" type="Texture" id=46]
+[ext_resource path="res://sprites/UI/Text_Button_256x.png" type="Texture" id=47]
+[ext_resource path="res://Resource/Button/Hover.tres" type="StyleBox" id=48]
+[ext_resource path="res://Resource/Button/Pressed.tres" type="StyleBox" id=49]
+[ext_resource path="res://sprites/UI/Paused_Button_50px.png" type="Texture" id=50]
+[ext_resource path="res://sprites/UI/Menu_Paused_256x.png" type="Texture" id=51]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
@@ -888,46 +894,48 @@ font_data = ExtResource( 25 )
 size = 13
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=52]
+[sub_resource type="StyleBoxTexture" id=52]
+texture = ExtResource( 46 )
+region_rect = Rect2( 15.601, 56.1494, 224.816, 141.108 )
+
+[sub_resource type="DynamicFont" id=53]
 size = 13
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=53]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=54]
-size = 10
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxTexture" id=54]
+texture = ExtResource( 47 )
+region_rect = Rect2( -0.407646, 29.9449, 80.4076, 20.2538 )
 
 [sub_resource type="DynamicFont" id=55]
-size = 12
+size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=56]
-size = 11
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxTexture" id=56]
+texture = ExtResource( 47 )
+region_rect = Rect2( -0.217072, 29.6224, 79.72, 20.6293 )
 
 [sub_resource type="DynamicFont" id=57]
-extra_spacing_char = 1
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=58]
 size = 12
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=59]
-size = 13
-extra_spacing_char = 1
+[sub_resource type="StyleBoxTexture" id=59]
+texture = ExtResource( 46 )
+region_rect = Rect2( 15.6842, 55.3158, 223.158, 145.263 )
+
+[sub_resource type="DynamicFont" id=60]
+size = 11
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxFlat" id=60]
-bg_color = Color( 0, 0, 0, 0.705882 )
-
-[sub_resource type="StyleBoxFlat" id=61]
+[sub_resource type="StyleBoxTexture" id=61]
+texture = ExtResource( 46 )
+region_rect = Rect2( 17, 56, 221, 143 )
 
 [sub_resource type="DynamicFont" id=62]
-size = 24
+extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=63]
@@ -935,12 +943,46 @@ size = 12
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=64]
+size = 13
+extra_spacing_char = 1
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=65]
+bg_color = Color( 0, 0, 0, 0.705882 )
+
+[sub_resource type="StyleBoxFlat" id=66]
+
+[sub_resource type="DynamicFont" id=67]
+size = 24
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=68]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=69]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="StyleBoxTexture" id=70]
+texture = ExtResource( 47 )
+region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
+
+[sub_resource type="DynamicFont" id=71]
 size = 10
 font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=72]
+texture = ExtResource( 50 )
+region_rect = Rect2( 5.14925, 4.51936, 40.1181, 42.8931 )
+
+[sub_resource type="StyleBoxTexture" id=73]
+texture = ExtResource( 50 )
+region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
+
+[sub_resource type="StyleBoxTexture" id=74]
+texture = ExtResource( 51 )
+region_rect = Rect2( 0, 0, 256, 256 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
@@ -1297,6 +1339,7 @@ margin_top = 117.38
 margin_right = 184.587
 margin_bottom = 157.38
 rect_scale = Vector2( 4.81913, 2.4048 )
+custom_styles/panel = SubResource( 52 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1308,16 +1351,23 @@ margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 52 )
+custom_fonts/normal_font = SubResource( 53 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 tab_size = 7
 text = "Text for question"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Option1" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 3.15092
-margin_top = 30.9877
-margin_right = 15.1509
-margin_bottom = 50.9877
+margin_left = 3.0
+margin_top = 31.0
+margin_right = 17.0
+margin_bottom = 52.0
 rect_scale = Vector2( 1.08151, 0.216734 )
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 54 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1328,27 +1378,32 @@ margin_top = 2.84982
 margin_right = 56.5077
 margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 53 )
+custom_fonts/font = SubResource( 55 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 1"
 valign = 1
 
 [node name="Option2" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 23.5119
-margin_top = 30.8921
-margin_right = 35.5119
-margin_bottom = 50.8921
+margin_left = 21.0
+margin_top = 30.5842
+margin_right = 37.0
+margin_bottom = 52.5842
 rect_scale = Vector2( 1.08151, 0.216734 )
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 56 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="GUI/DecisionPanel/Option2"]
 margin_left = 0.846161
-margin_top = 2.51065
+margin_top = 3.82492
 margin_right = 56.8462
-margin_bottom = 16.5107
+margin_bottom = 17.825
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 57 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 2"
 valign = 1
 
@@ -1369,7 +1424,7 @@ margin_top = 10.8051
 margin_right = 51.2891
 margin_bottom = 24.8051
 rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 55 )
+custom_fonts/font = SubResource( 58 )
 text = "tooltips"
 
 [node name="EventPanel" type="Panel" parent="GUI"]
@@ -1379,6 +1434,7 @@ margin_top = 249.0
 margin_right = 97.0
 margin_bottom = 289.0
 rect_scale = Vector2( 2.9478, 0.801499 )
+custom_styles/panel = SubResource( 59 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1391,7 +1447,8 @@ margin_top = 6.23829
 margin_right = 100.696
 margin_bottom = 20.2383
 rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 60 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Event Occured"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1416,6 +1473,7 @@ activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "W
 margin_right = 200.0
 margin_bottom = 160.0
 rect_scale = Vector2( 0.382225, 0.470944 )
+custom_styles/panel = SubResource( 61 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1425,7 +1483,8 @@ margin_left = 10.465
 margin_top = 16.9872
 margin_right = 139.465
 margin_bottom = 33.9872
-custom_fonts/font = SubResource( 57 )
+custom_fonts/font = SubResource( 62 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Object name"
 
 [node name="Level" type="Label" parent="GUI/ActivitySystem/Panel"]
@@ -1433,7 +1492,8 @@ margin_left = 151.743
 margin_top = 21.234
 margin_right = 191.743
 margin_bottom = 36.234
-custom_fonts/font = SubResource( 58 )
+custom_fonts/font = SubResource( 63 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "lv 1"
 
 [node name="Button" type="Button" parent="GUI/ActivitySystem/Panel"]
@@ -1441,6 +1501,9 @@ margin_left = 10.0
 margin_top = 55.0
 margin_right = 190.0
 margin_bottom = 80.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1448,7 +1511,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1461,6 +1525,9 @@ margin_left = 10.0
 margin_top = 90.0
 margin_right = 190.0
 margin_bottom = 115.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1468,7 +1535,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1478,6 +1546,9 @@ margin_left = 10.0
 margin_top = 125.0
 margin_right = 190.0
 margin_bottom = 150.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1485,7 +1556,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1494,7 +1566,7 @@ valign = 1
 visible = false
 margin_right = 480.0
 margin_bottom = 320.0
-custom_styles/panel = SubResource( 60 )
+custom_styles/panel = SubResource( 65 )
 script = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1507,7 +1579,7 @@ margin_left = 116.571
 margin_top = 74.1938
 margin_right = 376.571
 margin_bottom = 224.194
-custom_styles/panel = SubResource( 61 )
+custom_styles/panel = SubResource( 66 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1517,7 +1589,7 @@ margin_left = 59.429
 margin_top = 5.8062
 margin_right = 206.429
 margin_bottom = 30.8062
-custom_fonts/font = SubResource( 62 )
+custom_fonts/font = SubResource( 67 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over"
 align = 1
@@ -1548,7 +1620,7 @@ margin_left = 93.0
 margin_top = 35.0
 margin_right = 243.0
 margin_bottom = 95.0
-custom_fonts/normal_font = SubResource( 63 )
+custom_fonts/normal_font = SubResource( 68 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Send Help!"
 
@@ -1557,7 +1629,7 @@ margin_left = 7.0
 margin_top = 104.0
 margin_right = 195.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 69 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Survive for : 20 days"
 
@@ -1566,22 +1638,61 @@ margin_left = 7.72987
 margin_top = 119.515
 margin_right = 195.73
 margin_bottom = 134.515
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 69 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Total earning : 500 $"
 
 [node name="Button" type="Button" parent="GUI/GameOverPanel/Panel"]
 margin_left = 194.138
-margin_top = 107.921
+margin_top = 94.4667
 margin_right = 252.138
-margin_bottom = 127.921
-custom_fonts/font = SubResource( 65 )
+margin_bottom = 114.467
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 70 )
+custom_fonts/font = SubResource( 71 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Restart"
+
+[node name="Home" type="Button" parent="GUI/GameOverPanel/Panel"]
+margin_left = 194.138
+margin_top = 119.273
+margin_right = 252.138
+margin_bottom = 139.273
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 70 )
+custom_fonts/font = SubResource( 71 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Home"
+
+[node name="Pause" type="Button" parent="GUI"]
+margin_left = 6.61459
+margin_top = 6.61458
+margin_right = 21.6146
+margin_bottom = 21.6146
+custom_styles/hover = SubResource( 72 )
+custom_styles/pressed = SubResource( 73 )
+custom_styles/normal = SubResource( 72 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePanel" type="Panel" parent="GUI"]
+visible = false
+margin_left = 179.589
+margin_top = 95.3474
+margin_right = 299.589
+margin_bottom = 215.347
+custom_styles/panel = SubResource( 74 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1601,8 +1712,8 @@ text = "Restart"
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
@@ -1613,3 +1724,7 @@ text = "Restart"
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]
+[connection signal="pressed" from="GUI/GameOverPanel/Panel/Home" to="GUI/GameOverPanel" method="_on_Home_pressed"]
+[connection signal="mouse_entered" from="GUI/Pause" to="." method="_on_Pause_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Pause" to="." method="_on_Pause_mouse_exited"]
+[connection signal="pressed" from="GUI/Pause" to="." method="_on_Pause_pressed"]

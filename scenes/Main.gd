@@ -32,6 +32,7 @@ var happiness_gain_total : = 0
 var work_gain_total : = 0
 var showing_popup : bool = false
 var inside_popup : bool = false
+var pause_hover : bool = false
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -44,7 +45,7 @@ func _input(event):
 				showing_popup = true
 				$GUI/ActivitySystem.show_popup(object_fix, object_level_fix, 
 					object_cost_fix, object_position)
-			elif not showing_popup:
+			elif not showing_popup and not pause_hover:
 				object_fix = "null"
 				object_level_hover = 0
 				object_cost_fix = 0
@@ -55,7 +56,7 @@ func _input(event):
 				event_chance_pool = []
 				decision_index = []
 				move_player(event.position)
-			elif not inside_popup:
+			elif not inside_popup and not pause_hover:
 				object_fix = "null"
 				object_level_hover = 0
 				object_cost_fix = 0
@@ -65,6 +66,7 @@ func _input(event):
 func _ready():
 	time_hour = starting_hour
 	time_coroutine = time_moving()
+	$Objects/Windows.change_window(starting_hour)
 
 
 func move_player(target_position):
@@ -82,6 +84,8 @@ func pause_game():
 func unpause_game():
 	is_pause = false
 	emit_signal("unpause")
+	if $GUI/Pause.disabled == true:
+		$GUI/Pause.disabled = false
 
 func time_moving():
 	while true:
@@ -242,6 +246,7 @@ func decision_event(index : int):
 	$GUI/DecisionPanel/Text.text = question
 	$GUI/DecisionPanel/Option1/Label.text = option1
 	$GUI/DecisionPanel/Option2/Label.text = option2
+	$GUI/Pause.disabled = true
 	pause_game()
 	
 func decision_get(index):
@@ -273,3 +278,22 @@ func _on_Button2_mouse_entered():
 
 func _on_Button3_mouse_entered():
 	inside_popup = true
+
+
+func _on_Pause_pressed():
+	if is_pause:
+		is_pause = false
+		$GUI/PausePanel.visible = false
+		unpause_game()
+	else:
+		is_pause = true
+		$GUI/PausePanel.visible = true
+		pause_game()
+
+
+func _on_Pause_mouse_entered():
+	pause_hover = true
+
+
+func _on_Pause_mouse_exited():
+	pause_hover = false
