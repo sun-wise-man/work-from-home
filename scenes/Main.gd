@@ -441,10 +441,12 @@ func _on_Pause_pressed():
 	if is_pause:
 		is_pause = false
 		$GUI/PausePanel.visible = false
+		$Audio.play_activity_sound(activity_from)
 		unpause_game()
 	else:
 		is_pause = true
 		$GUI/PausePanel.visible = true
+		$Audio.stop_all_activity_sound()
 		pause_game()
 
 

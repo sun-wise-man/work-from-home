@@ -2,7 +2,7 @@ extends Node2D
 
 
 var playScene : bool = false
-export (float) var speed = 60
+export (float) var speed = 120
 
 
 func _process(delta):
