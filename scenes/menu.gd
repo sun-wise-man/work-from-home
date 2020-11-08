@@ -34,3 +34,11 @@ func _on_ExitHS_pressed():
 func _on_Tutorial_pressed():
 	playScene = true
 	Global.tutorial = true
+
+
+func _on_ExitCredit_pressed():
+	$Menu/CreditPanel.visible = false
+
+
+func _on_Credit_pressed():
+	$Menu/CreditPanel.visible = true

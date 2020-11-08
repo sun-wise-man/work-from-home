@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://sprites/UI/Start_Button.png" type="Texture" id=1]
 [ext_resource path="res://sprites/UI/Highscore_Button.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://sprites/UI/Highscore_Panel_256x.png" type="Texture" id=32]
 [ext_resource path="res://Resource/Font.tres" type="DynamicFont" id=33]
 [ext_resource path="res://scenes/SaveSystem.gd" type="Script" id=34]
+[ext_resource path="res://Resource/Panel.tres" type="StyleBox" id=35]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Floor_Wall_64x.png 0"
@@ -849,60 +850,64 @@ font_data = ExtResource( 5 )
 size = 11
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=44]
+[sub_resource type="DynamicFont" id=57]
 size = 13
 font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=45]
+[sub_resource type="StyleBoxFlat" id=58]
 bg_color = Color( 0, 0, 0, 0.54902 )
 
-[sub_resource type="StyleBoxTexture" id=46]
+[sub_resource type="StyleBoxTexture" id=45]
 texture = ExtResource( 1 )
 region_rect = Rect2( 14.5928, 141.562, 226.382, 53.694 )
 
-[sub_resource type="StyleBoxTexture" id=47]
+[sub_resource type="StyleBoxTexture" id=46]
 texture = ExtResource( 1 )
 region_rect = Rect2( 269.219, 139.864, 228.88, 58.381 )
 
-[sub_resource type="StyleBoxTexture" id=48]
+[sub_resource type="StyleBoxTexture" id=47]
 texture = ExtResource( 1 )
 region_rect = Rect2( 14.1117, 141.562, 227.236, 53.2052 )
 
-[sub_resource type="StyleBoxTexture" id=49]
+[sub_resource type="StyleBoxTexture" id=48]
 texture = ExtResource( 2 )
 region_rect = Rect2( 14.6997, 141.204, 226.727, 53.6955 )
 
-[sub_resource type="StyleBoxTexture" id=50]
+[sub_resource type="StyleBoxTexture" id=49]
 texture = ExtResource( 2 )
 region_rect = Rect2( 271.169, 141.336, 226.408, 54.4411 )
 
-[sub_resource type="StyleBoxTexture" id=51]
+[sub_resource type="StyleBoxTexture" id=50]
 texture = ExtResource( 30 )
 region_rect = Rect2( 14.0556, 139.319, 228.717, 56.2813 )
 
-[sub_resource type="StyleBoxTexture" id=52]
+[sub_resource type="StyleBoxTexture" id=51]
 texture = ExtResource( 30 )
 region_rect = Rect2( 269.392, 142.834, 228.792, 52.7723 )
 
-[sub_resource type="StyleBoxTexture" id=53]
+[sub_resource type="StyleBoxTexture" id=52]
 texture = ExtResource( 31 )
 region_rect = Rect2( 14.6251, 139.02, 227.143, 56.6021 )
 
-[sub_resource type="StyleBoxTexture" id=54]
+[sub_resource type="StyleBoxTexture" id=53]
 texture = ExtResource( 31 )
 region_rect = Rect2( 270.569, 141.023, 227.52, 55.4139 )
 
-[sub_resource type="StyleBoxTexture" id=55]
+[sub_resource type="StyleBoxTexture" id=54]
 texture = ExtResource( 32 )
 region_rect = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="StyleBoxTexture" id=56]
+[sub_resource type="StyleBoxTexture" id=85]
 texture = ExtResource( 6 )
 region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
 
-[sub_resource type="StyleBoxTexture" id=57]
+[sub_resource type="StyleBoxTexture" id=86]
 texture = ExtResource( 6 )
 region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
+
+[sub_resource type="DynamicFont" id=87]
+size = 13
+font_data = ExtResource( 5 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -1095,7 +1100,7 @@ margin_top = 75.0
 margin_right = 379.8
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 44 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "0 $"
 align = 1
@@ -1110,7 +1115,7 @@ layer = 2
 [node name="Panel" type="Panel" parent="Menu"]
 margin_right = 479.0
 margin_bottom = 320.0
-custom_styles/panel = SubResource( 45 )
+custom_styles/panel = SubResource( 58 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1132,9 +1137,9 @@ margin_left = 192.775
 margin_top = 162.38
 margin_right = 272.775
 margin_bottom = 182.38
-custom_styles/hover = SubResource( 46 )
-custom_styles/pressed = SubResource( 47 )
-custom_styles/normal = SubResource( 48 )
+custom_styles/hover = SubResource( 45 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/normal = SubResource( 47 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1144,9 +1149,9 @@ margin_left = 193.777
 margin_top = 217.36
 margin_right = 273.777
 margin_bottom = 237.36
-custom_styles/hover = SubResource( 49 )
-custom_styles/pressed = SubResource( 50 )
-custom_styles/normal = SubResource( 49 )
+custom_styles/hover = SubResource( 48 )
+custom_styles/pressed = SubResource( 49 )
+custom_styles/normal = SubResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1156,9 +1161,9 @@ margin_left = 194.06
 margin_top = 190.091
 margin_right = 274.06
 margin_bottom = 210.091
-custom_styles/hover = SubResource( 51 )
-custom_styles/pressed = SubResource( 52 )
-custom_styles/normal = SubResource( 51 )
+custom_styles/hover = SubResource( 50 )
+custom_styles/pressed = SubResource( 51 )
+custom_styles/normal = SubResource( 50 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1168,9 +1173,9 @@ margin_left = 192.822
 margin_top = 243.147
 margin_right = 272.822
 margin_bottom = 263.147
-custom_styles/hover = SubResource( 53 )
-custom_styles/pressed = SubResource( 54 )
-custom_styles/normal = SubResource( 53 )
+custom_styles/hover = SubResource( 52 )
+custom_styles/pressed = SubResource( 53 )
+custom_styles/normal = SubResource( 52 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1181,7 +1186,7 @@ margin_left = 88.4652
 margin_top = 16.1341
 margin_right = 388.465
 margin_bottom = 296.134
-custom_styles/panel = SubResource( 55 )
+custom_styles/panel = SubResource( 54 )
 script = ExtResource( 34 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1423,13 +1428,62 @@ margin_left = 8.82942
 margin_top = 7.14763
 margin_right = 28.8294
 margin_bottom = 27.1476
-custom_styles/hover = SubResource( 56 )
-custom_styles/pressed = SubResource( 57 )
-custom_styles/normal = SubResource( 56 )
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditPanel" type="Panel" parent="Menu"]
+visible = false
+margin_left = 11.0
+margin_top = 13.0
+margin_right = 471.0
+margin_bottom = 304.0
+custom_styles/panel = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitCredit" type="Button" parent="Menu/CreditPanel"]
+margin_left = 17.5504
+margin_top = 19.6256
+margin_right = 37.5504
+margin_bottom = 39.6256
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/CreditPanel"]
+margin_left = -6.68329
+margin_top = 32.3552
+margin_right = 466.317
+margin_bottom = 270.355
+custom_fonts/font = SubResource( 87 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "credit
+
+
+Silkscreen font by Jason Kottke from Fontsquirel.com
+
+Eating An Apple - omgbong
+Life Lost Game Over - noirenex
+Shower, A - InspectorJ
+Snoring - Daxter31
+TV News Loop - DDmyzik
+Keyboard Typing - Breviceps
+- All sound effects provided by Freesound.org"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Menu/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Menu/Highscore" to="." method="_on_Highscore_pressed"]
 [connection signal="pressed" from="Menu/Tutorial" to="." method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="Menu/Credit" to="." method="_on_Credit_pressed"]
 [connection signal="pressed" from="Menu/HSPanel/ExitHS" to="." method="_on_ExitHS_pressed"]
+[connection signal="pressed" from="Menu/CreditPanel/ExitCredit" to="." method="_on_ExitCredit_pressed"]

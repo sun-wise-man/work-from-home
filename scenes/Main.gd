@@ -462,3 +462,7 @@ func _on_Pause_mouse_exited():
 
 func _on_ExitPopUp_pressed():
 	close_popup()
+
+
+func _on_Quit_pressed():
+	get_tree().change_scene("res://scenes/menu.tscn")
