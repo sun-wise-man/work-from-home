@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=2]
+[gd_scene load_steps=148 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -45,6 +45,20 @@
 [ext_resource path="res://audio/Typing/447909__breviceps__keyboard-typing.wav" type="AudioStream" id=43]
 [ext_resource path="res://audio/Game Over/159408__noirenex__life-lost-game-over.wav" type="AudioStream" id=44]
 [ext_resource path="res://audio/Sleep/114609__daxter31__snoring.wav" type="AudioStream" id=45]
+[ext_resource path="res://sprites/UI/Text_Panel_256x.png" type="Texture" id=46]
+[ext_resource path="res://sprites/UI/Text_Button_256x.png" type="Texture" id=47]
+[ext_resource path="res://Resource/Button/Hover.tres" type="StyleBox" id=48]
+[ext_resource path="res://Resource/Button/Pressed.tres" type="StyleBox" id=49]
+[ext_resource path="res://sprites/UI/Paused_Button_50px.png" type="Texture" id=50]
+[ext_resource path="res://sprites/UI/Menu_Paused_256x.png" type="Texture" id=51]
+[ext_resource path="res://sprites/UI/Buff_Happiness_64x.png" type="Texture" id=52]
+[ext_resource path="res://sprites/UI/Debuff_Happiness_64x.png" type="Texture" id=53]
+[ext_resource path="res://sprites/UI/Buff_Health_64x.png" type="Texture" id=54]
+[ext_resource path="res://sprites/UI/Debuff_Health_64x.png" type="Texture" id=55]
+[ext_resource path="res://Resource/Cover.tres" type="StyleBox" id=56]
+[ext_resource path="res://Resource/Panel.tres" type="StyleBox" id=57]
+[ext_resource path="res://sprites/UI/Close_Button_50px.png" type="Texture" id=58]
+[ext_resource path="res://sprites/UI/Quit_Button_256x.png" type="Texture" id=59]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
@@ -687,15 +701,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -865,7 +879,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=46]
-size = 13
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=47]
@@ -873,79 +887,175 @@ size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=48]
-size = 13
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=49]
-size = 11
+size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=50]
-size = 11
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxFlat" id=50]
+bg_color = Color( 0, 0, 0, 0.54902 )
 
 [sub_resource type="DynamicFont" id=51]
 size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=52]
-size = 13
+size = 10
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=53]
-size = 10
+size = 13
 font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=54]
-size = 10
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=55]
-size = 12
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=56]
 size = 11
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=57]
-extra_spacing_char = 1
+[sub_resource type="DynamicFont" id=55]
+size = 11
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=58]
-size = 12
-font_data = ExtResource( 25 )
-
-[sub_resource type="DynamicFont" id=59]
+[sub_resource type="DynamicFont" id=56]
 size = 13
-extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxFlat" id=60]
-bg_color = Color( 0, 0, 0, 0.705882 )
+[sub_resource type="StyleBoxTexture" id=57]
+texture = ExtResource( 52 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="StyleBoxFlat" id=61]
+[sub_resource type="StyleBoxTexture" id=58]
+texture = ExtResource( 53 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=59]
+texture = ExtResource( 54 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=60]
+texture = ExtResource( 55 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=61]
+texture = ExtResource( 46 )
+region_rect = Rect2( 15.601, 56.1494, 224.816, 141.108 )
 
 [sub_resource type="DynamicFont" id=62]
-size = 24
+size = 13
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=63]
-size = 12
-font_data = ExtResource( 25 )
+[sub_resource type="StyleBoxTexture" id=63]
+texture = ExtResource( 47 )
+region_rect = Rect2( -0.407646, 29.9449, 80.4076, 20.2538 )
 
 [sub_resource type="DynamicFont" id=64]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="StyleBoxTexture" id=65]
+texture = ExtResource( 47 )
+region_rect = Rect2( -0.217072, 29.6224, 79.72, 20.6293 )
+
+[sub_resource type="DynamicFont" id=66]
 size = 10
 font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=67]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=68]
+texture = ExtResource( 46 )
+region_rect = Rect2( 15.6842, 55.3158, 223.158, 145.263 )
+
+[sub_resource type="DynamicFont" id=69]
+size = 11
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=70]
+texture = ExtResource( 46 )
+region_rect = Rect2( 17, 56, 221, 143 )
+
+[sub_resource type="DynamicFont" id=71]
+extra_spacing_char = 1
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=72]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=73]
+size = 13
+extra_spacing_char = 1
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=74]
+texture = ExtResource( 58 )
+region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
+
+[sub_resource type="StyleBoxTexture" id=75]
+texture = ExtResource( 58 )
+region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
+
+[sub_resource type="StyleBoxFlat" id=76]
+bg_color = Color( 0, 0, 0, 0.705882 )
+
+[sub_resource type="StyleBoxFlat" id=77]
+
+[sub_resource type="DynamicFont" id=78]
+size = 24
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=79]
+size = 12
+font_data = ExtResource( 25 )
+
+[sub_resource type="DynamicFont" id=80]
+size = 10
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=81]
+texture = ExtResource( 47 )
+region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
+
+[sub_resource type="DynamicFont" id=82]
+size = 10
+font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=83]
+bg_color = Color( 0, 0, 0, 0.54902 )
+
+[sub_resource type="StyleBoxTexture" id=84]
+texture = ExtResource( 51 )
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="StyleBoxTexture" id=85]
+texture = ExtResource( 59 )
+region_rect = Rect2( 14.3605, 141.315, 228.119, 55.132 )
+
+[sub_resource type="StyleBoxTexture" id=86]
+texture = ExtResource( 59 )
+region_rect = Rect2( 270.339, 139.555, 227.52, 56.2813 )
+
+[sub_resource type="StyleBoxTexture" id=87]
+texture = ExtResource( 50 )
+region_rect = Rect2( 5.14925, 4.51936, 40.1181, 42.8931 )
+
+[sub_resource type="StyleBoxTexture" id=88]
+texture = ExtResource( 50 )
+region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
 seconds_per_hour = 3.0
 starting_hour = 7
+buff_debuff_time = 5
+happiness_buff_chance = 50
+happiness_debuff_chance = 50
+health_buff_chance = 50
+health_debuff_chance = 50
+money_buff_amplifier = 1.2
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -1137,8 +1247,289 @@ volume_db = -10.0
 stream = ExtResource( 42 )
 volume_db = -35.0
 
+[node name="Tutorial" type="CanvasLayer" parent="."]
+
+[node name="Tutorial1" type="Control" parent="Tutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Tutorial/Tutorial1"]
+margin_left = 68.0
+margin_top = 6.0
+margin_right = 259.0
+margin_bottom = 78.0
+custom_styles/panel = ExtResource( 57 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Tutorial1/Panel"]
+margin_left = 4.0
+margin_top = 5.0
+margin_right = 186.0
+margin_bottom = 69.0
+custom_fonts/normal_font = SubResource( 46 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Welcome to Work from Home
+
+
+Press anywhere to move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial2" type="Control" parent="Tutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Tutorial/Tutorial2"]
+margin_left = 286.677
+margin_top = 89.3348
+margin_right = 463.677
+margin_bottom = 137.335
+custom_styles/panel = ExtResource( 57 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial2/Panel"]
+margin_left = 4.33823
+margin_top = 3.3371
+margin_right = 174.338
+margin_bottom = 44.3371
+custom_fonts/font = SubResource( 47 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Your health and happiness 
+will reduce overtime,
+keep it above 0 to survive"
+
+[node name="Tutorial3" type="Control" parent="Tutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 296.0
+margin_bottom = 59.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel6" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 256.0
+margin_top = 59.0
+margin_right = 295.0
+margin_bottom = 75.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel5" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 159.0
+margin_top = 59.0
+margin_right = 256.0
+margin_bottom = 111.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 25.0
+margin_top = 59.0
+margin_right = 97.0
+margin_bottom = 191.0
+custom_styles/panel = ExtResource( 56 )
+
+[node name="Panel3" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 97.0
+margin_top = 111.0
+margin_right = 257.0
+margin_bottom = 296.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel8" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 257.0
+margin_top = 125.0
+margin_right = 384.0
+margin_bottom = 229.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel11" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 384.0
+margin_top = 158.0
+margin_right = 455.0
+margin_bottom = 229.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel13" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 418.0
+margin_top = 87.0
+margin_right = 456.0
+margin_bottom = 158.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel12" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 392.495
+margin_top = 229.263
+margin_right = 463.495
+margin_bottom = 300.263
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel10" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 257.0
+margin_top = 229.0
+margin_right = 347.0
+margin_bottom = 332.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel9" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 288.0
+margin_top = 74.0
+margin_right = 384.0
+margin_bottom = 125.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 65.0
+margin_top = 190.53
+margin_right = 97.0
+margin_bottom = 302.53
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel7" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 24.0
+margin_top = 243.0
+margin_right = 65.0
+margin_bottom = 299.0
+custom_styles/panel = ExtResource( 56 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel14" type="Panel" parent="Tutorial/Tutorial3"]
+margin_left = 149.0
+margin_top = 171.0
+margin_right = 300.0
+margin_bottom = 214.0
+custom_styles/panel = ExtResource( 57 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial3/Panel14"]
+margin_left = 4.49493
+margin_top = 1.87288
+margin_right = 147.495
+margin_bottom = 40.8729
+custom_fonts/font = SubResource( 48 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Click these objects to
+gain happiness, health,
+or money"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial4" type="Control" parent="Tutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Tutorial/Tutorial4"]
+margin_left = 46.6164
+margin_top = 203.947
+margin_right = 303.616
+margin_bottom = 241.947
+custom_styles/panel = ExtResource( 57 )
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial4/Panel"]
+margin_left = 11.1244
+margin_top = 5.82705
+margin_right = 246.124
+margin_bottom = 30.827
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When you are doing an activity,
+there is a chance an event will occur"
+
+[node name="Tutorial5" type="Control" parent="Tutorial"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Tutorial/Tutorial5"]
+margin_left = 218.633
+margin_top = 89.0483
+margin_right = 469.633
+margin_bottom = 136.048
+custom_styles/panel = ExtResource( 57 )
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial5/Panel2"]
+margin_left = 11.1244
+margin_top = 5.82705
+margin_right = 246.124
+margin_bottom = 30.827
+custom_fonts/font = SubResource( 49 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "When your bar is full/almost empty,
+there is a chance you 
+will get a buff/debuff"
+
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
+
+[node name="Debuff" type="Panel" parent="GUI"]
+visible = false
+margin_right = 480.0
+margin_bottom = 321.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HealthBar" type="TextureProgress" parent="GUI"]
 margin_left = 379.0
@@ -1159,7 +1550,7 @@ margin_top = 28.0
 margin_right = 64.0004
 margin_bottom = 42.0001
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 51 )
 text = "Health"
 align = 1
 __meta__ = {
@@ -1172,7 +1563,7 @@ margin_left = 67.5287
 margin_top = 26.6933
 margin_right = 107.529
 margin_bottom = 40.6933
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 52 )
 custom_colors/font_color = Color( 0.67451, 0.196078, 0.196078, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1196,7 +1587,7 @@ margin_top = 28.0
 margin_right = 82.0
 margin_bottom = 42.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 48 )
+custom_fonts/font = SubResource( 53 )
 text = "Happiness"
 align = 1
 __meta__ = {
@@ -1209,7 +1600,7 @@ margin_left = 67.7055
 margin_top = 26.8406
 margin_right = 107.705
 margin_bottom = 40.8406
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 52 )
 custom_colors/font_color = Color( 0.807843, 0.776471, 0.137255, 1 )
 text = "+0"
 script = ExtResource( 29 )
@@ -1236,7 +1627,7 @@ margin_left = 6.00677
 margin_top = 18.0203
 margin_right = 56.0068
 margin_bottom = 33.0203
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 54 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7:00"
 align = 1
@@ -1250,7 +1641,7 @@ margin_left = 6.00677
 margin_top = 33.0203
 margin_right = 56.0068
 margin_bottom = 46.0203
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 55 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Day 1"
 align = 1
@@ -1260,12 +1651,12 @@ __meta__ = {
 }
 
 [node name="MoneyText" type="Label" parent="GUI"]
-margin_left = 300.0
+margin_left = 309.8
 margin_top = 75.0
-margin_right = 510.0
+margin_right = 379.8
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 56 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "0 $"
 align = 1
@@ -1276,15 +1667,59 @@ __meta__ = {
 
 [node name="Status" type="Label" parent="GUI/MoneyText"]
 visible = false
-margin_left = 136.177
-margin_top = 0.133812
-margin_right = 176.177
-margin_bottom = 14.1338
+margin_left = 75.405
+margin_top = 0.451988
+margin_right = 115.405
+margin_bottom = 14.452
 rect_scale = Vector2( 1.30344, 1.38164 )
-custom_fonts/font = SubResource( 47 )
+custom_fonts/font = SubResource( 52 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
 script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HappinessBuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 391.682
+margin_top = 70.2252
+margin_right = 407.682
+margin_bottom = 86.2252
+custom_styles/panel = SubResource( 57 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HappinessDebuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 391.682
+margin_top = 70.2252
+margin_right = 407.682
+margin_bottom = 86.2252
+custom_styles/panel = SubResource( 58 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 413.136
+margin_top = 70.0928
+margin_right = 429.136
+margin_bottom = 86.0928
+custom_styles/panel = SubResource( 59 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthDebuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 413.136
+margin_top = 70.0928
+margin_right = 429.136
+margin_bottom = 86.0928
+custom_styles/panel = SubResource( 60 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1297,6 +1732,7 @@ margin_top = 117.38
 margin_right = 184.587
 margin_bottom = 157.38
 rect_scale = Vector2( 4.81913, 2.4048 )
+custom_styles/panel = SubResource( 61 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1308,16 +1744,23 @@ margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 52 )
+custom_fonts/normal_font = SubResource( 62 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 tab_size = 7
 text = "Text for question"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Option1" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 3.15092
-margin_top = 30.9877
-margin_right = 15.1509
-margin_bottom = 50.9877
+margin_left = 3.0
+margin_top = 31.0
+margin_right = 17.0
+margin_bottom = 52.0
 rect_scale = Vector2( 1.08151, 0.216734 )
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 63 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1328,27 +1771,32 @@ margin_top = 2.84982
 margin_right = 56.5077
 margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 53 )
+custom_fonts/font = SubResource( 64 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 1"
 valign = 1
 
 [node name="Option2" type="Button" parent="GUI/DecisionPanel"]
-margin_left = 23.5119
-margin_top = 30.8921
-margin_right = 35.5119
-margin_bottom = 50.8921
+margin_left = 21.0
+margin_top = 30.5842
+margin_right = 37.0
+margin_bottom = 52.5842
 rect_scale = Vector2( 1.08151, 0.216734 )
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 65 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="GUI/DecisionPanel/Option2"]
 margin_left = 0.846161
-margin_top = 2.51065
+margin_top = 3.82492
 margin_right = 56.8462
-margin_bottom = 16.5107
+margin_bottom = 17.825
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 54 )
+custom_fonts/font = SubResource( 66 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 2"
 valign = 1
 
@@ -1369,7 +1817,7 @@ margin_top = 10.8051
 margin_right = 51.2891
 margin_bottom = 24.8051
 rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 55 )
+custom_fonts/font = SubResource( 67 )
 text = "tooltips"
 
 [node name="EventPanel" type="Panel" parent="GUI"]
@@ -1379,6 +1827,7 @@ margin_top = 249.0
 margin_right = 97.0
 margin_bottom = 289.0
 rect_scale = Vector2( 2.9478, 0.801499 )
+custom_styles/panel = SubResource( 68 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1391,14 +1840,14 @@ margin_top = 6.23829
 margin_right = 100.696
 margin_bottom = 20.2383
 rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 69 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Event Occured"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ActivitySystem" type="Control" parent="GUI"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 28 )
@@ -1416,6 +1865,8 @@ activity_desc = PoolStringArray( "Go to sleep", "Make a meal", "Play a game", "W
 margin_right = 200.0
 margin_bottom = 160.0
 rect_scale = Vector2( 0.382225, 0.470944 )
+mouse_filter = 1
+custom_styles/panel = SubResource( 70 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1425,7 +1876,8 @@ margin_left = 10.465
 margin_top = 16.9872
 margin_right = 139.465
 margin_bottom = 33.9872
-custom_fonts/font = SubResource( 57 )
+custom_fonts/font = SubResource( 71 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Object name"
 
 [node name="Level" type="Label" parent="GUI/ActivitySystem/Panel"]
@@ -1433,7 +1885,8 @@ margin_left = 151.743
 margin_top = 21.234
 margin_right = 191.743
 margin_bottom = 36.234
-custom_fonts/font = SubResource( 58 )
+custom_fonts/font = SubResource( 72 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "lv 1"
 
 [node name="Button" type="Button" parent="GUI/ActivitySystem/Panel"]
@@ -1441,6 +1894,9 @@ margin_left = 10.0
 margin_top = 55.0
 margin_right = 190.0
 margin_bottom = 80.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1448,7 +1904,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 73 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1461,6 +1918,9 @@ margin_left = 10.0
 margin_top = 90.0
 margin_right = 190.0
 margin_bottom = 115.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1468,7 +1928,8 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 73 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
@@ -1478,6 +1939,9 @@ margin_left = 10.0
 margin_top = 125.0
 margin_right = 190.0
 margin_bottom = 150.0
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = ExtResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1485,16 +1949,29 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 73 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
 valign = 1
+
+[node name="ExitPopUp" type="Button" parent="GUI/ActivitySystem/Panel"]
+margin_left = 175.289
+margin_top = 4.24679
+margin_right = 193.289
+margin_bottom = 20.2468
+custom_styles/hover = SubResource( 74 )
+custom_styles/pressed = SubResource( 75 )
+custom_styles/normal = SubResource( 74 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GameOverPanel" type="Panel" parent="GUI"]
 visible = false
 margin_right = 480.0
 margin_bottom = 320.0
-custom_styles/panel = SubResource( 60 )
+custom_styles/panel = SubResource( 76 )
 script = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1507,7 +1984,7 @@ margin_left = 116.571
 margin_top = 74.1938
 margin_right = 376.571
 margin_bottom = 224.194
-custom_styles/panel = SubResource( 61 )
+custom_styles/panel = SubResource( 77 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1517,7 +1994,7 @@ margin_left = 59.429
 margin_top = 5.8062
 margin_right = 206.429
 margin_bottom = 30.8062
-custom_fonts/font = SubResource( 62 )
+custom_fonts/font = SubResource( 78 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over"
 align = 1
@@ -1548,7 +2025,7 @@ margin_left = 93.0
 margin_top = 35.0
 margin_right = 243.0
 margin_bottom = 95.0
-custom_fonts/normal_font = SubResource( 63 )
+custom_fonts/normal_font = SubResource( 79 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Send Help!"
 
@@ -1557,7 +2034,7 @@ margin_left = 7.0
 margin_top = 104.0
 margin_right = 195.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 80 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Survive for : 20 days"
 
@@ -1566,22 +2043,82 @@ margin_left = 7.72987
 margin_top = 119.515
 margin_right = 195.73
 margin_bottom = 134.515
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 80 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Total earning : 500 $"
 
 [node name="Button" type="Button" parent="GUI/GameOverPanel/Panel"]
 margin_left = 194.138
-margin_top = 107.921
+margin_top = 94.4667
 margin_right = 252.138
-margin_bottom = 127.921
-custom_fonts/font = SubResource( 65 )
+margin_bottom = 114.467
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 81 )
+custom_fonts/font = SubResource( 82 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Restart"
-[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+
+[node name="Home" type="Button" parent="GUI/GameOverPanel/Panel"]
+margin_left = 194.138
+margin_top = 119.273
+margin_right = 252.138
+margin_bottom = 139.273
+custom_styles/hover = ExtResource( 48 )
+custom_styles/pressed = ExtResource( 49 )
+custom_styles/normal = SubResource( 81 )
+custom_fonts/font = SubResource( 82 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Home"
+
+[node name="PausePanel" type="Panel" parent="GUI"]
+visible = false
+margin_right = 479.0
+margin_bottom = 318.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 83 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausePanel" type="Panel" parent="GUI/PausePanel"]
+margin_left = 179.589
+margin_top = 95.3474
+margin_right = 299.589
+margin_bottom = 215.347
+custom_styles/panel = SubResource( 84 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="GUI/PausePanel/PausePanel"]
+margin_left = 19.5268
+margin_top = 73.4779
+margin_right = 99.5268
+margin_bottom = 93.4779
+custom_styles/hover = SubResource( 85 )
+custom_styles/pressed = SubResource( 86 )
+custom_styles/normal = SubResource( 85 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="GUI"]
+margin_left = 6.61459
+margin_top = 6.61458
+margin_right = 21.6146
+margin_bottom = 21.6146
+custom_styles/hover = SubResource( 87 )
+custom_styles/pressed = SubResource( 88 )
+custom_styles/normal = SubResource( 87 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -1600,10 +2137,10 @@ text = "Restart"
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button" to="." method="_on_Button_mouse_entered"]
@@ -1612,4 +2149,10 @@ text = "Restart"
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button2" to="GUI/ActivitySystem" method="_on_Button2_pressed"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel/Button3" to="." method="_on_Button3_mouse_entered"]
 [connection signal="pressed" from="GUI/ActivitySystem/Panel/Button3" to="GUI/ActivitySystem" method="_on_Button3_pressed"]
+[connection signal="pressed" from="GUI/ActivitySystem/Panel/ExitPopUp" to="." method="_on_ExitPopUp_pressed"]
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]
+[connection signal="pressed" from="GUI/GameOverPanel/Panel/Home" to="GUI/GameOverPanel" method="_on_Home_pressed"]
+[connection signal="pressed" from="GUI/PausePanel/PausePanel/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="mouse_entered" from="GUI/Pause" to="." method="_on_Pause_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/Pause" to="." method="_on_Pause_mouse_exited"]
+[connection signal="pressed" from="GUI/Pause" to="." method="_on_Pause_pressed"]

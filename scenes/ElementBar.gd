@@ -11,8 +11,8 @@ func _ready():
 	decrease_rate = start_dr
 	
 func _on_World_hour_pass(time):
-	if is_decreasing:
-		value += decrease_rate
+	#if is_decreasing:
+		#value += decrease_rate
 	hour_count += 1
 	if hour_count == hour_per_increase:
 		decrease_rate += increase_dr_rate
