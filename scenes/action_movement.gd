@@ -1,19 +1,23 @@
 extends KinematicBody2D
 
 export (int) var speed = 50
+export (int) var buff_speed = 20
+export (int) var debuff_speed = -20
 
 var idle = true
 signal path_done
+var current_speed
 
 # Untuk menyimpan runtutan perjalanan
 var path : = PoolVector2Array()
 
 func _ready():
+	current_speed = speed
 	$AnimatedSprite.play("idle")
 
 func _process(delta):
 	# Calculate the movement distance for this frame
-	var distance_to_walk = speed * delta
+	var distance_to_walk = current_speed * delta
 	
 	# Move the player along the path until he has run out of movement or the path ends.
 	while distance_to_walk > 0 and path.size() > 0:

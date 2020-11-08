@@ -3,6 +3,12 @@ extends Node2D
 
 export (float) var seconds_per_hour = 10.0
 export (int) var starting_hour
+export (int) var buff_debuff_time
+export (int) var happiness_buff_chance
+export (int) var happiness_debuff_chance
+export (int) var health_buff_chance
+export (int) var health_debuff_chance
+export (float) var money_buff_amplifier
 signal hour_pass(time)
 signal unpause
 var time_hour : int
@@ -33,6 +39,12 @@ var work_gain_total : = 0
 var showing_popup : bool = false
 var inside_popup : bool = false
 var pause_hover : bool = false
+var happiness_buff_time : int = 0
+var health_buff_time : int = 0
+var happiness_buff : bool = false
+var health_buff : bool = false
+var happiness_debuff : bool = false
+var health_debuff : bool = false
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -159,6 +171,8 @@ func _on_World_hour_pass(time):
 			yield(self, "unpause")
 		$GUI/HealthBar.value += health_gain_total
 		$GUI/HappinessBar.value += happiness_gain_total
+		if happiness_buff:
+			work_gain_total = int(work_gain_total * money_buff_amplifier)
 		money += work_gain_total
 	health_gain_total += $GUI/HealthBar.decrease_rate
 	happiness_gain_total += $GUI/HappinessBar.decrease_rate
@@ -166,6 +180,7 @@ func _on_World_hour_pass(time):
 	$GUI/HappinessBar/Status.get_gain_number(happiness_gain_total)
 	$GUI/MoneyText/Status.get_gain_number(work_gain_total)
 	reset_money()
+	buff_check()
 	if $GUI/HealthBar.value <= 0:
 		pause_game()
 		$GUI/GameOverPanel.game_over(1, day_count, money)
@@ -258,6 +273,66 @@ func decision_get(index):
 		chance_event(output_index)
 	elif output == "decision":
 		decision_event(output_index)
+
+func buff_check():
+	if happiness_buff:
+		happiness_buff_time -= 1
+		if happiness_buff_time <= 0 or $GUI/HappinessBar.value <= 50:
+			happiness_buff_time = 0
+			happiness_buff = false
+			$GUI/HappinessBuff.visible = false
+	elif happiness_debuff:
+		happiness_buff_time -= 1
+		if happiness_buff_time <= 0 or $GUI/HappinessBar.value >= 50:
+			happiness_buff_time = 0
+			happiness_debuff = false
+			$GUI/HappinessDebuff.visible = false
+			$Player.current_speed -= $Player.debuff_speed
+	if health_buff:
+		health_buff_time -= 1
+		if health_buff_time <= 0 or $GUI/HealthBar.value <= 50:
+			health_buff_time = 0
+			health_buff = false
+			$GUI/HealthBuff.visible = false
+			$Player.current_speed -= $Player.buff_speed
+	elif health_debuff:
+		health_buff_time -= 1
+		if health_buff_time <= 0 or $GUI/HealthBar.value >= 50:
+			health_buff_time = 0
+			health_debuff = false
+			$GUI/HealthDebuff.visible = false
+			$GUI/Debuff.visible = false
+	if $GUI/HappinessBar.value == 100:
+		randomize()
+		var number = randi() % 100
+		if number <= happiness_buff_chance:
+			happiness_buff = true
+			happiness_buff_time += buff_debuff_time
+			$GUI/HappinessBuff.visible = true
+	elif $GUI/HappinessBar.value <= 10:
+		randomize()
+		var number = randi() % 100
+		if number <= happiness_debuff_chance:
+			happiness_debuff = true
+			happiness_buff_time += buff_debuff_time
+			$GUI/HappinessDebuff.visible = true
+			$Player.current_speed += $Player.debuff_speed
+	if $GUI/HealthBar.value == 100:
+		randomize()
+		var number = randi() % 100
+		if number <= health_buff_chance:
+			health_buff = true
+			health_buff_time += buff_debuff_time
+			$GUI/HealthBuff.visible = true
+			$Player.current_speed += $Player.buff_speed
+	elif $GUI/HealthBar.value <= 10:
+		randomize()
+		var number = randi() % 100
+		if number <= health_debuff_chance:
+			health_debuff = false
+			health_buff_time += buff_debuff_time
+			$GUI/HealthDebuff.visible = true
+			$GUI/Debuff.visible = true
 
 
 func _on_Panel_mouse_entered():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=2]
+[gd_scene load_steps=135 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -51,6 +51,10 @@
 [ext_resource path="res://Resource/Button/Pressed.tres" type="StyleBox" id=49]
 [ext_resource path="res://sprites/UI/Paused_Button_50px.png" type="Texture" id=50]
 [ext_resource path="res://sprites/UI/Menu_Paused_256x.png" type="Texture" id=51]
+[ext_resource path="res://sprites/UI/Buff_Happiness_64x.png" type="Texture" id=52]
+[ext_resource path="res://sprites/UI/Debuff_Happiness_64x.png" type="Texture" id=53]
+[ext_resource path="res://sprites/UI/Buff_Health_64x.png" type="Texture" id=54]
+[ext_resource path="res://sprites/UI/Debuff_Health_64x.png" type="Texture" id=55]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
@@ -870,6 +874,9 @@ animations = [ {
 "speed": 5.02
 } ]
 
+[sub_resource type="StyleBoxFlat" id=75]
+bg_color = Color( 0, 0, 0, 0.54902 )
+
 [sub_resource type="DynamicFont" id=46]
 size = 13
 font_data = ExtResource( 25 )
@@ -893,6 +900,22 @@ font_data = ExtResource( 25 )
 [sub_resource type="DynamicFont" id=51]
 size = 13
 font_data = ExtResource( 25 )
+
+[sub_resource type="StyleBoxTexture" id=76]
+texture = ExtResource( 52 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=77]
+texture = ExtResource( 53 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=78]
+texture = ExtResource( 54 )
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="StyleBoxTexture" id=79]
+texture = ExtResource( 55 )
+region_rect = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="StyleBoxTexture" id=52]
 texture = ExtResource( 46 )
@@ -988,6 +1011,12 @@ region_rect = Rect2( 0, 0, 256, 256 )
 script = ExtResource( 10 )
 seconds_per_hour = 3.0
 starting_hour = 7
+buff_debuff_time = 5
+happiness_buff_chance = 50
+happiness_debuff_chance = 50
+health_buff_chance = 50
+health_debuff_chance = 50
+money_buff_amplifier = 1.2
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 visible = false
@@ -1182,6 +1211,16 @@ volume_db = -35.0
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="Debuff" type="Panel" parent="GUI"]
+visible = false
+margin_right = 480.0
+margin_bottom = 321.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HealthBar" type="TextureProgress" parent="GUI"]
 margin_left = 379.0
 margin_top = 12.0
@@ -1304,7 +1343,7 @@ __meta__ = {
 [node name="MoneyText" type="Label" parent="GUI"]
 margin_left = 300.0
 margin_top = 75.0
-margin_right = 510.0
+margin_right = 400.0
 margin_bottom = 91.0
 rect_scale = Vector2( 0.7, 0.7 )
 custom_fonts/font = SubResource( 51 )
@@ -1327,6 +1366,50 @@ custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "+0"
 script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HappinessBuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 391.682
+margin_top = 70.2252
+margin_right = 407.682
+margin_bottom = 86.2252
+custom_styles/panel = SubResource( 76 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HappinessDebuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 391.682
+margin_top = 70.2252
+margin_right = 407.682
+margin_bottom = 86.2252
+custom_styles/panel = SubResource( 77 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 413.136
+margin_top = 70.0928
+margin_right = 429.136
+margin_bottom = 86.0928
+custom_styles/panel = SubResource( 78 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthDebuff" type="Panel" parent="GUI"]
+visible = false
+margin_left = 413.136
+margin_top = 70.0928
+margin_right = 429.136
+margin_bottom = 86.0928
+custom_styles/panel = SubResource( 79 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
