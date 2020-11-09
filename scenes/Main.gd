@@ -447,7 +447,8 @@ func _on_Button3_mouse_entered():
 func _on_Pause_pressed():
 	if is_pause:
 		$GUI/PausePanel.visible = false
-		$Audio.play_activity_sound(activity_from)
+		if is_working:
+			$Audio.play_activity_sound(activity_from)
 		unpause_game()
 	else:
 		$GUI/PausePanel.visible = true
@@ -473,5 +474,6 @@ func _on_Quit_pressed():
 
 func _on_Continue_pressed():
 	$GUI/PausePanel.visible = false
-	$Audio.play_activity_sound(activity_from)
+	if is_working:
+		$Audio.play_activity_sound(activity_from)
 	unpause_game()
