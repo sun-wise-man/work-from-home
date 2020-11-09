@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=2]
+[gd_scene load_steps=153 format=2]
 
 [ext_resource path="res://sprites/main_walk_1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/action_movement.gd" type="Script" id=2]
@@ -59,6 +59,8 @@
 [ext_resource path="res://Resource/Panel.tres" type="StyleBox" id=57]
 [ext_resource path="res://sprites/UI/Close_Button_50px.png" type="Texture" id=58]
 [ext_resource path="res://sprites/UI/Quit_Button_256x.png" type="Texture" id=59]
+[ext_resource path="res://sprites/UI/Continue_Button.png" type="Texture" id=60]
+[ext_resource path="res://scenes/BuffTooltip.gd" type="Script" id=61]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 155.501, 158.258, 168.561, 144.25, 248.926, 142.315, 256.069, 142.513, 256.069, 157.99, 221, 209, 209, 222.075, 145, 247, 65, 150, 41, 150, 40.5613, 122.276, 63.9934, 122.475, 88, 147, 168.561, 118, 248.505, 94.3163, 145, 255, 73, 256, 73, 173, 288.561, 158.316, 418.078, 158.506, 418, 187, 98, 158, 65, 173, 441, 187, 441, 205, 418, 205, 412, 214, 412, 278, 401, 278, 400.561, 214.316, 340, 280, 318, 280, 318, 209, 340.561, 214.316, 209, 247, 88.3327, 120.51, 64.5887, 93.9015, 98.5, 102.316, 157.75, 102.316 )
@@ -701,15 +703,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "eating",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -937,6 +939,10 @@ region_rect = Rect2( 0, 0, 64, 64 )
 texture = ExtResource( 55 )
 region_rect = Rect2( 0, 0, 64, 64 )
 
+[sub_resource type="DynamicFont" id=91]
+size = 10
+font_data = ExtResource( 25 )
+
 [sub_resource type="StyleBoxTexture" id=61]
 texture = ExtResource( 46 )
 region_rect = Rect2( 15.601, 56.1494, 224.816, 141.108 )
@@ -1039,10 +1045,18 @@ texture = ExtResource( 59 )
 region_rect = Rect2( 270.339, 139.555, 227.52, 56.2813 )
 
 [sub_resource type="StyleBoxTexture" id=87]
+texture = ExtResource( 60 )
+region_rect = Rect2( 13.1632, 139.432, 227.878, 57.3372 )
+
+[sub_resource type="StyleBoxTexture" id=88]
+texture = ExtResource( 60 )
+region_rect = Rect2( 270.234, 140.633, 226.382, 55.1736 )
+
+[sub_resource type="StyleBoxTexture" id=89]
 texture = ExtResource( 50 )
 region_rect = Rect2( 5.14925, 4.51936, 40.1181, 42.8931 )
 
-[sub_resource type="StyleBoxTexture" id=88]
+[sub_resource type="StyleBoxTexture" id=90]
 texture = ExtResource( 50 )
 region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
 
@@ -1724,6 +1738,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BuffTooltip" type="Panel" parent="GUI"]
+visible = false
+margin_left = 322.0
+margin_top = 91.0
+margin_right = 419.0
+margin_bottom = 109.0
+mouse_filter = 2
+custom_styles/panel = ExtResource( 57 )
+script = ExtResource( 61 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/BuffTooltip"]
+margin_left = 3.84186
+margin_top = 2.43878
+margin_right = 97.8419
+margin_bottom = 15.4388
+custom_fonts/font = SubResource( 91 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "dark screen"
+
 [node name="DecisionPanel" type="Panel" parent="GUI"]
 pause_mode = 2
 visible = false
@@ -1848,6 +1884,7 @@ __meta__ = {
 }
 
 [node name="ActivitySystem" type="Control" parent="GUI"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 28 )
@@ -2092,10 +2129,10 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="GUI/PausePanel/PausePanel"]
-margin_left = 19.5268
-margin_top = 73.4779
-margin_right = 99.5268
-margin_bottom = 93.4779
+margin_left = 20.1214
+margin_top = 88.6403
+margin_right = 100.121
+margin_bottom = 108.64
 custom_styles/hover = SubResource( 85 )
 custom_styles/pressed = SubResource( 86 )
 custom_styles/normal = SubResource( 85 )
@@ -2103,14 +2140,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Continue" type="Button" parent="GUI/PausePanel/PausePanel"]
+margin_left = 19.6219
+margin_top = 65.1091
+margin_right = 99.6219
+margin_bottom = 85.1091
+custom_styles/hover = SubResource( 87 )
+custom_styles/pressed = SubResource( 88 )
+custom_styles/normal = SubResource( 87 )
+
 [node name="Pause" type="Button" parent="GUI"]
 margin_left = 6.61459
 margin_top = 6.61458
 margin_right = 21.6146
 margin_bottom = 21.6146
-custom_styles/hover = SubResource( 87 )
-custom_styles/pressed = SubResource( 88 )
-custom_styles/normal = SubResource( 87 )
+custom_styles/hover = SubResource( 89 )
+custom_styles/pressed = SubResource( 90 )
+custom_styles/normal = SubResource( 89 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2133,13 +2179,21 @@ __meta__ = {
 [connection signal="visibility_changed" from="GUI/HealthBar/Status" to="GUI/HealthBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/HappinessBar/Status" to="GUI/HappinessBar/Status" method="_on_Status_visibility_changed"]
 [connection signal="visibility_changed" from="GUI/MoneyText/Status" to="GUI/MoneyText/Status" method="_on_Status_visibility_changed"]
+[connection signal="mouse_entered" from="GUI/HappinessBuff" to="GUI/BuffTooltip" method="_on_HappinessBuff_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/HappinessBuff" to="GUI/BuffTooltip" method="_on_HappinessBuff_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/HappinessDebuff" to="GUI/BuffTooltip" method="_on_HappinessDebuff_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/HappinessDebuff" to="GUI/BuffTooltip" method="_on_HappinessDebuff_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/HealthBuff" to="GUI/BuffTooltip" method="_on_HealthBuff_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/HealthBuff" to="GUI/BuffTooltip" method="_on_HealthBuff_mouse_exited"]
+[connection signal="mouse_entered" from="GUI/HealthDebuff" to="GUI/BuffTooltip" method="_on_HealthDebuff_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/HealthDebuff" to="GUI/BuffTooltip" method="_on_HealthDebuff_mouse_exited"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option1" to="GUI/DecisionPanel" method="_on_Option1_pressed"]
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
@@ -2153,6 +2207,7 @@ __meta__ = {
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Button" to="GUI/GameOverPanel" method="_on_Button_pressed"]
 [connection signal="pressed" from="GUI/GameOverPanel/Panel/Home" to="GUI/GameOverPanel" method="_on_Home_pressed"]
 [connection signal="pressed" from="GUI/PausePanel/PausePanel/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="GUI/PausePanel/PausePanel/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="mouse_entered" from="GUI/Pause" to="." method="_on_Pause_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/Pause" to="." method="_on_Pause_mouse_exited"]
 [connection signal="pressed" from="GUI/Pause" to="." method="_on_Pause_pressed"]

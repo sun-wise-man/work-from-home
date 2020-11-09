@@ -441,12 +441,10 @@ func _on_Button3_mouse_entered():
 
 func _on_Pause_pressed():
 	if is_pause:
-		is_pause = false
 		$GUI/PausePanel.visible = false
 		$Audio.play_activity_sound(activity_from)
 		unpause_game()
 	else:
-		is_pause = true
 		$GUI/PausePanel.visible = true
 		$Audio.stop_all_activity_sound()
 		pause_game()
@@ -466,3 +464,9 @@ func _on_ExitPopUp_pressed():
 
 func _on_Quit_pressed():
 	get_tree().change_scene("res://scenes/menu.tscn")
+
+
+func _on_Continue_pressed():
+	$GUI/PausePanel.visible = false
+	$Audio.play_activity_sound(activity_from)
+	unpause_game()
