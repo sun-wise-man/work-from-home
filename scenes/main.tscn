@@ -703,15 +703,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -939,124 +939,124 @@ region_rect = Rect2( 0, 0, 64, 64 )
 texture = ExtResource( 55 )
 region_rect = Rect2( 0, 0, 64, 64 )
 
-[sub_resource type="DynamicFont" id=91]
+[sub_resource type="DynamicFont" id=61]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=61]
+[sub_resource type="StyleBoxTexture" id=62]
 texture = ExtResource( 46 )
 region_rect = Rect2( 15.601, 56.1494, 224.816, 141.108 )
 
-[sub_resource type="DynamicFont" id=62]
+[sub_resource type="DynamicFont" id=63]
 size = 13
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=63]
+[sub_resource type="StyleBoxTexture" id=64]
 texture = ExtResource( 47 )
 region_rect = Rect2( -0.407646, 29.9449, 80.4076, 20.2538 )
 
-[sub_resource type="DynamicFont" id=64]
+[sub_resource type="DynamicFont" id=65]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=65]
+[sub_resource type="StyleBoxTexture" id=66]
 texture = ExtResource( 47 )
 region_rect = Rect2( -0.217072, 29.6224, 79.72, 20.6293 )
 
-[sub_resource type="DynamicFont" id=66]
+[sub_resource type="DynamicFont" id=67]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=67]
+[sub_resource type="DynamicFont" id=68]
 size = 12
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=68]
+[sub_resource type="StyleBoxTexture" id=69]
 texture = ExtResource( 46 )
 region_rect = Rect2( 15.6842, 55.3158, 223.158, 145.263 )
 
-[sub_resource type="DynamicFont" id=69]
+[sub_resource type="DynamicFont" id=70]
 size = 11
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=70]
+[sub_resource type="StyleBoxTexture" id=71]
 texture = ExtResource( 46 )
 region_rect = Rect2( 17, 56, 221, 143 )
 
-[sub_resource type="DynamicFont" id=71]
+[sub_resource type="DynamicFont" id=72]
 extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=72]
+[sub_resource type="DynamicFont" id=73]
 size = 12
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=73]
+[sub_resource type="DynamicFont" id=74]
 size = 13
 extra_spacing_char = 1
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=74]
+[sub_resource type="StyleBoxTexture" id=75]
 texture = ExtResource( 58 )
 region_rect = Rect2( 4.50745, 4.30469, 40.8674, 43.7353 )
 
-[sub_resource type="StyleBoxTexture" id=75]
+[sub_resource type="StyleBoxTexture" id=76]
 texture = ExtResource( 58 )
 region_rect = Rect2( 54.7129, 4.6352, 40.3186, 43.9543 )
 
-[sub_resource type="StyleBoxFlat" id=76]
+[sub_resource type="StyleBoxFlat" id=77]
 bg_color = Color( 0, 0, 0, 0.705882 )
 
-[sub_resource type="StyleBoxFlat" id=77]
+[sub_resource type="StyleBoxFlat" id=78]
 
-[sub_resource type="DynamicFont" id=78]
+[sub_resource type="DynamicFont" id=79]
 size = 24
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=79]
+[sub_resource type="DynamicFont" id=80]
 size = 12
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=80]
+[sub_resource type="DynamicFont" id=81]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxTexture" id=81]
+[sub_resource type="StyleBoxTexture" id=82]
 texture = ExtResource( 47 )
 region_rect = Rect2( 0.152283, 29.7171, 80.4895, 20.3907 )
 
-[sub_resource type="DynamicFont" id=82]
+[sub_resource type="DynamicFont" id=83]
 size = 10
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxFlat" id=83]
+[sub_resource type="StyleBoxFlat" id=84]
 bg_color = Color( 0, 0, 0, 0.54902 )
 
-[sub_resource type="StyleBoxTexture" id=84]
+[sub_resource type="StyleBoxTexture" id=85]
 texture = ExtResource( 51 )
 region_rect = Rect2( 0, 0, 256, 256 )
 
-[sub_resource type="StyleBoxTexture" id=85]
+[sub_resource type="StyleBoxTexture" id=86]
 texture = ExtResource( 59 )
 region_rect = Rect2( 14.3605, 141.315, 228.119, 55.132 )
 
-[sub_resource type="StyleBoxTexture" id=86]
+[sub_resource type="StyleBoxTexture" id=87]
 texture = ExtResource( 59 )
 region_rect = Rect2( 270.339, 139.555, 227.52, 56.2813 )
 
-[sub_resource type="StyleBoxTexture" id=87]
+[sub_resource type="StyleBoxTexture" id=88]
 texture = ExtResource( 60 )
 region_rect = Rect2( 13.1632, 139.432, 227.878, 57.3372 )
 
-[sub_resource type="StyleBoxTexture" id=88]
+[sub_resource type="StyleBoxTexture" id=89]
 texture = ExtResource( 60 )
 region_rect = Rect2( 270.234, 140.633, 226.382, 55.1736 )
 
-[sub_resource type="StyleBoxTexture" id=89]
+[sub_resource type="StyleBoxTexture" id=90]
 texture = ExtResource( 50 )
 region_rect = Rect2( 5.14925, 4.51936, 40.1181, 42.8931 )
 
-[sub_resource type="StyleBoxTexture" id=90]
+[sub_resource type="StyleBoxTexture" id=91]
 texture = ExtResource( 50 )
 region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
 
@@ -1756,7 +1756,7 @@ margin_left = 3.84186
 margin_top = 2.43878
 margin_right = 97.8419
 margin_bottom = 15.4388
-custom_fonts/font = SubResource( 91 )
+custom_fonts/font = SubResource( 61 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "dark screen"
 
@@ -1768,7 +1768,7 @@ margin_top = 117.38
 margin_right = 184.587
 margin_bottom = 157.38
 rect_scale = Vector2( 4.81913, 2.4048 )
-custom_styles/panel = SubResource( 61 )
+custom_styles/panel = SubResource( 62 )
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1780,7 +1780,7 @@ margin_top = 5.67094
 margin_right = 313.83
 margin_bottom = 135.671
 rect_scale = Vector2( 0.103871, 0.181936 )
-custom_fonts/normal_font = SubResource( 62 )
+custom_fonts/normal_font = SubResource( 63 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 tab_size = 7
 text = "Text for question"
@@ -1796,7 +1796,7 @@ margin_bottom = 52.0
 rect_scale = Vector2( 1.08151, 0.216734 )
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 63 )
+custom_styles/normal = SubResource( 64 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1807,7 +1807,7 @@ margin_top = 2.84982
 margin_right = 56.5077
 margin_bottom = 16.8498
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 65 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 1"
 valign = 1
@@ -1820,7 +1820,7 @@ margin_bottom = 52.5842
 rect_scale = Vector2( 1.08151, 0.216734 )
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 65 )
+custom_styles/normal = SubResource( 66 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1831,7 +1831,7 @@ margin_top = 3.82492
 margin_right = 56.8462
 margin_bottom = 17.825
 rect_scale = Vector2( 0.0929867, 0.96253 )
-custom_fonts/font = SubResource( 66 )
+custom_fonts/font = SubResource( 67 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Option 2"
 valign = 1
@@ -1853,7 +1853,7 @@ margin_top = 10.8051
 margin_right = 51.2891
 margin_bottom = 24.8051
 rect_scale = Vector2( 0.333333, 0.846158 )
-custom_fonts/font = SubResource( 67 )
+custom_fonts/font = SubResource( 68 )
 text = "tooltips"
 
 [node name="EventPanel" type="Panel" parent="GUI"]
@@ -1863,7 +1863,7 @@ margin_top = 249.0
 margin_right = 97.0
 margin_bottom = 289.0
 rect_scale = Vector2( 2.9478, 0.801499 )
-custom_styles/panel = SubResource( 68 )
+custom_styles/panel = SubResource( 69 )
 script = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1876,7 +1876,7 @@ margin_top = 6.23829
 margin_right = 100.696
 margin_bottom = 20.2383
 rect_scale = Vector2( 0.216527, 0.928298 )
-custom_fonts/font = SubResource( 69 )
+custom_fonts/font = SubResource( 70 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Event Occured"
 __meta__ = {
@@ -1903,7 +1903,7 @@ margin_right = 200.0
 margin_bottom = 160.0
 rect_scale = Vector2( 0.382225, 0.470944 )
 mouse_filter = 1
-custom_styles/panel = SubResource( 70 )
+custom_styles/panel = SubResource( 71 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1913,7 +1913,7 @@ margin_left = 10.465
 margin_top = 16.9872
 margin_right = 139.465
 margin_bottom = 33.9872
-custom_fonts/font = SubResource( 71 )
+custom_fonts/font = SubResource( 72 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Object name"
 
@@ -1922,7 +1922,7 @@ margin_left = 151.743
 margin_top = 21.234
 margin_right = 191.743
 margin_bottom = 36.234
-custom_fonts/font = SubResource( 72 )
+custom_fonts/font = SubResource( 73 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "lv 1"
 
@@ -1941,7 +1941,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 73 )
+custom_fonts/font = SubResource( 74 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
@@ -1965,7 +1965,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button2"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 73 )
+custom_fonts/font = SubResource( 74 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
@@ -1986,7 +1986,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="GUI/ActivitySystem/Panel/Button3"]
 margin_right = 180.0
 margin_bottom = 25.0
-custom_fonts/font = SubResource( 73 )
+custom_fonts/font = SubResource( 74 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play a game"
 align = 1
@@ -1997,9 +1997,9 @@ margin_left = 175.289
 margin_top = 4.24679
 margin_right = 193.289
 margin_bottom = 20.2468
-custom_styles/hover = SubResource( 74 )
-custom_styles/pressed = SubResource( 75 )
-custom_styles/normal = SubResource( 74 )
+custom_styles/hover = SubResource( 75 )
+custom_styles/pressed = SubResource( 76 )
+custom_styles/normal = SubResource( 75 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2008,7 +2008,7 @@ __meta__ = {
 visible = false
 margin_right = 480.0
 margin_bottom = 320.0
-custom_styles/panel = SubResource( 76 )
+custom_styles/panel = SubResource( 77 )
 script = ExtResource( 36 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2021,7 +2021,7 @@ margin_left = 116.571
 margin_top = 74.1938
 margin_right = 376.571
 margin_bottom = 224.194
-custom_styles/panel = SubResource( 77 )
+custom_styles/panel = SubResource( 78 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2031,7 +2031,7 @@ margin_left = 59.429
 margin_top = 5.8062
 margin_right = 206.429
 margin_bottom = 30.8062
-custom_fonts/font = SubResource( 78 )
+custom_fonts/font = SubResource( 79 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game Over"
 align = 1
@@ -2062,7 +2062,7 @@ margin_left = 93.0
 margin_top = 35.0
 margin_right = 243.0
 margin_bottom = 95.0
-custom_fonts/normal_font = SubResource( 79 )
+custom_fonts/normal_font = SubResource( 80 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Send Help!"
 
@@ -2071,7 +2071,7 @@ margin_left = 7.0
 margin_top = 104.0
 margin_right = 195.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 80 )
+custom_fonts/font = SubResource( 81 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Survive for : 20 days"
 
@@ -2080,7 +2080,7 @@ margin_left = 7.72987
 margin_top = 119.515
 margin_right = 195.73
 margin_bottom = 134.515
-custom_fonts/font = SubResource( 80 )
+custom_fonts/font = SubResource( 81 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Total earning : 500 $"
 
@@ -2091,8 +2091,8 @@ margin_right = 252.138
 margin_bottom = 114.467
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 81 )
-custom_fonts/font = SubResource( 82 )
+custom_styles/normal = SubResource( 82 )
+custom_fonts/font = SubResource( 83 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Restart"
 
@@ -2103,8 +2103,8 @@ margin_right = 252.138
 margin_bottom = 139.273
 custom_styles/hover = ExtResource( 48 )
 custom_styles/pressed = ExtResource( 49 )
-custom_styles/normal = SubResource( 81 )
-custom_fonts/font = SubResource( 82 )
+custom_styles/normal = SubResource( 82 )
+custom_fonts/font = SubResource( 83 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Home"
 
@@ -2113,7 +2113,7 @@ visible = false
 margin_right = 479.0
 margin_bottom = 318.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 83 )
+custom_styles/panel = SubResource( 84 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2123,7 +2123,7 @@ margin_left = 179.589
 margin_top = 95.3474
 margin_right = 299.589
 margin_bottom = 215.347
-custom_styles/panel = SubResource( 84 )
+custom_styles/panel = SubResource( 85 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2133,9 +2133,9 @@ margin_left = 20.1214
 margin_top = 88.6403
 margin_right = 100.121
 margin_bottom = 108.64
-custom_styles/hover = SubResource( 85 )
-custom_styles/pressed = SubResource( 86 )
-custom_styles/normal = SubResource( 85 )
+custom_styles/hover = SubResource( 86 )
+custom_styles/pressed = SubResource( 87 )
+custom_styles/normal = SubResource( 86 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2145,24 +2145,24 @@ margin_left = 19.6219
 margin_top = 65.1091
 margin_right = 99.6219
 margin_bottom = 85.1091
-custom_styles/hover = SubResource( 87 )
-custom_styles/pressed = SubResource( 88 )
-custom_styles/normal = SubResource( 87 )
+custom_styles/hover = SubResource( 88 )
+custom_styles/pressed = SubResource( 89 )
+custom_styles/normal = SubResource( 88 )
 
 [node name="Pause" type="Button" parent="GUI"]
 margin_left = 6.61459
 margin_top = 6.61458
 margin_right = 21.6146
 margin_bottom = 21.6146
-custom_styles/hover = SubResource( 89 )
-custom_styles/pressed = SubResource( 90 )
-custom_styles/normal = SubResource( 89 )
+custom_styles/hover = SubResource( 90 )
+custom_styles/pressed = SubResource( 91 )
+custom_styles/normal = SubResource( 90 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
@@ -2191,9 +2191,9 @@ __meta__ = {
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]

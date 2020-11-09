@@ -53,6 +53,7 @@ var tutorial4 : bool = false
 var tutorial42 : bool = false
 var tutorial5 : bool = false
 var tutorial52 : bool = false
+var player_speed : int
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -109,10 +110,13 @@ func move_player(target_position):
 
 func pause_game():
 	is_pause = true
+	player_speed = $Player.current_speed
+	$Player.current_speed = 0
 
 func unpause_game():
 	is_pause = false
 	emit_signal("unpause")
+	$Player.current_speed = player_speed
 	if $GUI/Pause.disabled == true:
 		$GUI/Pause.disabled = false
 
