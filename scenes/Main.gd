@@ -72,6 +72,7 @@ func _input(event):
 					object_cost_fix = 0
 					activity_name = "null"
 					activity_type = "null"
+					activity_from = "null"
 					activity_gain = 0
 					activity_scale = 0
 					event_chance_pool = []
