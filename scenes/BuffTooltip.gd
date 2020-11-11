@@ -8,7 +8,7 @@ func _process(delta):
 
 func _on_HappinessBuff_mouse_entered():
 	visible = true
-	$Label.text = "Bonus money"
+	$Label.text = "bonus money"
 
 
 func _on_HappinessBuff_mouse_exited():
