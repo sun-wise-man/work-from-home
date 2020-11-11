@@ -57,30 +57,31 @@ var player_speed : int
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed and not is_pause:
+		if event.button_index == BUTTON_LEFT and event.pressed:
 			if tutorial_check():
-				if object_hover != "null" and not showing_popup:
-					object_fix = object_hover
-					object_level_fix = object_level_hover
-					object_cost_fix = object_cost_hover
-					object_position = event.position
-					showing_popup = true
-					$GUI/ActivitySystem.show_popup(object_fix, object_level_fix, 
-						object_cost_fix, object_position)
-				elif not showing_popup and not pause_hover:
-					object_fix = "null"
-					object_level_hover = 0
-					object_cost_fix = 0
-					activity_name = "null"
-					activity_type = "null"
-					activity_from = "null"
-					activity_gain = 0
-					activity_scale = 0
-					event_chance_pool = []
-					decision_index = []
-					move_player(event.position)
-				elif not inside_popup and not pause_hover:
-					close_popup()
+				if not is_pause:
+					if object_hover != "null" and not showing_popup:
+						object_fix = object_hover
+						object_level_fix = object_level_hover
+						object_cost_fix = object_cost_hover
+						object_position = event.position
+						showing_popup = true
+						$GUI/ActivitySystem.show_popup(object_fix, object_level_fix, 
+							object_cost_fix, object_position)
+					elif not showing_popup and not pause_hover:
+						object_fix = "null"
+						object_level_hover = 0
+						object_cost_fix = 0
+						activity_name = "null"
+						activity_type = "null"
+						activity_from = "null"
+						activity_gain = 0
+						activity_scale = 0
+						event_chance_pool = []
+						decision_index = []
+						move_player(event.position)
+					elif not inside_popup and not pause_hover:
+						close_popup()
 
 func _ready():
 	time_hour = starting_hour
@@ -206,6 +207,7 @@ func _on_World_hour_pass(time):
 		tutorial22 = true
 		tutorial2 = false
 		$Tutorial/Tutorial2.visible = true
+		pause_game()
 	reset_money()
 	buff_check()
 	if $GUI/HealthBar.value <= 0:
@@ -266,6 +268,7 @@ func gain_event(index : int):
 	$GUI/EventPanel/Label.text = gain_desc
 	$GUI/EventPanel.visible = true
 	if tutorial4:
+		pause_game()
 		$Tutorial/Tutorial4.visible = true
 		tutorial42 = true
 		tutorial4 = false
@@ -353,6 +356,7 @@ func buff_check():
 					$Tutorial/Tutorial5.visible = true
 					tutorial52 = true
 					tutorial5 = false
+					pause_game()
 	elif $GUI/HappinessBar.value <= 10:
 		randomize()
 		var number = randi() % 100
@@ -366,6 +370,7 @@ func buff_check():
 					$Tutorial/Tutorial5.visible = true
 					tutorial52 = true
 					tutorial5 = false
+					pause_game()
 	if $GUI/HealthBar.value == 100:
 		randomize()
 		var number = randi() % 100
@@ -379,6 +384,7 @@ func buff_check():
 					$Tutorial/Tutorial5.visible = true
 					tutorial52 = true
 					tutorial5 = false
+					pause_game()
 	elif $GUI/HealthBar.value <= 10:
 		randomize()
 		var number = randi() % 100
@@ -392,6 +398,7 @@ func buff_check():
 					$Tutorial/Tutorial5.visible = true
 					tutorial52 = true
 					tutorial5 = false
+					pause_game()
 
 func tutorial_check():
 	if not Global.tutorial:
@@ -418,14 +425,17 @@ func tutorial_check():
 				tutorial3 = false
 				tutorial4 = true
 				tutorial5 = true
+				unpause_game()
 				return true
 			else:
 				return false
 		if tutorial42:
+			unpause_game()
 			$Tutorial/Tutorial4.visible = false
 			tutorial42 = false
 			return false
 		if tutorial52:
+			unpause_game()
 			$Tutorial/Tutorial5.visible = false
 			tutorial52 = false
 			return false
