@@ -312,6 +312,8 @@ func buff_check():
 			happiness_buff_time = 0
 			happiness_buff = false
 			$GUI/HappinessBuff.visible = false
+			if $GUI/BuffTooltip/Label.text == "bonus money":
+				$GUI/BuffTooltip.visible = false
 	elif happiness_debuff:
 		happiness_buff_time -= 1
 		if happiness_buff_time <= 0 or $GUI/HappinessBar.value >= 50:
@@ -319,6 +321,8 @@ func buff_check():
 			happiness_debuff = false
 			$GUI/HappinessDebuff.visible = false
 			$Player.current_speed -= $Player.debuff_speed
+			if $GUI/BuffTooltip/Label.text == "speed down":
+				$GUI/BuffTooltip.visible = false
 	if health_buff:
 		health_buff_time -= 1
 		if health_buff_time <= 0 or $GUI/HealthBar.value <= 50:
@@ -326,6 +330,8 @@ func buff_check():
 			health_buff = false
 			$GUI/HealthBuff.visible = false
 			$Player.current_speed -= $Player.buff_speed
+			if $GUI/BuffTooltip/Label.text == "speed up":
+				$GUI/BuffTooltip.visible = false
 	elif health_debuff:
 		health_buff_time -= 1
 		if health_buff_time <= 0 or $GUI/HealthBar.value >= 50:
@@ -333,6 +339,8 @@ func buff_check():
 			health_debuff = false
 			$GUI/HealthDebuff.visible = false
 			$GUI/Debuff.visible = false
+			if $GUI/BuffTooltip/Label.text == "dark screen":
+				$GUI/BuffTooltip.visible = false
 	if $GUI/HappinessBar.value == 100:
 		randomize()
 		var number = randi() % 100
