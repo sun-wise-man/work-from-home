@@ -703,15 +703,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "eating",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -1126,7 +1126,7 @@ __meta__ = {
 }
 object_names = "Bed"
 object_start_cost = 75
-object_cost_increase = 50
+object_cost_increase = 70
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
 
@@ -1144,7 +1144,7 @@ __meta__ = {
 }
 object_names = "Stove"
 object_start_cost = 75
-object_cost_increase = 50
+object_cost_increase = 70
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
 
@@ -1162,7 +1162,7 @@ __meta__ = {
 }
 object_names = "TV"
 object_start_cost = 75
-object_cost_increase = 50
+object_cost_increase = 70
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
 
@@ -1180,7 +1180,7 @@ __meta__ = {
 }
 object_names = "PC"
 object_start_cost = 75
-object_cost_increase = 50
+object_cost_increase = 70
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
 
@@ -1198,7 +1198,7 @@ __meta__ = {
 }
 object_names = "Bathroom"
 object_start_cost = 75
-object_cost_increase = 50
+object_cost_increase = 70
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
 
@@ -1231,8 +1231,8 @@ event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overti
 event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
 event_chance = PoolIntArray( 11, 102, 0, 3, 3, 3, 20, 10, 50, 55, 45, 50, 40, 60, 15, 50, 100, 50, 50, 50, 15, 50, 50, 12, 3, 12, 13, 19, 1, 19, 5 )
 event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
-health_output = PoolIntArray( 0, 3, -4, -4, -4, -4, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 2, -12, 4, -17, 6, 1 )
-happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6, 0, 0, 4, 0, 8, -8, 0, 4, -15, 9, -11, 16, -12, 4, -11, 4, -5 )
+health_output = PoolIntArray( 0, 3, -4, -4, -4, -4, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 2, -12, 4, -17, 9, 1 )
+happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6, 0, 0, 4, 0, 8, -8, 0, 4, -15, 9, -11, 16, -12, 9, -11, 4, -5 )
 work_output = PoolIntArray( 0, 5, 5, 10, -10, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
 
@@ -2166,13 +2166,11 @@ custom_styles/normal = SubResource( 90 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
-
+[connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
-[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="path_done" from="Player" to="." method="_on_Player_path_done"]
 [connection signal="mouse_entered" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Objects/Bed/Area2D" to="Objects/Bed" method="_on_Area2D_mouse_exited"]
@@ -2199,9 +2197,9 @@ __meta__ = {
 [connection signal="pressed" from="GUI/DecisionPanel/Option2" to="GUI/DecisionPanel" method="_on_Option2_pressed"]
 [connection signal="visibility_changed" from="GUI/EventPanel" to="GUI/EventPanel" method="_on_EventPanel_visibility_changed"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Stove" method="_on_ActivitySystem_upgrade_object"]
-[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Console" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bed" method="_on_ActivitySystem_upgrade_object"]
+[connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/PC" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="upgrade_object" from="GUI/ActivitySystem" to="Objects/Bathroom" method="_on_ActivitySystem_upgrade_object"]
 [connection signal="mouse_entered" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/ActivitySystem/Panel" to="." method="_on_Panel_mouse_exited"]
