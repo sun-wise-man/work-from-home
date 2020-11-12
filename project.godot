@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="work_from_home"
 run/main_scene="res://scenes/menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/UI/Title_512x.png"
 
 [autoload]
 
