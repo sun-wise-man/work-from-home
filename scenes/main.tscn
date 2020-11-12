@@ -703,15 +703,15 @@ animations = [ {
 "name": "idle",
 "speed": 6.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "eating",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "eating",
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -1062,7 +1062,7 @@ region_rect = Rect2( 54.5065, 4.75858, 40.8945, 43.1891 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
-seconds_per_hour = 2.0
+seconds_per_hour = 3.0
 starting_hour = 7
 buff_debuff_time = 3
 happiness_buff_chance = 50
@@ -1126,7 +1126,7 @@ __meta__ = {
 }
 object_names = "Bed"
 object_start_cost = 75
-object_cost_increase = 75
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bed"]
 
@@ -1144,7 +1144,7 @@ __meta__ = {
 }
 object_names = "Stove"
 object_start_cost = 75
-object_cost_increase = 75
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Stove"]
 
@@ -1162,7 +1162,7 @@ __meta__ = {
 }
 object_names = "TV"
 object_start_cost = 75
-object_cost_increase = 75
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Console"]
 
@@ -1180,7 +1180,7 @@ __meta__ = {
 }
 object_names = "PC"
 object_start_cost = 75
-object_cost_increase = 75
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/PC"]
 
@@ -1198,7 +1198,7 @@ __meta__ = {
 }
 object_names = "Bathroom"
 object_start_cost = 75
-object_cost_increase = 75
+object_cost_increase = 50
 
 [node name="Area2D" type="Area2D" parent="Objects/Bathroom"]
 
@@ -1229,10 +1229,10 @@ frame = 5
 script = ExtResource( 18 )
 event_name = PoolStringArray( "meeting", "great meeting", "bad meeting", "overtime", "missing file", "missed deadline", "finish game", "play online", "duo", "win duo", "lose duo", "full party", "win full", "lose full", "movie", "known movie", "known movie gain", "recommended", "fun movie", "sad movie", "news", "good news", "bad news", "video call", "jumpscare", "great food", "bad food", "refreshed bath", "diarrhea", "refreshed sleep", "confused" )
 event_from = PoolStringArray( "PC", "meeting", "meeting", "PC", "PC", "PC", "Console", "Console", "play online", "duo", "duo", "play online", "full party", "full party", "TV", "movie", "known movie", "movie", "recommended", "recommended", "TV", "news", "news", "Web", "Web", "Stove", "Stove", "Bathroom", "Bathroom", "Bed", "Bed" )
-event_chance = PoolIntArray( 11, 102, 0, 3, 3, 3, 20, 10, 50, 55, 45, 50, 40, 60, 15, 50, 100, 50, 50, 50, 15, 50, 50, 12, 3, 12, 13, 19, 5, 19, 5 )
+event_chance = PoolIntArray( 11, 102, 0, 3, 3, 3, 20, 10, 50, 55, 45, 50, 40, 60, 15, 50, 100, 50, 50, 50, 15, 50, 50, 12, 3, 12, 13, 19, 1, 19, 5 )
 event_output = PoolStringArray( "chance", "gain", "gain", "gain", "gain", "gain", "gain", "decision", "chance", "gain", "gain", "chance", "gain", "gain", "decision", "chance", "gain", "chance", "gain", "gain", "chance", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain", "gain" )
-health_output = PoolIntArray( 0, 3, -4, -4, -4, -4, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 2, -12, 4, -26, 6, 1 )
-happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6, 0, 0, 4, 0, 8, -8, 0, 4, -15, 9, -11, 16, -12, 4, -21, 4, -5 )
+health_output = PoolIntArray( 0, 3, -4, -4, -4, -4, 0, 0, 0, 0, -2, 0, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -11, 2, -12, 4, -17, 6, 1 )
+happiness_output = PoolIntArray( 0, 6, -1, -6, -1, -1, 2, 0, 0, 2, -4, 0, 2, -6, 0, 0, 4, 0, 8, -8, 0, 4, -15, 9, -11, 16, -12, 4, -11, 4, -5 )
 work_output = PoolIntArray( 0, 5, 5, 10, -10, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 event_desc = PoolStringArray( "", "You have a great meeting", "You have a bad meeting", "You work overtime", "A file is missing", "You miss a deadline", "You finish a game", "Your friend\'s friend wants to join your party. Would you accept\?", "Play duo", "You win duo game", "You lose duo game", "Play full party", "You win full party", "You lose full party", "Your friend recommends a movie", "Watch known movie", "You watch your movie", "Watch recommend", "It was a fun movie", "It was a sad movie", "", "You watch a good news", "You watch a bad news", "You video call with friends", "You get jumpscared", "You have a great food", "You have a bad food", "You feel refreshed", "You get diarrhea", "You feel refreshed", "You get confused" )
 
@@ -1560,7 +1560,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 increase_dr_rate = -2
-hour_per_increase = 72
+hour_per_increase = 96
 
 [node name="Label" type="Label" parent="GUI/HealthBar"]
 margin_left = 13.0
@@ -1599,7 +1599,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 increase_dr_rate = -2
-hour_per_increase = 72
+hour_per_increase = 96
 
 [node name="Label" type="Label" parent="GUI/HappinessBar"]
 margin_left = 4.0
@@ -2166,8 +2166,10 @@ custom_styles/normal = SubResource( 90 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+
 [connection signal="hour_pass" from="." to="GUI/HealthBar" method="_on_World_hour_pass"]
+[connection signal="hour_pass" from="." to="GUI/HappinessBar" method="_on_World_hour_pass"]
+
 [connection signal="hour_pass" from="." to="GUI/Time" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="Objects/Windows" method="_on_World_hour_pass"]
 [connection signal="hour_pass" from="." to="." method="_on_World_hour_pass"]
